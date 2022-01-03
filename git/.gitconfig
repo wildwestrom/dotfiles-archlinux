@@ -1,0 +1,27 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Christian Westrom
+	email = c.westrom@westrom.xyz
+[cola]
+	startupmode = folder
+	spellcheck = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	excludesfile = /home/main/.gitignore_global
+[init]
+	defaultBranch = main
+[github]
+	user = wildwestrom
+[gitlab]
+	user = wildwestrom
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg
