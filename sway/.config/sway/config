@@ -13,25 +13,39 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Applications
-set $term alacritty
-set $browser brave
-
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Default wallpaper
 output * bg /home/main/images/teal-swan-frequency-paintings/Simplify.jpg fit
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+set $main_monitor eDP-1
+set $external_monitor DP-3
+
+output $main_monitor {
+    resolution 2880x1800 
+    position 1920,0 
+    scale 2
+    }
+output $external_monitor {
+    resolution 1920x1080 
+    position 0,0
+    scale 1
+    }
+# Focus on main monitor on startup
+exec focus output $main_monitor
+
+# Bind workspaces to monitors
+    workspace 1  output $external_monitor
+    workspace 2  output $external_monitor
+    workspace 3  output $external_monitor
+    workspace 4  output $external_monitor
+    workspace 5  output $external_monitor
+    workspace 6  output $main_monitor
+    workspace 7  output $main_monitor
+    workspace 8  output $main_monitor
+    workspace 9  output $main_monitor
+    workspace 10 output $main_monitor
 
 ### Idle configuration
 #
@@ -41,14 +55,8 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
-
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 ### Input configuration
 #
-# Example configuration:
 #
 input "1739:1751:Apple_SPI_Touchpad" {
     # disable while typing
@@ -62,27 +70,34 @@ input "1739:1751:Apple_SPI_Touchpad" {
     tap enabled
     tap_button_map lmr
 }
+
+### Applications
 #
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+#
+
+set $term footclient
+set $browser brave
+exec_always {
+    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+    mako
+    wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
+    ibus-daemon -drxR
+    foot --server
+}
 
 ### Key bindings
 #
-# Basics:
 #
-    # Start a terminal
     bindsym $mod+Return exec $term
-
-    # Start browser
     bindsym $mod+Shift+b exec $browser
+    bindsym $mod+q kill
 
-    # Kill focused window
-    bindsym $mod+Shift+q kill
-
-    # Start your launcher
+    # menu
+    set $menu bemenu-run | xargs swaymsg exec --
     bindsym $mod+d exec $menu
 
-
+    #todo, make a quick menu selection window for different screenshot scripts
+    bindsym $mod+g exec screencap-area.fish
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -98,14 +113,6 @@ input "1739:1751:Apple_SPI_Touchpad" {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-
-#
-# Startup Programs:
-#
-
-exec_always fcitx5
-exec_always protonmail-bridge --no-window
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 
 #
@@ -159,6 +166,8 @@ exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+    
+
 #
 # Layout stuff:
 #
@@ -220,6 +229,16 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+#
+# Gaps
+#
+gaps inner 10
+gaps outer 4
+smart_gaps off
+#default_border none
+focus_follows_mouse yes
+
 
 #
 # Title Bar Appearance

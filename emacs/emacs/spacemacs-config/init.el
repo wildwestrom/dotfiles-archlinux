@@ -20,7 +20,7 @@ This function should only modify configuration layer settings."
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
-   dotspacemacs-enable-lazy-installation 'unused
+   dotspacemacs-enable-lazy-installation nil
 
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
@@ -119,6 +119,9 @@ This function should only modify configuration layer settings."
                treemacs-use-filewatch-mode t
                treemacs-use-follow-mode t
                )
+
+     ;; (neotree :variables
+     ;;          neotree-theme 'icons)
 
      ;; spacemacs-layouts layer added to set variables
      ;; SPC TAB restricted to current layout buffers
@@ -356,7 +359,7 @@ This function should only modify configuration layer settings."
             shell-default-term-shell "/bin/fish"
             shell-default-width 30
             shell-default-position 'bottom
-            terminal-here-linux-terminal-command 'alacritty)
+            terminal-here-linux-terminal-command 'foot)
 
 
      ) ;; End of dotspacemacs-configuration-layers
@@ -370,7 +373,9 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(fcitx)
+   dotspacemacs-additional-packages '()
+   ;; TODO figure out ime on emacs
+   ;;dotspacemacs-additional-packages '(imbot)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -877,15 +882,19 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Add fcitx support for emacs
-  (setq fcitx-active-evil-states '(insert emacs hybrid)) ; if you use hybrid mode
-  (fcitx-aggressive-setup)
-  (fcitx-prefix-keys-add "M-m") ; M-m is common in Spacemacs
-  (setq fcitx-use-dbus t) ; uncomment if you're using Linux
+  ;; TODO figure out ime on emacs
+  ;; imbot for fcitx configuration
+  ;; (use-package imbot
+  ;;   :hook
+  ;;   (evil-mode . imbot-mode)
+  ;;   :preface
+  ;;   (setq imbot--im-config 'imbot--fcitx5))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Some breathing room while scrolling vertically
   (setq scroll-margin 10)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; org-roam-graph config
@@ -918,8 +927,8 @@ before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Font for all Unicode chars
-  (when (member "Sarasa Mono J" (font-family-list))
-    (set-fontset-font t 'unicode "Sarasa Mono J" nil 'append))
+  ;; (when (member "Sarasa Mono J" (font-family-list))
+  ;;   (set-fontset-font t 'unicode "Sarasa Mono J" nil 'append))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

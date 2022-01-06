@@ -10,7 +10,7 @@ set -x EDITOR "nvim"
 set -x VISUAL "emacsclient -c -a emacs"
 set -x READER "bat"
 
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x GDK_BACKEND "wayland"
 
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_DATA_HOME "$HOME/.local/share"
@@ -26,6 +26,8 @@ set -x PATH "/var/lib/flatpak/exports/bin" $PATH
 set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+
+set SCREENSHOT_DIR "$HOME/images/screenshots"
 
 
 ### Aliases
@@ -48,13 +50,13 @@ alias l.="exa -a | egrep '^\.'"
 alias cat="bat"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
-alias termrc="$EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml"
+alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
 alias swayrc="$EDITOR $XDG_CONFIG_HOME/sway/config"
+alias edviminit="$EDITOR $XDG_CONFIG_HOME/nvim/init.lua"
 
 alias su="su -s /bin/fish"
 alias brave="brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
-
-alias reinstall-grub="doas grub-install --efi-directory=/boot --target=x86_64-efi"
+alias ps="ps aux | grep -v grep | grep "
 
 # Vi bindings
 function fish_user_key_bindings
