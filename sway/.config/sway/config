@@ -239,6 +239,8 @@ smart_gaps off
 #default_border none
 focus_follows_mouse yes
 
+# TODO Figure out how to 
+font pango:Sarasa Mono J 10
 
 #
 # Title Bar Appearance
@@ -254,6 +256,8 @@ border {
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
+
+    icon_theme Adwaita
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
