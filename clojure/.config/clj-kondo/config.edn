@@ -1,0 +1,7 @@
+{:lint-as {reagent.core/with-let                   clojure.core/let
+           kitchen-async.promise/let               clojure.core/let
+           clojure.test.check.properties/for-all   clojure.core/let
+           clojure.test.check.clojure-test/defspec clojure.test/deftest
+           day8.re-frame.tracing/fn-traced         clojure.core/fn
+           day8.re-frame.tracing/defn-traced       clojure.core/defn
+           rum.core/defc                           clojure.core/defn}}
