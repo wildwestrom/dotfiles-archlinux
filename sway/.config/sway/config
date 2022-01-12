@@ -36,16 +36,17 @@ output $external_monitor {
 exec focus output $main_monitor
 
 # Bind workspaces to monitors
-    workspace 1  output $external_monitor
-    workspace 2  output $external_monitor
-    workspace 3  output $external_monitor
-    workspace 4  output $external_monitor
-    workspace 5  output $external_monitor
-    workspace 6  output $main_monitor
-    workspace 7  output $main_monitor
-    workspace 8  output $main_monitor
-    workspace 9  output $main_monitor
-    workspace 10 output $main_monitor
+workspace 1  output $external_monitor
+workspace 2  output $external_monitor
+workspace 3  output $external_monitor
+workspace 4  output $external_monitor
+workspace 5  output $external_monitor
+workspace 6  output $main_monitor
+workspace 7  output $main_monitor
+workspace 8  output $main_monitor
+workspace 9  output $main_monitor
+workspace 10 output $main_monitor
+
 
 ### Idle configuration
 #
@@ -78,11 +79,18 @@ input "1739:1751:Apple_SPI_Touchpad" {
 set $term footclient
 set $browser brave
 exec_always {
+    # Essentials
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     mako
     wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
     fcitx5
     foot --server
+    # Applications
+    discord 
+    thunderbird
+    protonmail-bridge
+    element-desktop
+    hexchat
 }
 
 ### Key bindings
