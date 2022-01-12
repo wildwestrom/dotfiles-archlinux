@@ -360,9 +360,12 @@ This function should only modify configuration layer settings."
             shell-default-term-shell "/bin/fish"
             shell-default-width 30
             shell-default-position 'bottom
-            terminal-here-linux-terminal-command 'foot)
-
-
+            terminal-here-terminal-command-table (list
+                                                  (cons 'alacritty  (list "alacritty"))
+                                                  (cons 'foot       (list "foot"))
+                                                  (cons 'footclient (list "footclient")))
+            terminal-here-linux-terminal-command 'footclient
+            )
      ) ;; End of dotspacemacs-configuration-layers
 
 
