@@ -32,7 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(systemd
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -76,8 +76,7 @@ This function should only modify configuration layer settings."
      ;; including text-mode may cause issues with org-mode and magit
      (unicode-fonts :variables
                     unicode-fonts-existence-checks 'first
-                    unicode-fonts-force-multi-color-on-mac t
-                    unicode-fonts-enable-ligatures t
+                    unicode-fonts-enable-ligatures nil
                     unicode-fonts-ligature-modes '(prog-mode))
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -223,21 +222,23 @@ This function should only modify configuration layer settings."
 
      ;; Spacemacs Org mode
      (org :variables
-          org-clock-sound "~/emacs/spacemacs-config/bell.wav"
+          org-clock-sound "~/emacs/spacemacs-config/bell.mp3"
           org-enable-github-support t
           org-enable-asciidoc-support t
           org-enable-bootstrap-support t
           org-enable-reveal-js-support t
           org-enable-roam-support t
           org-enable-roam-protocol t
-          org-roam-directory "~/org/Notes/"
-          org-roam-dailies-directory "Journal/"
+          org-roam-directory "~/org/Notes"
+          org-roam-dailies-directory "Journal"
           org-roam-v2-ack t
           org-want-todo-bindings t
           org-latex-classes '("letter" "\\documentclass{letter}"
                               ("\\section{%s}" . "\\section*{%s}")
                               ("\\subsection{%s}" . "\\subsection*{%s}")
                               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+
+     systemd
 
      yaml
 
@@ -373,9 +374,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(keychain-environment)
-   ;; TODO figure out ime on emacs
-   ;;dotspacemacs-additional-packages '(imbot)
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -808,6 +807,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-use-clean-aindent-mode t
 
+   ;; Accept SPC as y for prompts if non-nil. (default nil)
+   dotspacemacs-use-SPC-as-y nil
+
    ;; If non-nil shift your number row to match the entered keyboard layout
    ;; (only in insert state). Currently supported keyboard layouts are:
    ;; `qwerty-us', `qwertz-de' and `querty-ca-fr'.
@@ -829,7 +831,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-home-shorten-agenda-source nil
 
    ;; If non-nil then byte-compile some of Spacemacs files.
-   dotspacemacs-byte-compile nil))
+   dotspacemacs-byte-compile t))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
@@ -837,7 +839,8 @@ This function defines the environment variables for your Emacs session. By
 default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
-  (spacemacs/load-spacemacs-env))
+  (spacemacs/load-spacemacs-env)
+)
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -871,7 +874,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
-dump.")
+dump."
+)
 
 
 (defun dotspacemacs/user-config ()
@@ -1326,12 +1330,11 @@ before packages are loaded."
   ;; Get GPG pinentry working
   (require 'epg)
   (setq epg-pinentry-mode 'loopback)
-  ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;; End of dot-spacemacs/user-config
-
   )
+
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use

@@ -1,4 +1,3 @@
-
 ### ENVVARS
 #
 #
@@ -12,23 +11,41 @@ set -x READER "bat"
 
 set -x GDK_BACKEND "wayland"
 
+# User Path
+fish_add_path -a "$HOME/.local/bin"
+
+# Flatpak Path
+fish_add_path -a "/var/lib/flatpak/exports/bin"
+
+# GPG
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+
+# Screenshots
+set -x SCREENSHOT_DIR "$HOME/images/screenshots"
+
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_DATA_HOME "$HOME/.local/share"
 set -x XDG_CACHE_HOME "$HOME/.cache"
 
-# User Path
-set -x PATH "$HOME/.local/bin" $PATH
-
-# Flatpak Path
-set -x PATH "/var/lib/flatpak/exports/bin" $PATH
-
-# GPG
-set -x GPG_TTY (tty)
-set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
-set SCREENSHOT_DIR "$HOME/images/screenshots"
-
+set -x NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
+set -x GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+set -x LESSHISTFILE "~"
+set -x WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
+set -x INPUTRC "$XDG_CONFIG_HOME/shell/inputrc"
+set -x ALSA_CONFIG_PATH "$XDG_CONFIG_HOME/alsa/asoundrc"
+# set -x GNUPGHOME "$XDG_DATA_HOME/gnupg"
+set -x WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
+set -x KODI_DATA "$XDG_DATA_HOME/kodi"
+set -x PASSWORD_STORE_DIR "$XDG_DATA_HOME/password-store"
+set -x TMUX_TMPDIR "$XDG_RUNTIME_DIR"
+set -x ANDROID_SDK_HOME "$XDG_CONFIG_HOME/android"
+set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
+set -x GOPATH "$XDG_DATA_HOME/go"
+set -x ANSIBLE_CONFIG "$XDG_CONFIG_HOME/ansible/ansible.cfg"
+set -x HISTFILE "$XDG_DATA_HOME/history"
+set -x WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
+set -x MBSYNCRC "$XDG_CONFIG_HOME/mbsync/config"
+set -x ELECTRUMDIR "$XDG_DATA_HOME/electrum"
 
 ### Aliases
 #
@@ -46,7 +63,7 @@ alias ls="exa --color=always"
 alias ll="exa -la --color=always"
 alias la="exa -a --color=always"
 alias lt="exa -aT --color=always"
-alias l.="exa -a | egrep '^\.'"
+alias l.="exa -d .*"
 alias cat="bat"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
@@ -57,6 +74,7 @@ alias edviminit="$EDITOR $XDG_CONFIG_HOME/nvim/init.lua"
 alias su="su -s /bin/fish"
 alias brave="brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias ps="ps aux | grep -v grep | grep "
+alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0"
 
 # Vi bindings
 function fish_user_key_bindings
