@@ -23,6 +23,9 @@ set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 # Screenshots
 set -x SCREENSHOT_DIR "$HOME/images/screenshots"
 
+# Java Applications
+set -x _JAVA_AWT_WM_NONREPARENTING 1
+
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_DATA_HOME "$HOME/.local/share"
 set -x XDG_CACHE_HOME "$HOME/.cache"
