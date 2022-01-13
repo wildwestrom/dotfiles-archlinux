@@ -32,7 +32,7 @@ set -x XDG_CACHE_HOME "$HOME/.cache"
 
 set -x NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
 set -x GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
-set -x LESSHISTFILE "~"
+set -x LESSHISTFILE "-"
 set -x WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
 set -x INPUTRC "$XDG_CONFIG_HOME/shell/inputrc"
 set -x ALSA_CONFIG_PATH "$XDG_CONFIG_HOME/alsa/asoundrc"
