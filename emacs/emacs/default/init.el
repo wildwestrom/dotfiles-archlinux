@@ -5,7 +5,7 @@
 (scroll-bar-mode -1)  ; Disable visible scrollbar
 (tool-bar-mode -1)    ; Disable the toolbar
 ;(tooltip-mode -1)     ; Disable tooltips
-;(set-fringe-mode 10)  ; Add more padding on the sides, default is 8px
+(set-fringe-mode 0)  ; Remove padding on the sides, default is 8px
 ;(setq visible-bell t) ; No beepling, but now there's a big pop-up on my screen
 
 
@@ -14,16 +14,7 @@
       scroll-conservatively 100000 ;; Doesn't jump when scrolling
       )
 
-;; Set retina/hidpi display settings properly
-
-
-;; set up font
-;; (set-face-attribute 'default nil
-;; 		    :font "JetBrainsMono Nerd Font Mono"
-;; 		    :height 140
-;; 		    )
-
-;; set-up use-package
+; set-up use-package
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -185,6 +176,7 @@
 ;; TODO: bindings:
 ;; Switch-windows
 ;; right now it's C-w hjkl
+;; should be SPC w hjkl
 
 ;; Leader to SPC
 ;; SPC SPC opens M-x minibuffer
