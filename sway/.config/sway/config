@@ -88,7 +88,7 @@ exec_always {
     # Applications
     discord 
     thunderbird
-    element-desktop
+    fluffychat
     signal-desktop
 }
 
@@ -99,8 +99,8 @@ exec_always {
     bindsym $mod+Shift+b exec $browser
     bindsym $mod+q kill
 
-    # menu
-    set $menu dmenu_path | dmenu | xargs swaymsg exec --
+    # launcher/menu
+    set $menu dmenu-wl_run | xargs swaymsg exec --
     bindsym $mod+d exec $menu
 
     #todo, make a quick menu selection window for different screenshot scripts
