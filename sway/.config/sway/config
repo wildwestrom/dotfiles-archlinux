@@ -77,15 +77,17 @@ input "1739:1751:Apple_SPI_Touchpad" {
 
 set $term footclient
 set $browser brave
+
+# Startup
 exec_always {
-    # Essentials
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-    mako
-    wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
-    fcitx5
     foot --server
+    mako
+    fcitx5
+}
+exec {
     light -I
-    # Applications
+    wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
     discord 
     thunderbird
     fluffychat
