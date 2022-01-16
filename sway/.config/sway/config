@@ -17,7 +17,7 @@ set $right l
 ### Output configuration
 #
 # Default wallpaper
-output * bg /home/main/images/teal-swan-frequency-paintings/Simplify.jpg fit
+output * bg /home/main/images/teal-swan-frequency-paintings/Pleiadian_Integration_Lightwork_Model.jpg fit
 
 set $main_monitor eDP-1
 set $external_monitor DP-3
@@ -25,8 +25,7 @@ set $external_monitor DP-3
 output $main_monitor {
     resolution 2880x1800 
     position 1920,0 
-    scale 2
-    }
+    scale 2 }
 output $external_monitor {
     resolution 1920x1080 
     position 0,0
@@ -85,12 +84,12 @@ exec_always {
     wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
     fcitx5
     foot --server
+    light -I
     # Applications
     discord 
     thunderbird
-    protonmail-bridge
     element-desktop
-    hexchat
+    signal-desktop
 }
 
 ### Key bindings
@@ -101,7 +100,7 @@ exec_always {
     bindsym $mod+q kill
 
     # menu
-    set $menu bemenu-run | xargs swaymsg exec --
+    set $menu dmenu_path | dmenu | xargs swaymsg exec --
     bindsym $mod+d exec $menu
 
     #todo, make a quick menu selection window for different screenshot scripts
@@ -247,7 +246,7 @@ smart_gaps off
 #default_border none
 focus_follows_mouse yes
 
-# TODO Figure out how to 
+# TODO Figure out how to have multiple fonts by priority
 font pango:Sarasa Mono J 10
 
 #
