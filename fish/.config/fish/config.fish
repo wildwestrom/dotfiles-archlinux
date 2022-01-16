@@ -67,6 +67,8 @@ alias ll="exa -la --color=always"
 alias la="exa -a --color=always"
 alias lt="exa -aT --color=always"
 alias l.="exa -d .*"
+alias df='df -h'
+alias du='du -ch'
 alias cat="bat"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
@@ -74,9 +76,10 @@ alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
 alias swayrc="$EDITOR $XDG_CONFIG_HOME/sway/config"
 alias edviminit="$EDITOR $XDG_CONFIG_HOME/nvim/init.lua"
 
+
 alias su="su -s /bin/fish"
 alias brave="brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
-alias ps="ps aux | grep -v grep | grep "
+alias proc="ps aux | grep -v grep | grep "
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0"
 
 # Vi bindings

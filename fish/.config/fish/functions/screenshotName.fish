@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 
-
 # Only works for png images for now
 function screenshotName
     if not $SCREENSHOT_DIR
