@@ -69,6 +69,7 @@ alias lt="exa -aT --color=always"
 alias l.="exa -d .*"
 alias df='df -h'
 alias du='du -ch'
+alias fd='fd --hidden'
 alias cat="bat"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
