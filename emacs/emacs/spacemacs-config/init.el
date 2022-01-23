@@ -117,6 +117,7 @@ This function should only modify configuration layer settings."
                treemacs-indentation 1
                treemacs-use-all-the-icons-theme t
                treemacs-space-between-root-nodes nil
+               treemacs-use-scope-type 'Perspectives
                treemacs-use-filewatch-mode t
                treemacs-use-follow-mode t
                )
@@ -181,7 +182,8 @@ This function should only modify configuration layer settings."
 
      rust
 
-     shell-scripts
+     (shell-scripts :variables
+                    insert-shebang-track-ignored-filename nil)
 
      ;; swift
 
@@ -216,6 +218,7 @@ This function should only modify configuration layer settings."
      json
 
      (latex :variables
+            latex-build-command "LaTeX"
             latex-backend 'lsp
             latex-refresh-preview t)
 
@@ -558,7 +561,7 @@ It should only modify the values of Spacemacs settings."
    ;; Point size is recommended, because it's device independent. (default 10.0)
    ;; Comment for recording mode
    dotspacemacs-default-font '(("JetBrainsMono Nerd Font Mono"
-                                :size 14
+                                :size 11.0
                                 :weight normal
                                 :width normal)
                                ("Sarasa Mono J"))
@@ -890,6 +893,11 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Keybindings for perspectives mode
+  (spacemacs/set-leader-keys "ps" 'persp-frame-switch)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; TODO figure out ime on emacs
   ;; imbot for fcitx configuration
   ;; (use-package imbot
@@ -901,7 +909,7 @@ before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Some breathing room while scrolling vertically
-  (setq scroll-margin 10)
+  (setq scroll-margin 4)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -931,12 +939,6 @@ before packages are loaded."
   (setq history-delete-duplicates t)
   (setq extended-command-history
         (delq nil (delete-dups extended-command-history)))
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Font for all Unicode chars
-  ;; (when (member "Sarasa Mono J" (font-family-list))
-  ;;   (set-fontset-font t 'unicode "Sarasa Mono J" nil 'append))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
