@@ -5,11 +5,11 @@
 # Remove default greeing
 set fish_greeting
 
-set -x EDITOR "nvim"
-set -x VISUAL "emacsclient -c -a emacs"
-set -x READER "bat"
+set -gx EDITOR "nvim"
+set -gx VISUAL "emacsclient -c -a emacs"
+set -gx READER "bat"
 
-set -x GDK_BACKEND "wayland"
+set -gx GDK_BACKEND "wayland"
 
 # User Path
 fish_add_path -a "$HOME/.local/bin"
@@ -18,37 +18,40 @@ fish_add_path -a "$HOME/.local/bin"
 fish_add_path -a "/var/lib/flatpak/exports/bin"
 
 # GPG
-set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
 # Screenshots
-set -x SCREENSHOT_DIR "$HOME/images/screenshots"
+set -gx SCREENSHOT_DIR "$HOME/images/screenshots"
 
 # Java Applications
-set -x _JAVA_AWT_WM_NONREPARENTING 1
+set -gx _JAVA_AWT_WM_NONREPARENTING 1
 
-set -x XDG_CONFIG_HOME "$HOME/.config"
-set -x XDG_DATA_HOME "$HOME/.local/share"
-set -x XDG_CACHE_HOME "$HOME/.cache"
+# Node.js
+set -gx NVM_DIR "$XDG_CONFIG_HOME/nvm"
 
-set -x NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
-set -x GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
-set -x LESSHISTFILE "-"
-set -x WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
-set -x INPUTRC "$XDG_CONFIG_HOME/shell/inputrc"
-set -x ALSA_CONFIG_PATH "$XDG_CONFIG_HOME/alsa/asoundrc"
-# set -x GNUPGHOME "$XDG_DATA_HOME/gnupg"
-set -x WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
-set -x KODI_DATA "$XDG_DATA_HOME/kodi"
-set -x PASSWORD_STORE_DIR "$XDG_DATA_HOME/password-store"
-set -x TMUX_TMPDIR "$XDG_RUNTIME_DIR"
-set -x ANDROID_SDK_HOME "$XDG_CONFIG_HOME/android"
-set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
-set -x GOPATH "$XDG_DATA_HOME/go"
-set -x ANSIBLE_CONFIG "$XDG_CONFIG_HOME/ansible/ansible.cfg"
-set -x HISTFILE "$XDG_DATA_HOME/history"
-set -x WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
-set -x MBSYNCRC "$XDG_CONFIG_HOME/mbsync/config"
-set -x ELECTRUMDIR "$XDG_DATA_HOME/electrum"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+
+set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
+set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+set -gx LESSHISTFILE "-"
+set -gx WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
+set -gx INPUTRC "$XDG_CONFIG_HOME/shell/inputrc"
+set -gx ALSA_CONFIG_PATH "$XDG_CONFIG_HOME/alsa/asoundrc"
+# set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
+set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
+set -gx KODI_DATA "$XDG_DATA_HOME/kodi"
+set -gx PASSWORD_STORE_DIR "$XDG_DATA_HOME/password-store"
+set -gx TMUX_TMPDIR "$XDG_RUNTIME_DIR"
+set -gx ANDROID_SDK_HOME "$XDG_CONFIG_HOME/android"
+set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
+set -gx GOPATH "$XDG_DATA_HOME/go"
+set -gx ANSIBLE_CONFIG "$XDG_CONFIG_HOME/ansible/ansible.cfg"
+set -gx HISTFILE "$XDG_DATA_HOME/history"
+set -gx WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
+set -gx MBSYNCRC "$XDG_CONFIG_HOME/mbsync/config"
+set -gx ELECTRUMDIR "$XDG_DATA_HOME/electrum"
 
 ### Aliases
 #
