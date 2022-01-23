@@ -79,6 +79,7 @@ input "1739:1751:Apple_SPI_Touchpad" {
 
 set $term footclient
 set $browser brave-beta
+set $emacs emacsclient -c
 
 # Startup
 exec_always {
@@ -103,7 +104,7 @@ exec {
 #
 #
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $browser
+    bindsym $mod+Shift+Return exec $emacs
     bindsym $mod+q kill
 
     # launcher/menu
