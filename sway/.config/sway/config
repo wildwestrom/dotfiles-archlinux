@@ -17,17 +17,19 @@ set $right l
 ### Output configuration
 #
 # Default wallpaper
-output * bg /home/main/images/teal-swan-frequency-paintings/Pleiadian_Integration_Lightwork_Model.jpg fit
+exec ~/.azotebg
 
-set $main_monitor eDP-1
-set $external_monitor DP-3
+set $main_monitor "Apple Computer Inc Color LCD 0x00000000"
+set $external_monitor "Goldstar Company Ltd E2242 210NDMTEU091"
 
 output $main_monitor {
-    resolution 2880x1800 
-    position 1920,0 
-    scale 2 }
+    resolution 2880x1800
+    position 1920,0
+    scale 2
+    }
+
 output $external_monitor {
-    resolution 1920x1080 
+    resolution 1920x1080
     position 0,0
     scale 1
     }
@@ -60,7 +62,7 @@ exec swayidle -w \
 #
 input "1739:1751:Apple_SPI_Touchpad" {
     # disable while typing
-    dwt enabled 
+    dwt enabled
     # scroll direction
     natural_scroll disabled
     accel_profile adaptive
@@ -76,7 +78,7 @@ input "1739:1751:Apple_SPI_Touchpad" {
 #
 
 set $term footclient
-set $browser brave
+set $browser brave-beta
 
 # Startup
 exec_always {
@@ -88,17 +90,20 @@ exec_always {
 exec {
     light -I
     wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
-    discord 
+    discord
     thunderbird
-    fluffychat
+    element-desktop
     signal-desktop
+    jami
+    protonmail-bridge --noninteractive
 }
+
 
 ### Key bindings
 #
 #
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+b exec $browser
+    bindsym $mod+Shift+Return exec $browser
     bindsym $mod+q kill
 
     # launcher/menu
@@ -175,7 +180,7 @@ exec {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-    
+
 
 #
 # Layout stuff:
