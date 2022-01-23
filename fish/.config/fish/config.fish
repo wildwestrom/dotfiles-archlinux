@@ -29,10 +29,15 @@ set -gx _JAVA_AWT_WM_NONREPARENTING 1
 # Node.js
 set -gx NVM_DIR "$XDG_CONFIG_HOME/nvm"
 
+# Haskell
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; fish_add_path -a $HOME/.cabal/bin $HOME/.ghcup/bin
+
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 
+# Cleanup
+set -gx IPFS_PATH "XDG"
 set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
 set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 set -gx LESSHISTFILE "-"
@@ -79,7 +84,6 @@ alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
 alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
 alias swayrc="$EDITOR $XDG_CONFIG_HOME/sway/config"
 alias edviminit="$EDITOR $XDG_CONFIG_HOME/nvim/init.lua"
-
 
 alias su="su -s /bin/fish"
 alias brave="brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
