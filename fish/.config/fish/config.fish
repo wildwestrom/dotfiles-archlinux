@@ -1,16 +1,25 @@
 ### ENVVARS
-#
-#
 
 # Remove default greeing
 set fish_greeting
 
+# Editors/Readers
 set -gx EDITOR "nvim"
 set -gx VISUAL "emacsclient -c -a emacs"
 set -gx READER "bat"
 
-set -gx GDK_BACKEND "wayland"
+# XDG_DIRS
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
 
+# Wayland tricks
+set -gx GDK_BACKEND "wayland"
+set -gx QT_QPA_PLATFORM "wayland"
+# set -gx QT_QPA_PLATFORM_PLUGIN_PATH "/usr/lib/qt/plugins"
+set -gx BRAVE_FLAGS "--enable-features=UseOzonePlatform --ozone-platform=wayland"
+
+### PATH
 # User Path
 fish_add_path -a "$HOME/.local/bin"
 
@@ -26,15 +35,18 @@ set -gx SCREENSHOT_DIR "$HOME/images/screenshots"
 # Java Applications
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
 
+# Android
+fish_add_path -a "/opt/android-sdk/platform-tools"
+
 # Node.js
 set -gx NVM_DIR "$XDG_CONFIG_HOME/nvm"
+set -gx NPM_PACKAGES "$XDG_DATA_HOME/npm-packages"
+set -gx NODE_PATH "$NPM_PACKAGES/lib/node_modules"
+fish_add_path -a "$NPM_PACKAGES/bin"
+set -gx MANPATH ":$NPM_PACKAGES/share/man"
 
 # Haskell
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; fish_add_path -a $HOME/.cabal/bin $HOME/.ghcup/bin
-
-set -gx XDG_CONFIG_HOME "$HOME/.config"
-set -gx XDG_DATA_HOME "$HOME/.local/share"
-set -gx XDG_CACHE_HOME "$HOME/.cache"
 
 # Cleanup
 set -gx IPFS_PATH "XDG"
@@ -59,8 +71,6 @@ set -gx MBSYNCRC "$XDG_CONFIG_HOME/mbsync/config"
 set -gx ELECTRUMDIR "$XDG_DATA_HOME/electrum"
 
 ### Aliases
-#
-#
 alias v=$EDITOR
 
 alias cp="cp -iv"
@@ -86,9 +96,9 @@ alias swayrc="$EDITOR $XDG_CONFIG_HOME/sway/config"
 alias edviminit="$EDITOR $XDG_CONFIG_HOME/nvim/init.lua"
 
 alias su="su -s /bin/fish"
-alias brave="brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias brave="brave-beta --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias proc="ps aux | grep -v grep | grep "
-alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0"
+alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0 "
 
 # Vi bindings
 function fish_user_key_bindings

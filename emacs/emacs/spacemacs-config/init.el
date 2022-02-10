@@ -183,7 +183,8 @@ This function should only modify configuration layer settings."
      rust
 
      (shell-scripts :variables
-                    insert-shebang-track-ignored-filename nil)
+                    insert-shebang-track-ignored-filename nil
+                    shell-scripts-format-on-save t)
 
      ;; swift
 
@@ -805,7 +806,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'all
+   dotspacemacs-whitespace-cleanup 'nil
 
    ;; If non nil activate `clean-aindent-mode' which tries to correct
    ;; virtual indentation of simple modes. This can interfer with mode specific
@@ -864,8 +865,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
       ('light (load-theme 'doom-one-light t))
       ('dark (load-theme 'doom-one t))))
 
-  (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
-
   (setq-default
    theming-modifications
    '((doom-one
@@ -891,6 +890,20 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Global config for all text buffers.
+  (add-hook
+   'text-mode-hook
+   (lambda ()
+     (spacemacs/toggle-visual-line-navigation-on)))
+
+  ;; Make sure whitespace doesn't get cleaned up on markdown mode
+  (add-hook
+   'clojure-mode-hook
+   (lambda ()
+     (setq dotspacemacs-whitespace-cleanup 'all)))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Keybindings for perspectives mode
@@ -1126,12 +1139,6 @@ before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-mode configuration
-  ;;
-  ;; Visual line navigation on by default in Org-mode buffers.
-  (add-hook
-   'org-mode-hook
-   (lambda ()
-     (spacemacs/toggle-visual-line-navigation-on)))
   ;;
   ;; Org-reveal - define were reveal.js files can be found
   ;; (I place reveal.js files in same directory as I write the org files)

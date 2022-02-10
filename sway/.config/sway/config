@@ -19,10 +19,11 @@ set $right l
 # Default wallpaper
 exec ~/.azotebg
 
-set $main_monitor "Apple Computer Inc Color LCD 0x00000000"
+set $laptop_monitor "Apple Computer Inc Color LCD 0x00000000"
 set $external_monitor "Goldstar Company Ltd E2242 210NDMTEU091"
+# set $external_monitor DP-3
 
-output $main_monitor {
+output $laptop_monitor {
     resolution 2880x1800
     position 1920,0
     scale 2
@@ -34,7 +35,9 @@ output $external_monitor {
     scale 1
     }
 # Focus on main monitor on startup
-exec focus output $main_monitor
+exec focus output $external_monitor
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 
 # Bind workspaces to monitors
 workspace 1  output $external_monitor
@@ -42,17 +45,19 @@ workspace 2  output $external_monitor
 workspace 3  output $external_monitor
 workspace 4  output $external_monitor
 workspace 5  output $external_monitor
-workspace 6  output $main_monitor
-workspace 7  output $main_monitor
-workspace 8  output $main_monitor
-workspace 9  output $main_monitor
-workspace 10 output $main_monitor
+workspace 6  output $laptop_monitor
+workspace 7  output $laptop_monitor
+workspace 8  output $laptop_monitor
+workspace 9  output $laptop_monitor
+workspace 10 output $laptop_monitor
 
 
 ### Idle configuration
 #
 # Example configuration:
 #
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
 exec swayidle -w \
          timeout 600 'swaylock -e -f -c 000000' \
          timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
@@ -78,24 +83,26 @@ input "1739:1751:Apple_SPI_Touchpad" {
 #
 
 set $term footclient
-set $browser brave-beta
+set $browser brave
 
 # Startup
 exec_always {
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-    foot --server
     mako
     fcitx5
-    protonmail-bridge --noninteractive
 }
 exec {
-    light -I
+    foot --server
+    protonmail-bridge
     wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
+    light -I
+    transmission-gtk
     discord
     thunderbird
     element-desktop
     signal-desktop
     jami
+    transmission
 }
 
 
@@ -104,6 +111,7 @@ exec {
 #
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+Return exec $browser
+    bindsym $mod+Shift+e exec emacs
     bindsym $mod+q kill
 
     # launcher/menu
@@ -125,7 +133,7 @@ exec {
 
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 
 
@@ -275,7 +283,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %a %H:%M:%S %p'; do sleep 1; done
+    status_command while date +'%Y-%m-%d %a %H:%M:%S'; do sleep 1; done
 
     colors {
         statusline #ffffff
