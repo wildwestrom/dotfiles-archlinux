@@ -84,6 +84,7 @@ input "1739:1751:Apple_SPI_Touchpad" {
 
 set $term footclient
 set $browser brave
+set $file_manager nautilus
 
 # Startup
 exec_always {
@@ -112,6 +113,7 @@ exec {
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+Return exec $browser
     bindsym $mod+Shift+e exec emacs
+    bindsym $mod+Shift+f exec $file_manager
     bindsym $mod+q kill
 
     # launcher/menu

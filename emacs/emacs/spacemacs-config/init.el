@@ -562,7 +562,7 @@ It should only modify the values of Spacemacs settings."
    ;; Point size is recommended, because it's device independent. (default 10.0)
    ;; Comment for recording mode
    dotspacemacs-default-font '(("JetBrainsMono Nerd Font Mono"
-                                :size 11.0
+                                :size 10.0
                                 :weight normal
                                 :width normal)
                                ("Sarasa Mono J"))
@@ -896,7 +896,8 @@ before packages are loaded."
   (add-hook
    'text-mode-hook
    (lambda ()
-     (spacemacs/toggle-visual-line-navigation-on)))
+     (spacemacs/toggle-visual-line-navigation-on)
+     (visual-fill-column-mode 1)))
 
   ;; Make sure whitespace doesn't get cleaned up on markdown mode
   (add-hook
@@ -1139,6 +1140,10 @@ before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-mode configuration
+  ;;
+  ;; Allow alphanumeric list types
+  (with-eval-after-load 'org
+    (setq org-list-allow-alphabetical 't))
   ;;
   ;; Org-reveal - define were reveal.js files can be found
   ;; (I place reveal.js files in same directory as I write the org files)
