@@ -18,6 +18,7 @@ set -gx GDK_BACKEND "wayland"
 set -gx QT_QPA_PLATFORM "wayland"
 # set -gx QT_QPA_PLATFORM_PLUGIN_PATH "/usr/lib/qt/plugins"
 set -gx BRAVE_FLAGS "--enable-features=UseOzonePlatform --ozone-platform=wayland"
+set -gx MOZ_ENABLE_WAYLAND 1
 
 ### PATH
 # User Path
@@ -77,6 +78,7 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias ln="ln -iv"
 alias rm="rm -iv"
+alias trash="trash -v"
 alias mkdir="mkdir -pv"
 alias stow="stow -v"
 
@@ -93,10 +95,11 @@ alias cat="bat"
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
 alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
 alias swayrc="$EDITOR $XDG_CONFIG_HOME/sway/config"
+alias kanshirc="$EDITOR $XDG_CONFIG_HOME/kanshi/config"
 alias edviminit="$EDITOR $XDG_CONFIG_HOME/nvim/init.lua"
 
 alias su="su -s /bin/fish"
-alias brave="brave-beta --enable-features=UseOzonePlatform --ozone-platform=wayland"
+alias htop="htop -t -s PERCENT_MEM"
 alias proc="ps aux | grep -v grep | grep "
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0 "
 

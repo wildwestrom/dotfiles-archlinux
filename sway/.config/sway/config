@@ -23,17 +23,10 @@ set $laptop_monitor "Apple Computer Inc Color LCD 0x00000000"
 set $external_monitor "Goldstar Company Ltd E2242 210NDMTEU091"
 # set $external_monitor DP-3
 
-output $laptop_monitor {
-    resolution 2880x1800
-    position 1920,0
-    scale 2
-    }
+exec xsettingsd
+xwayland force scale 2
+exec kanshi
 
-output $external_monitor {
-    resolution 1920x1080
-    position 0,0
-    scale 1
-    }
 # Focus on main monitor on startup
 exec focus output $external_monitor
 bindswitch --reload --locked lid:on output $laptop disable
@@ -83,27 +76,24 @@ input "1739:1751:Apple_SPI_Touchpad" {
 #
 
 set $term footclient
-set $browser brave
+set $browser librewolf
 set $file_manager nautilus
 
 # Startup
-exec_always {
-    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec {
     mako
     fcitx5
-}
-exec {
+    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     foot --server
-    protonmail-bridge
+    protonmail-bridge --no-window
     wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
     light -I
-    transmission-gtk
-    discord
+    transmission-gtk -m
+    discord-canary
     thunderbird
     element-desktop
     signal-desktop
     jami
-    transmission
 }
 
 
@@ -117,7 +107,7 @@ exec {
     bindsym $mod+q kill
 
     # launcher/menu
-    set $menu dmenu-wl_run | xargs swaymsg exec --
+    set $menu bemenu-run | xargs swaymsg exec --
     bindsym $mod+d exec $menu
 
     #todo, make a quick menu selection window for different screenshot scripts
@@ -132,7 +122,6 @@ exec {
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -190,7 +179,6 @@ exec {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-
 
 #
 # Layout stuff:
@@ -266,10 +254,7 @@ focus_follows_mouse yes
 # TODO Figure out how to have multiple fonts by priority
 font pango:Sarasa Mono J 10
 
-#
 # Title Bar Appearance
-#
-
 border {
 
 }

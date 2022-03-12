@@ -1,0 +1,10 @@
+profile {
+    output "Apple Computer Inc Color LCD 0x00000000" enable scale 2 position 0,0
+    exec sh -c "swaymsg xwayland scale 1; echo Gdk/WindowScalingFactor 1 > ~/.config/xsettingsd/xsettingsd.conf; killall -HUP xsettingsd"
+}
+
+profile {
+    output "Apple Computer Inc Color LCD 0x00000000" enable scale 2 position 1920,0
+    output "Goldstar Company Ltd E2242 210NDMTEU091" enable scale 1 position 0,0
+    exec sh -c "swaymsg xwayland scale 1; echo Gdk/WindowScalingFactor 1 > ~/.config/xsettingsd/xsettingsd.conf; killall -HUP xsettingsd"
+}
