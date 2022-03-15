@@ -24,7 +24,6 @@ set $external_monitor "Goldstar Company Ltd E2242 210NDMTEU091"
 # set $external_monitor DP-3
 
 exec xsettingsd
-xwayland force scale 2
 exec kanshi
 
 # Focus on main monitor on startup
@@ -86,7 +85,6 @@ exec {
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     foot --server
     protonmail-bridge --no-window
-    wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
     light -I
     transmission-gtk -m
     discord-canary
@@ -104,6 +102,7 @@ exec {
     bindsym $mod+Shift+Return exec $browser
     bindsym $mod+Shift+e exec emacs
     bindsym $mod+Shift+f exec $file_manager
+    bindsym $mod+Shift+y exec freetube
     bindsym $mod+q kill
 
     # launcher/menu
@@ -265,7 +264,6 @@ border {
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-
     icon_theme Adwaita
 
     # When the status_command prints a new line to stdout, swaybar updates.
