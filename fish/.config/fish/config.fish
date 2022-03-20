@@ -96,6 +96,7 @@ alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
 alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
 alias swayrc="$EDITOR $XDG_CONFIG_HOME/sway/config"
 alias kanshirc="$EDITOR $XDG_CONFIG_HOME/kanshi/config"
+alias barrc="$EDITOR $XDG_CONFIG_HOME/waybar/config"
 alias edviminit="$EDITOR $XDG_CONFIG_HOME/nvim/init.lua"
 
 alias su="su -s /bin/fish"
