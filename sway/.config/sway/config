@@ -38,7 +38,6 @@ workspace $ws10 output $laptop_monitor
 # Startup
 exec {
     foot --server
-    fcitx5 -d
     protonmail-bridge --no-window
     light -I
     transmission-gtk -m
@@ -50,12 +49,11 @@ exec {
 }
 
 exec_always {
-    pkill kanshi; exec kanshi
+    'pkill fcitx5; fcitx5 -d || fcitx5 -d'
+    'pkill kanshi; kanshi || kanshi'
 }
 
-#
 # Gaps
-#
 gaps inner 10
 gaps outer 4
 smart_gaps off
@@ -65,9 +63,7 @@ focus_follows_mouse yes
 # TODO Figure out how to have multiple fonts by priority
 font pango:Sarasa Mono J 10
 
-#
 # Status Bar:
-#
 bar swaybar_command waybar
 
 include /etc/sway/config.d/*
