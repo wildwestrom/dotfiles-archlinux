@@ -88,7 +88,7 @@ This function should only modify configuration layer settings."
      ;; Spell as you type with Flyspell package,
      ;; requires external command - ispell, hunspell, aspell
      ;; SPC S menu, SPC S s to check current word
-     (spell-checking :variables spell-checking-enable-by-default nil)
+     spell-checking
 
      ;; Editing multiple lines of text concurrently
      ;; `g r' menu in Emacs normal state
