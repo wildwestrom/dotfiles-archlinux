@@ -102,7 +102,6 @@ alias vimrc="$EDITOR $XDG_CONFIG_HOME/nvim/"
 alias su="su -s /bin/fish"
 alias htop="htop -t -s PERCENT_MEM"
 alias proc="ps aux | grep -v grep | grep "
-alias grimshot="/usr/share/sway-hidpi-git/scripts/grimshot"
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0 "
 
 # Vi bindings
