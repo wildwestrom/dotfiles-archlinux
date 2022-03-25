@@ -3,7 +3,7 @@
 #
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+Return exec $browser
-    bindsym $mod+Shift+e exec emacs
+    bindsym $mod+Shift+e exec emacsclient -c
     bindsym $mod+Shift+f exec $file_manager
     bindsym $mod+Shift+y exec freetube
     bindsym $mod+q kill
