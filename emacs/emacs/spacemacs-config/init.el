@@ -113,7 +113,7 @@ This function should only modify configuration layer settings."
      ;; treemacs-no-png-images t removes file and directory icons
      (treemacs :variables
                treemacs-lock-width t
-               treemacs-width 22
+               treemacs-width 30
                treemacs-indentation 1
                treemacs-use-all-the-icons-theme t
                treemacs-space-between-root-nodes nil
@@ -383,7 +383,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(org-roam-ui)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -890,6 +890,13 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Org-roam-ui
+  (use-package org-roam-ui
+    :after org-roam
+    :defer t)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Global config for all text buffers.
