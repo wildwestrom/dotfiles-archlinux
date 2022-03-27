@@ -33,13 +33,6 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
-     ;; `M-m f e R' (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     ;;
-
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;
      ;; General Nicities
@@ -383,7 +376,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(org-roam-ui)
+   dotspacemacs-additional-packages '(org-roam-ui fcitx)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -892,6 +885,15 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Fcitx5
+  (require 'fcitx)
+  (setq fcitx-use-dbus nil ; fcitx.el doesn't know fcitx5's new dbus interface
+        ;; the command name changed, but the switches and arguments haven't
+        fcitx-remote-command "fcitx5-remote")
+  (fcitx-aggressive-setup)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-roam-ui
   (use-package org-roam-ui
     :after org-roam
@@ -918,15 +920,6 @@ before packages are loaded."
   (spacemacs/set-leader-keys "ps" 'persp-frame-switch)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; TODO figure out ime on emacs
-  ;; imbot for fcitx configuration
-  ;; (use-package imbot
-  ;;   :hook
-  ;;   (evil-mode . imbot-mode)
-  ;;   :preface
-  ;;   (setq imbot--im-config 'imbot--fcitx5))
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Some breathing room while scrolling vertically
