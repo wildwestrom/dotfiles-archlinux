@@ -4,8 +4,8 @@
 set fish_greeting
 
 # Editors/Readers
-set -gx EDITOR "nvim"
-set -gx VISUAL "emacsclient -c -a emacs"
+set -gx EDITOR "emacsclient -t"
+set -gx VISUAL "emacsclient -c"
 set -gx READER "bat"
 
 # XDG_DIRS
@@ -77,7 +77,7 @@ alias v=$EDITOR
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias ln="ln -iv"
-alias rm="rm -iv"
+alias rm="$HOME/.local/bin/rm2trash.fish"
 alias trash="trash -v"
 alias mkdir="mkdir -pv"
 alias stow="stow -v"
@@ -100,7 +100,7 @@ alias barrc="$EDITOR $XDG_CONFIG_HOME/waybar/config"
 alias vimrc="$EDITOR $XDG_CONFIG_HOME/nvim/"
 
 alias su="su -s /bin/fish"
-alias htop="htop -t -s PERCENT_MEM"
+alias htop="htop -s PERCENT_CPU"
 alias proc="ps aux | grep -v grep | grep "
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0 "
 
