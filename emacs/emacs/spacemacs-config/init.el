@@ -70,8 +70,6 @@ This function should only modify configuration layer settings."
      ;; 'prog-mode for only programming languages
      ;; including text-mode may cause issues with org-mode and magit
      (unicode-fonts :variables
-                    unicode-fonts-existence-checks 'first
-                    unicode-fonts-enable-ligatures nil
                     unicode-fonts-ligature-modes '(prog-mode))
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -554,11 +552,14 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    ;; Comment for recording mode
-   dotspacemacs-default-font '(("JetBrainsMono Nerd Font Mono"
-                                :size 10.0
-                                :weight normal
-                                :width normal)
-                               ("Sarasa Mono J"))
+   dotspacemacs-default-font (let ((fonts '("JetBrains Mono"
+                                            "Sarasa Mono J")))
+                               (mapcar (lambda (font)
+                                         `(,font
+                                           :size 14
+                                           :weight normal
+                                           :width normal))
+                                       fonts))
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -1253,7 +1254,7 @@ before packages are loaded."
 
   ;; Auto-indent code automatically
   ;; https://emacsredux.com/blog/2016/02/07/auto-indent-your-code-with-aggressive-indent-mode/
-  (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+  ;; (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
 
   ;; Lookup functions in Clojure - The Essentail Reference book
   ;; https://github.com/p3r7/clojure-essential-ref
