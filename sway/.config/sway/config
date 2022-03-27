@@ -38,11 +38,13 @@ workspace $ws10 output $laptop_monitor
 # Startup
 exec {
     foot --server
+    nm-applet --indicator
     protonmail-bridge --no-window
     light -I
     transmission-gtk -m
     discord-canary
     thunderbird
+    slack
     element-desktop
     signal-desktop
     jami
