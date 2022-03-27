@@ -1,5 +1,9 @@
 #!/usr/bin/env fish
 
+### This script is meant to help me
+### unlearn the muscle memory of
+### using `rm` for all my deletion needs.
+
 function read_confirm
     while true
         read -l -P $argv confirm
@@ -17,5 +21,5 @@ end
 if test (read_confirm "Are you sure you want to use rm to delete? (y/N): ")
     rm -iv $argv
 else
-    trash -v $argv
+    echo "Ok, use trash-cli instead."
 end
