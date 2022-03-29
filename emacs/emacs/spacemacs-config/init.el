@@ -885,6 +885,17 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Get some envvars form shell
+  (setenv "SSH_AUTH_SOCK" "/run/user/1000/gnupg/S.gpg-agent.ssh")
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Get GPG pinentry working
+  (require 'epg)
+  (setq epg-pinentry-mode 'loopback)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Fcitx5
   (require 'fcitx)
   (setq fcitx-use-dbus nil ; fcitx.el doesn't know fcitx5's new dbus interface
@@ -1342,12 +1353,6 @@ before packages are loaded."
   ;; - icon changes color for doom-gruvbox-light theme
   ;; (setq doom-modeline-modal-icon nil)
   ;; End of Spaceline Doom theme settings
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Get GPG pinentry working
-  (require 'epg)
-  (setq epg-pinentry-mode 'loopback)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;; End of dot-spacemacs/user-config
