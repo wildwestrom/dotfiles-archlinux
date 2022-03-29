@@ -27,10 +27,10 @@ exec swayidle -w \
 #
 set $term footclient
 set $browser librewolf
-set $file_manager nautilus
+set $file_manager pcmanfm
 
 # launcher/menu
-set $menu bemenu-run | xargs swaymsg exec --
+set $menu bemenu-run -H 30 | xargs swaymsg exec --
 
 # screenshot 
 set $grimshot /usr/share/sway/scripts/grimshot

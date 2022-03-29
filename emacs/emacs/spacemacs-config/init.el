@@ -715,12 +715,11 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   ;; For some reason this causes a massive performance hit
-   ;; dotspacemacs-line-numbers '(:relative nil
-   ;;                             :disabled-for-modes dired-mode
-   ;;                                                 doc-view-mode
-   ;;                                                 pdf-view-mode
-   ;;                             :size-limit-kb 1000)
+   dotspacemacs-line-numbers '(:relative nil
+                               :disabled-for-modes dired-mode
+                                                   doc-view-mode
+                                                   pdf-view-mode
+                               :size-limit-kb 1000)
 
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
