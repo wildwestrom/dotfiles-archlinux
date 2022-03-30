@@ -8,6 +8,8 @@ set $down j
 set $up k
 set $right l
 
+set $bg ~/.local/share/current-bg
+
 set $laptop_monitor "Apple Computer Inc Color LCD 0x00000000"
 set $external_monitor "Goldstar Company Ltd E2242 210NDMTEU091"
 # set $external_monitor DP-3
@@ -30,7 +32,7 @@ set $browser librewolf
 set $file_manager pcmanfm
 
 # launcher/menu
-set $menu bemenu-run -H 30 | xargs swaymsg exec --
+set $menu fuzzel -i breeze -T "alacritty -e" -B 0 -r 0 -b 302f2ef8 -t d0d0d0ff -S ffffffff -s 1793d1ff -f Hack:size=14 -w 50
 
 # screenshot 
 set $grimshot /usr/share/sway/scripts/grimshot

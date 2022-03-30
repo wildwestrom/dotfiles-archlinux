@@ -13,10 +13,7 @@ include $XDG_CONFIG_HOME/sway/modes/*
 # additional config
 include $XDG_CONFIG_HOME/sway/config.d/*.conf
 
-# Default wallpaper
-exec ~/.azotebg
-
-exec xsettingsd
+output * bg $bg fill
 
 # Focus on main monitor on startup
 exec focus output $external_monitor
@@ -37,7 +34,6 @@ workspace $ws10 output $laptop_monitor
 
 # Startup
 exec {
-    foot --server
     nm-applet --indicator
     protonmail-bridge --no-window
     light -I
@@ -52,7 +48,9 @@ exec {
 
 exec_always {
     'pkill fcitx5; fcitx5 -d || fcitx5 -d'
+    'pkill foot; foot --server || foot --server'
     'pkill kanshi; kanshi || kanshi'
+    dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 }
 
 # Gaps
