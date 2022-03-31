@@ -42,7 +42,7 @@ set -gx MANPATH ":$NPM_PACKAGES/share/man"
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; fish_add_path -a $HOME/.cabal/bin $HOME/.ghcup/bin
 
 # Cleanup
-set -gx IPFS_PATH "XDG"
+set -gx IPFS_PATH "$XDG_DATA_HOME/ipfs"
 set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
 set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 set -gx LESSHISTFILE "-"
@@ -82,7 +82,9 @@ alias l.="exa -d .*"
 alias df='df -h'
 alias du='du -ch'
 alias fd='fd --hidden'
+alias ag='ag -a'
 alias cat="bat"
+alias tree="tree -a"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
 alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
