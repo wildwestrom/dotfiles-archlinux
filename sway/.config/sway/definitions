@@ -20,8 +20,8 @@ set $external_monitor "Goldstar Company Ltd E2242 210NDMTEU091"
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 exec swayidle -w \
-         timeout 600 'swaylock -e -f -c 000000' \
-         timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 300 'swaylock -e -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -e -f -c 000000'
 
 ### Applications
