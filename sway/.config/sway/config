@@ -44,6 +44,7 @@ exec {
     element-desktop
     signal-desktop
     jami
+    foot --server
 }
 
 exec_always {
