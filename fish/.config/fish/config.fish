@@ -12,13 +12,6 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 
-# Wayland tricks
-set -gx GDK_BACKEND "wayland"
-set -gx QT_QPA_PLATFORM "wayland"
-# set -gx QT_QPA_PLATFORM_PLUGIN_PATH "/usr/lib/qt/plugins"
-set -gx BRAVE_FLAGS "--enable-features=UseOzonePlatform --ozone-platform=wayland"
-set -gx MOZ_ENABLE_WAYLAND 1
-
 ### PATH
 # User Path
 fish_add_path -a "$HOME/.local/bin"
