@@ -263,10 +263,6 @@ This function should only modify configuration layer settings."
           magit-diff-refine-hunk t
           git-enable-magit-todos-plugin t)
 
-     ;; SPC g h to use GitHub repositories
-     ;; SPC g g to use GitHub Gists
-     github
-
      ;; Highlight changes in buffers
      ;; SPC g . transient state for navigating changes
      (version-control :variables
@@ -885,14 +881,10 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Get some envvars form shell
-  (setenv "SSH_AUTH_SOCK" "/run/user/1000/gnupg/S.gpg-agent.ssh")
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Get GPG pinentry working
+  ;; Yubikey Setup
   (require 'epg)
   (setq epg-pinentry-mode 'loopback)
+  (setenv "SSH_AUTH_SOCK" "/run/user/1000/gnupg/S.gpg-agent.ssh")
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
