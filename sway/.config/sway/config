@@ -38,27 +38,22 @@ exec {
     protonmail-bridge --no-window
     light -I
     transmission-gtk -m
-    discord-canary
-    thunderbird
-    slack
-    element-desktop
-    signal-desktop
-    jami
-    foot --server
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+    git -C ~/emacs/spacemacs/ pull
 }
 
 exec_always {
+    'pkill wlsunset; wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2 || wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2'
     'pkill fcitx5; fcitx5 -d || fcitx5 -d'
     'pkill kanshi; kanshi || kanshi'
     dbus-update-activation-environment --systemd --all
 }
 
 # Gaps
-gaps inner 10
-gaps outer 4
+gaps inner 2
+gaps outer 2
 smart_gaps off
-#default_border none
+default_border normal 2
 focus_follows_mouse yes
 
 # TODO Figure out how to have multiple fonts by priority

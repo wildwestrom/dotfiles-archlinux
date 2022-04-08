@@ -105,5 +105,5 @@
 
 
 # OCR Shortcut
-
-bindsym Mod1+f exec '~/.local/bin/sg-ocr.fish -s'
+bindsym Mod1+b exec '~/.local/bin/sg-ocr.fish -s'
+bindsym Mod1+f exec '~/.local/bin/sg-ocr.fish'

@@ -113,9 +113,6 @@ This function should only modify configuration layer settings."
                treemacs-use-follow-mode t
                )
 
-     ;; (neotree :variables
-     ;;          neotree-theme 'icons)
-
      ;; spacemacs-layouts layer added to set variables
      ;; SPC TAB restricted to current layout buffers
      ;; Kill buffers when killing layer - SPC l x
@@ -139,8 +136,10 @@ This function should only modify configuration layer settings."
 
      ;; apl+variants
 
-     ;; (c-c++ :variables c-c++-enable-clang-support t)
-     ;; cmake
+     (c-c++ :variables
+            c-c++-backend 'lsp-clangd
+            c-c++-enable-clang-support t)
+     cmake
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      (clojure :variables
@@ -167,6 +166,8 @@ This function should only modify configuration layer settings."
 
      java
 
+     lua
+
      ;; python
 
      ;; racket
@@ -177,15 +178,13 @@ This function should only modify configuration layer settings."
                     insert-shebang-track-ignored-filename nil
                     shell-scripts-format-on-save t)
 
-     ;; swift
-
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;; Web Programming
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
      html
-     (php :variables php-backend 'lsp)
-     gtags ;; seems to fix the problem of not detecting closing tags
+     ;; (php :variables php-backend 'lsp)
+     ;; gtags ;; seems to fix the problem of not detecting closing tags
 
      (javascript :variables
                  javascript-backend 'lsp)
@@ -357,7 +356,7 @@ This function should only modify configuration layer settings."
                                                   (cons 'alacritty  (list "alacritty"))
                                                   (cons 'foot       (list "foot"))
                                                   (cons 'footclient (list "footclient")))
-            terminal-here-linux-terminal-command 'footclient
+            terminal-here-linux-terminal-command 'foot
             )
      ) ;; End of dotspacemacs-configuration-layers
 
@@ -552,7 +551,7 @@ It should only modify the values of Spacemacs settings."
                                             "Sarasa Mono J")))
                                (mapcar (lambda (font)
                                          `(,font
-                                           :size 14
+                                           :size 10.0
                                            :weight normal
                                            :width normal))
                                        fonts))
@@ -881,6 +880,13 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (require 'dired)
+
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
+  (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Yubikey Setup
   (require 'epg)
   (setq epg-pinentry-mode 'loopback)
@@ -906,7 +912,7 @@ before packages are loaded."
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Global config for all text buffers.
   (add-hook
-   'text-mode-hook
+   'org-mode-hook
    (lambda ()
      (spacemacs/toggle-visual-line-navigation-on)
      (visual-fill-column-mode 1)))
@@ -922,7 +928,6 @@ before packages are loaded."
   ;; Keybindings for perspectives mode
   (spacemacs/set-leader-keys "ps" 'persp-frame-switch)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Some breathing room while scrolling vertically
@@ -975,14 +980,12 @@ before packages are loaded."
   (setq garbage-collection-messages t)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Keeping Helm history clean
   (setq history-delete-duplicates t)
   (setq extended-command-history
         (delq nil (delete-dups extended-command-history)))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Connecting to a reomote nREPL server
@@ -1006,7 +1009,6 @@ before packages are loaded."
         (setq global-mode-string (remove '("" mode-line-keycast " ") mode-line-misc-info))))
     )
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
   ;; Emacs text rendering optimizations
   ;; https://200ok.ch/posts/2020-09-29_comprehensive_guide_on_handling_long_lines_in_emacs.html
@@ -1080,7 +1082,6 @@ before packages are loaded."
   ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Magit - forge configuration
   ;;
@@ -1139,7 +1140,6 @@ before packages are loaded."
   ;;
   ;; end of version control configuration
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-mode configuration
@@ -1246,7 +1246,6 @@ before packages are loaded."
   ;; End of Web-mode configuration
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Clojure configurations
   ;;
@@ -1302,7 +1301,6 @@ before packages are loaded."
   ;;
   ;; end of clojure configuration
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Spaceline Doom theme settings
