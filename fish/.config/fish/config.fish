@@ -37,6 +37,7 @@ set -gx NPM_PACKAGES "$XDG_DATA_HOME/npm-packages"
 set -gx NODE_PATH "$NPM_PACKAGES/lib/node_modules"
 fish_add_path -a "$NPM_PACKAGES/bin"
 set -gx MANPATH ":$NPM_PACKAGES/share/man"
+set -gx nvm_prefix $NVM_DIR
 
 # Haskell
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; fish_add_path -a $HOME/.cabal/bin $HOME/.ghcup/bin
@@ -82,8 +83,10 @@ alias l.="exa -d .*"
 alias df='df -h'
 alias du='du -ch'
 alias fd='fd --hidden'
+alias rg='rg -.'
 alias ag='ag -a'
 alias cat="bat"
+alias less="bat"
 alias tree="tree -a"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
