@@ -22,3 +22,6 @@ _darcs
 ^/COPYING
 
 \.DS_Store   # Annoying MacOS Crap
+
+# Output of `pacman -Qe | awk '{print $1}'`
+packages.txt # List of Arch Linux Packages
