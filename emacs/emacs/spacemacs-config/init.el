@@ -52,15 +52,6 @@ This function should only modify configuration layer settings."
      ;; Include emojis into everything
      emoji
 
-     ;; Configuration: https://github.com/seagle0128/doom-modeline#customize
-     (spacemacs-modeline :variables
-                         doom-modeline-height 12
-                         doom-modeline-major-mode-color-icon t
-                         doom-modeline-buffer-file-name-style 'relative-to-project
-                         doom-modeline-display-default-persp-name t
-                         doom-modeline-minor-modes nil
-                         doom-modeline-modal-icon nil)
-
      ;; Customise the Spacemacs themes
      ;; https://develop.spacemacs.org/layers/+themes/theming/README.html
      ;; Code in dotspacemacs/user-init to reduce size of modeline
@@ -91,14 +82,6 @@ This function should only modify configuration layer settings."
 
      (helm :variables
            helm-follow-mode-persistent t)
-
-     ;; Text-based file manager with preview - SPC a t r r
-     (ranger :variables
-             ranger-show-preview t
-             ranger-show-hidden t
-             ranger-cleanup-eagerly t
-             ranger-cleanup-on-disable t
-             ranger-ignored-extensions '("mkv" "flv" "iso" "mp4"))
 
      ;; Visual file manager - `SPC p t'
      ;; treemacs-no-png-images t removes file and directory icons
@@ -146,7 +129,7 @@ This function should only modify configuration layer settings."
               ;; clojure-backend 'cider               ;; use cider instead of lsp
               ;; clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
               clojure-enable-clj-refactor t
-              cider-repl-display-help-banner nil      ;; disable help banner
+              cider-repl-display-help-banner t        ;; disable help banner
               cider-pprint-fn 'fipp                   ;; fast pretty printing
               clojure-indent-style 'align-arguments
               clojure-align-forms-automatically t
@@ -315,7 +298,7 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-show-diagnostics nil
 
           ;; reference count for functions (assume their maybe other lenses in future)
-          lsp-lens-enable nil
+          lsp-lens-enable t
 
           ;; Efficient use of space in treemacs-lsp display
 
@@ -853,15 +836,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
       ('light (load-theme 'doom-one-light t))
       ('dark (load-theme 'doom-one t))))
 
-  (setq-default
-   theming-modifications
-   '((doom-one
-      (mode-line :height 0.92)
-      (mode-line-inactive :height 0.92))
-     (doom-one-light
-      (mode-line :height 0.92)
-      (mode-line-inactive :height 0.92))))
-
   )  ;; End of dotspacemacs/user-int
 
 (defun dotspacemacs/user-load ()
@@ -1034,30 +1008,6 @@ before packages are loaded."
   ;; Emacs latex configuration
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   ;; End of: Emacs latex configuration
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Doom theme settings
-  (setq doom-gruvbox-light-variant "hard")
-  ;;
-  (defun wildwestrom/setup-custom-doom-modeline ()
-    (doom-modeline-set-modeline 'my-modeline 'default))
-  ;;
-  (with-eval-after-load 'doom-modeline
-    (doom-modeline-def-modeline 'my-modeline
-      '(workspace-name window-number modals buffer-position persp-name buffer-info matches remote-host vcs)
-      '(misc-info repl lsp))
-    (wildwestrom/setup-custom-doom-modeline))
-
-  ;; checker = flycheck results (not working)
-  ;; buffer-position
-  ;; word-count - number of words in current buffer
-  ;; parrot
-  ;; selection-info
-  ;; repl - shows status of Cloure repl (not working)
-  ;; process ??
-  ;; debug
-  ;; misc-info  - used for keycast
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1300,49 +1250,6 @@ before packages are loaded."
     "zO" (lambda () (interactive) (clojure-hack/toggle-comment-block 'open)))
   ;;
   ;; end of clojure configuration
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Spaceline Doom theme settings
-  ;; https://seagle0128.github.io/doom-modeline/
-  ;; Configuration set in layer variables
-  ;;
-  ;; Set height of the modeline - will resize to height of text
-  ;; (setq doom-modeline-height 12)
-
-  ;; The left hand bar in the modeline
-  ;; setting to zero shows a large box outline
-  ;; (setq doom-modeline-bar-width 1)
-
-  ;; Determine style of current filename / path displayed
-  ;; default: auto
-  ;; (setq doom-modeline-buffer-file-name-style 'relative-to-project)
-
-  ;; default perspective name displayed in the mode-line.
-  ;; (setq doom-modeline-display-default-persp-name t)
-
-  ;; Do not show buffer encoding
-  ;; (setq doom-modeline-buffer-encoding nil)
-
-  ;; display GitHub notifications (requires `ghub' package)
-  ;; (setq doom-modeline-github t)
-  ;; The interval of checking GitHub.
-  ;; (setq doom-modeline-github-interval (* 30 60))
-
-  ;; GNUs notifications - default t
-  ;; (setq doom-modeline-gnus nil)
-
-  ;; IRC notifications - default t
-  ;; (setq doom-modeline-irc nil)
-
-  ;; Environment versions - default t
-  ;; (setq doom-modeline-env-version t)
-
-  ;; Use ascii rather than icon for modal state (more specific)
-  ;; Icon not changing for doom-solarized-light theme
-  ;; - icon changes color for doom-gruvbox-light theme
-  ;; (setq doom-modeline-modal-icon nil)
-  ;; End of Spaceline Doom theme settings
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;; End of dot-spacemacs/user-config

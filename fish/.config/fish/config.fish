@@ -70,7 +70,7 @@ alias v=$EDITOR
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias ln="ln -iv"
-alias rm="echo -e 'Do not use rm for deleting files, use trash-cli instead.\nAttempted: rm'"
+alias rm="rm -iv"
 alias trash="trash -v"
 alias mkdir="mkdir -pv"
 alias stow="stow -v"
@@ -102,6 +102,7 @@ alias proc="ps aux | grep -v grep | grep "
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0"
 alias magit='swayhide emacsclient -c --eval "(magit-status-here)"'
 alias mpv="swayhide mpv"
+alias imv="swayhide imv"
 
 # Vi bindings
 function fish_user_key_bindings

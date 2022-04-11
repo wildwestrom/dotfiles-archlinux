@@ -40,10 +40,10 @@ exec {
     transmission-gtk -m
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
     git -C ~/emacs/spacemacs/ pull
+    wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
 }
 
 exec_always {
-    'pkill wlsunset; wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2 || wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2'
     'pkill fcitx5; fcitx5 -d || fcitx5 -d'
     'pkill kanshi; kanshi || kanshi'
     dbus-update-activation-environment --systemd --all

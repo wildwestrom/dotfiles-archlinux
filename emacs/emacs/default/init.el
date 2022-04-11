@@ -173,6 +173,38 @@
   :hook (dired-mode . treemacs-icons-dired-enable-once)
   :ensure t)
 
+(use-package clojure-mode
+  :ensure t)
+
+(use-package cider
+  :after (clojure-mode)
+  :ensure t)
+
+(use-package lsp-mode
+  :ensure t
+  :hook ((clojure-mode . lsp)
+         (clojurec-mode . lsp)
+         (clojurescript-mode . lsp))
+  :config
+  ;; add paths to your local installation of project mgmt tools, like lein
+  (setenv "PATH" (concat
+                   "/usr/bin" path-separator
+                   (getenv "PATH")))
+  (dolist (m '(clojure-mode
+               clojurec-mode
+               clojurescript-mode
+               clojurex-mode))
+     (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+  (setq lsp-clojure-server-command '("/usr/bin/clojure-lsp")
+	lsp-enable-snippet nil))
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
+
+(use-package company
+  :ensure t)
+
 ;; TODO: bindings:
 ;; Switch-windows
 ;; right now it's C-w hjkl
@@ -182,14 +214,14 @@
 ;; SPC SPC opens M-x minibuffer
 ;; scroll+ctrl to change font size globally
 
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(treemacs-icons-dired treemacs-evil treemacs which-key-posframe which-key command-log-mode use-package general evil-collection counsel avy)))
+   '(clojure-mode treemacs-icons-dired treemacs-evil treemacs which-key-posframe which-key command-log-mode use-package general evil-collection counsel avy))
+ '(warning-suppress-types '((comp) (comp) (comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
