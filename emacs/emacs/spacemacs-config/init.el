@@ -127,7 +127,7 @@ This function should only modify configuration layer settings."
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      (clojure :variables
               ;; clojure-backend 'cider               ;; use cider instead of lsp
-              ;; clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
+              clojure-enable-linters 'clj-kondo       ;; clj-kondo included in lsp
               clojure-enable-clj-refactor t
               cider-repl-display-help-banner t        ;; disable help banner
               cider-pprint-fn 'fipp                   ;; fast pretty printing
@@ -283,7 +283,7 @@ This function should only modify configuration layer settings."
 
           ;; Show lint error indicator in the mode line
           lsp-modeline-diagnostics-enable nil
-          lsp-modeline-diagnostics-scope nil
+          lsp-modeline-diagnostics-scope :workspace
           lsp-modeline-code-actions-enable nil
 
           ;; popup documentation boxes
