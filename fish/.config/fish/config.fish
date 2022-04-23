@@ -32,12 +32,12 @@ set -gx _JAVA_AWT_WM_NONREPARENTING 1
 fish_add_path -a "/opt/android-sdk/platform-tools"
 
 # Node.js
-set -gx NVM_DIR "$XDG_CONFIG_HOME/nvm"
+set -gx NVM_DIR "$XDG_DATA_HOME/nvm"
 set -gx NPM_PACKAGES "$XDG_DATA_HOME/npm-packages"
 set -gx NODE_PATH "$NPM_PACKAGES/lib/node_modules"
-fish_add_path -a "$NPM_PACKAGES/bin"
 set -gx MANPATH ":$NPM_PACKAGES/share/man"
 set -gx nvm_prefix $NVM_DIR
+fish_add_path -a "$NVM_DIR/versions/node/v17.9.0/bin/"
 
 # Haskell
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; fish_add_path -a $HOME/.cabal/bin $HOME/.ghcup/bin
