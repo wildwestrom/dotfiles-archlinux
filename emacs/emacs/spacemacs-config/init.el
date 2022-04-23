@@ -117,6 +117,8 @@ This function should only modify configuration layer settings."
      ;;
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+     ansible
+
      ;; apl+variants
 
      (c-c++ :variables
