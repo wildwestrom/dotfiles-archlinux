@@ -856,6 +856,10 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (setenv "PATH"
+          (concat "~/.local/share/nvm/versions/node/v17.9.0/bin:"
+           (getenv "PATH")))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Get dired to delete buffer upon exiting
