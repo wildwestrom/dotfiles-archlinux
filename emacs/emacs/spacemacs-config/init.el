@@ -697,8 +697,11 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-line-numbers '(:relative nil
                                :disabled-for-modes dired-mode
+                                                   org-mode
+                                                   markdown-mode
                                                    doc-view-mode
                                                    pdf-view-mode
+                                                   text-mode
                                :size-limit-kb 1000)
 
 
