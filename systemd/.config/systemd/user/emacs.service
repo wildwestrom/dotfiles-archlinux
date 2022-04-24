@@ -1,0 +1,14 @@
+[Unit]
+Description=Emacs text editor
+Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
+Wants=graphical-session.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/emacs --daemon
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Environment="XMODIFIERS=@im=fcitx"
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
