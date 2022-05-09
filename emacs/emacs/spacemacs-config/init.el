@@ -163,6 +163,9 @@ This function should only modify configuration layer settings."
                     insert-shebang-track-ignored-filename nil
                     shell-scripts-format-on-save t)
 
+     (sql :variables
+          sql-backend 'lsp)
+
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;; Web Programming
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -174,6 +177,7 @@ This function should only modify configuration layer settings."
      (javascript :variables
                  javascript-backend 'lsp)
      typescript
+
      svelte
 
      elm
@@ -859,8 +863,12 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Use tabs instead of spaces
+
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (setenv "PATH"
-          (concat "~/.local/share/nvm/versions/node/v17.9.0/bin:"
+          (concat "~/.local/share/nvm/versions/node/v18.0.0/bin:"
            (getenv "PATH")))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1276,8 +1284,18 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(js-indent-level 2)
+ '(js2-indent-level 2)
  '(safe-local-variable-values
-   '((major-mode . nxml-mode)
+   '((default-tab-width . 2)
+     (eval quote
+           (spacemacs/set-leader-keys
+             '(shell-command "pnpm format")
+             ",=="))
+     (eval spacemacs/set-leader-keys
+           '(shell-command "pnpm format")
+           ",==")
+     (major-mode . nxml-mode)
      (eval
       (lambda nil
         (when
@@ -1306,6 +1324,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t)
  '(mode-line ((t (:height 0.92))))
  '(mode-line-inactive ((t (:height 0.92)))))
 )
