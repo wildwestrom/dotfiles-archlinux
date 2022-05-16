@@ -13,7 +13,7 @@ include $XDG_CONFIG_HOME/sway/modes/*
 # additional config
 include $XDG_CONFIG_HOME/sway/config.d/*.conf
 
-output * bg $bg fill
+output * bg $bg fit
 
 # Focus on main monitor on startup
 exec focus output $external_monitor
@@ -34,7 +34,6 @@ workspace $ws10 output $laptop_monitor
 
 # Startup
 exec {
-    autotiling
     nm-applet --indicator
     protonmail-bridge --no-window
     light -I
@@ -54,9 +53,10 @@ exec_always {
 # Gaps
 gaps inner 2
 gaps outer 2
-smart_gaps off
+smart_gaps on
 default_border normal 2
 focus_follows_mouse yes
+# Protip: Use mod+rightclick to drag resize windows
 
 # TODO Figure out how to have multiple fonts by priority
 font pango:Sarasa Mono J 10
