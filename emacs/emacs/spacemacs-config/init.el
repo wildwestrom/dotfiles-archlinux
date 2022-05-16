@@ -126,6 +126,8 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-support t)
      cmake
 
+     meson
+
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      (clojure :variables
               ;; clojure-backend 'cider               ;; use cider instead of lsp
