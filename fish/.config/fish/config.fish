@@ -5,6 +5,7 @@ set fish_greeting
 
 # Editors/Readers
 set -gx EDITOR "swayhide emacsclient -c"
+# set -gx EDITOR "nvim"
 set -gx READER "bat"
 
 # XDG_DIRS
@@ -67,10 +68,10 @@ set -gx ELECTRUMDIR "$XDG_DATA_HOME/electrum"
 ### Aliases
 alias v=$EDITOR
 
-alias cp="cp -iv"
+alias cp="cp -riv"
 alias mv="mv -iv"
 alias ln="ln -iv"
-alias rm="rm -iv"
+alias rm="rm -riv"
 alias trash="trash -v"
 alias mkdir="mkdir -pv"
 alias stow="stow -v"
@@ -81,7 +82,7 @@ alias la="exa -a --color=always"
 alias lt="exa -aT --color=always"
 alias l.="exa -d .*"
 alias df='df -h'
-alias du='du -ch'
+#alias du='du -ch'
 alias fd='fd --hidden'
 alias rg='rg -.'
 alias ag='ag -a'
@@ -106,5 +107,12 @@ alias imv="swayhide imv"
 
 # Vi bindings
 function fish_user_key_bindings
-  fish_vi_key_bindings
+    if test -n "$INSIDE_EMACS"
+        fish_default_key_bindings
+    else
+        fish_vi_key_bindings
+    end
 end
+
+set -gx PNPM_HOME "/home/main/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
