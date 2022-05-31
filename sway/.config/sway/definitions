@@ -11,7 +11,7 @@ set $right l
 set $bg ~/.local/share/current-bg
 
 set $laptop_monitor "Apple Computer Inc Color LCD 0x00000000"
-set $external_monitor "Goldstar Company Ltd E2242 210NDMTEU091"
+set $external_monitor "LG Electronics E2242 210NDMTEU091"
 # set $external_monitor DP-3
 
 ### Idle configuration
