@@ -46,7 +46,7 @@ exec {
 exec_always {
     'pkill fcitx5; fcitx5 -d || fcitx5 -d'
     'pkill kanshi; kanshi || kanshi'
-    dbus-update-activation-environment --systemd --all
+    exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 }
 
 # Gaps
