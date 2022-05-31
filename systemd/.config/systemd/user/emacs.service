@@ -1,11 +1,12 @@
 [Unit]
 Description=Emacs text editor
 Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
-Wants=graphical-session.target
+Requires=graphical-session.target
+Wants=pull-latest-spacemacs.service
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/emacs --daemon
+ExecStart=/usr/bin/emacs --daemon --debug-init
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
 Environment="XMODIFIERS=@im=fcitx"
 Restart=on-failure

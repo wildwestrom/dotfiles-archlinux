@@ -149,6 +149,10 @@ This function should only modify configuration layer settings."
      ;; (go :variables
      ;;     go-backend 'lsp)
 
+     (groovy :variables
+             groovy-backend 'lsp
+             groovy-lsp-jar-path "/usr/share/java/groovy-language-server/groovy-language-server-all.jar") 
+
      haskell
 
      java
@@ -177,6 +181,7 @@ This function should only modify configuration layer settings."
      ;; gtags ;; seems to fix the problem of not detecting closing tags
 
      (javascript :variables
+                 javascript-fmt-tool 'prettier
                  javascript-backend 'lsp)
      typescript
 
@@ -237,10 +242,6 @@ This function should only modify configuration layer settings."
 
      ;; Containers
      docker
-
-     ;; Pair programming!
-     floobits
-
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;; Version Control
@@ -865,13 +866,16 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Use tabs instead of spaces
-
+  ;; Manually set nodejs path
+  (setenv "PATH"
+          (concat "~/.local/share/nvm/versions/node/v18.2.0/bin:"
+           (getenv "PATH")))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  (setenv "PATH"
-          (concat "~/.local/share/nvm/versions/node/v18.0.0/bin:"
-           (getenv "PATH")))
+  ;; Stop prompting me to follow symlinks.
+  ;; I always want to edit the one in version control.
+  (setq vc-follow-symlinks t)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

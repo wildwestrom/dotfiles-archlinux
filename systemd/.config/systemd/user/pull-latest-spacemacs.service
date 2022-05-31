@@ -1,0 +1,10 @@
+[Unit]
+Description=Pull the latest build of Spacemacs from git
+Before=emacs.service
+Wants=NetworkManager-wait-online.service
+After=NetworkManager-wait-online.service
+
+[Service]
+Type=oneshot
+TimeoutStartSec=25m
+ExecStart=/usr/bin/git -C /home/main/emacs/spacemacs/ pull
