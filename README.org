@@ -12,6 +12,11 @@ Then run the sync script. Both `fish` and `~/.local/bin` should be on your path.
 stowsync.fish
 ```
 
+In order to save packages on arch, use the command:
+```shell
+pacman -Qe | awk '{print $1}' > ~/.dotfiles/packages.txt
+```
+
 ** License
 My Personal Dotfiles - Feel free to fork!
 Copyright © 2021 Christian Westrom

@@ -69,6 +69,7 @@ fzf
 gawk
 gazou-git
 gcc
+gdb
 gdm
 gedit
 gettext
@@ -146,6 +147,7 @@ native-image-jdk17-bin
 nautilus
 neofetch
 neovim
+nerd-fonts-jetbrains-mono
 network-manager-applet
 networkmanager
 noise-suppression-for-voice-git
@@ -218,7 +220,7 @@ strawberry
 sudo
 supercollider
 supertuxkart
-sway-hidpi-git
+sway
 swayhide
 swayidle
 swaylock
@@ -271,6 +273,7 @@ wireplumber
 wireplumber-docs
 wkhtmltopdf
 wl-clipboard
+wlroots
 wlsunset
 wob
 wxformbuilder
@@ -278,6 +281,7 @@ xdg-desktop-portal-wlr
 xdg-user-dirs-gtk
 xdiskusage
 xorg-bdftopcf
+xorg-xwayland
 xorg-xwininfo
 yt-dlp
 zathura
