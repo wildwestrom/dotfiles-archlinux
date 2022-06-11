@@ -4,19 +4,13 @@ profile {
 }
 
 profile {
-    output "Apple Computer Inc Color LCD 0x00000000" enable scale 2 position 1920,0
-    output "Goldstar Company Ltd E2242 210NDMTEU091" enable scale 1 position 0,0
+    output eDP-1 enable scale 2 position 1920,0
+    output DP-1, DP-2, DP-3, DP-4 enable scale 1 position 0,0
     exec sh -c "swaymsg xwayland scale 1; echo Gdk/WindowScalingFactor 1 > ~/.config/xsettingsd/xsettingsd.conf; killall -HUP xsettingsd"
 }
 
 profile {
-    output "Apple Computer Inc Color LCD 0x00000000" enable scale 2 position 1920,0
-    output "LG Electronics E2242 210NDMTEU091" enable scale 1 position 0,0
-    exec sh -c "swaymsg xwayland scale 1; echo Gdk/WindowScalingFactor 1 > ~/.config/xsettingsd/xsettingsd.conf; killall -HUP xsettingsd"
-}
-
-profile {
-    output "Apple Computer Inc Color LCD 0x00000000" enable scale 2 position 0,723
-    output "LG Electronics LG TV SSCR2 0x00000101" enable scale 2 position 1440,543
+    output "Apple Computer Inc Color LCD 0x00000000" enable scale 2 position 0,1080
+    output "LG Electronics LG TV SSCR2 0x00000101" enable scale 2 position 0,0
     exec sh -c "swaymsg xwayland scale 1; echo Gdk/WindowScalingFactor 1 > ~/.config/xsettingsd/xsettingsd.conf; killall -HUP xsettingsd"
 }
