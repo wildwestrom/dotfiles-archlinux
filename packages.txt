@@ -15,7 +15,6 @@ baobab
 base
 bash-language-server
 bat
-bemenu-wayland
 binutils
 bison
 bitwarden
@@ -219,8 +218,7 @@ strace
 strawberry
 sudo
 supercollider
-supertuxkart
-sway
+sway-hidpi-git
 swayhide
 swayidle
 swaylock
@@ -273,15 +271,12 @@ wireplumber
 wireplumber-docs
 wkhtmltopdf
 wl-clipboard
-wlroots
 wlsunset
 wob
-wxformbuilder
 xdg-desktop-portal-wlr
 xdg-user-dirs-gtk
 xdiskusage
 xorg-bdftopcf
-xorg-xwayland
 xorg-xwininfo
 yt-dlp
 zathura
