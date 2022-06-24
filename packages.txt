@@ -15,12 +15,12 @@ baobab
 base
 bash-language-server
 bat
+bind
 binutils
 bison
 bitwarden
 blender
 brave-bin
-btrfs-progs
 cambalache-git
 cheese
 clj-kondo-bin
@@ -31,6 +31,7 @@ cmatrix
 code
 cool-retro-term
 czkawka-gui-bin
+devhelp
 discord
 docker
 docker-compose
@@ -91,6 +92,7 @@ gnome-tweaks
 gnu-free-fonts
 gnucash
 go-ipfs
+gobject-introspection
 gparted
 gradle
 grep
@@ -113,11 +115,11 @@ imv
 inkscape
 intel-ucode
 jami-qt
-jdk17-graalvm-bin
 jdk17-openjdk
 jdtls
 jq
 kanshi
+kdenlive
 lazygit
 leiningen
 libayatana-appindicator
@@ -130,6 +132,7 @@ lingot
 linux
 linux-firmware
 linux-headers
+lldb
 lolcat
 lua-language-server
 m4
@@ -139,6 +142,7 @@ man-db
 man-pages
 mediainfo
 mgba-qt
+mold
 mpd
 mpv
 multimc-bin
@@ -152,6 +156,7 @@ networkmanager
 noise-suppression-for-voice-git
 noto-fonts-cjk
 noto-fonts-emoji
+noto-fonts-extra
 npm
 nushell
 obs-studio
@@ -159,6 +164,7 @@ obsidian
 opencl-mesa
 openjdk-src
 openjdk17-src
+openresolv
 opus-tools
 otf-frb-american-cursive
 otf-mathilde
@@ -166,7 +172,7 @@ otf-russkopis
 pacfinder
 pacman
 pandoc
-paru
+paru-bin
 patch
 pavucontrol
 perl-gd
@@ -184,6 +190,7 @@ prettier
 protonmail-bridge-bin
 pv
 python-j2cli
+python-lsp-server
 python-pyalsa
 python-pynvim
 qemu-desktop
@@ -194,6 +201,7 @@ qt5ct
 qt6-wayland
 reflector
 rime-emoji
+ripgrep
 rlwrap
 rsync
 rust-analyzer
@@ -202,6 +210,7 @@ sbcl
 sdparm
 sed
 shntool
+shotcut
 showmethekey
 signal-desktop
 signato-font
@@ -218,7 +227,7 @@ strace
 strawberry
 sudo
 supercollider
-sway-hidpi-git
+sway
 swayhide
 swayidle
 swaylock
@@ -252,6 +261,7 @@ ttf-sarasa-gothic
 ttf-victor-mono
 tzclock
 ueberzug
+unbound
 ungoogled-chromium
 unrar
 v4l2loopback-dkms
@@ -277,8 +287,11 @@ xdg-desktop-portal-wlr
 xdg-user-dirs-gtk
 xdiskusage
 xorg-bdftopcf
+xorg-xwayland
 xorg-xwininfo
 yt-dlp
 zathura
 zathura-pdf-mupdf
 zip
+zram-generator
+zsa-wally-cli
