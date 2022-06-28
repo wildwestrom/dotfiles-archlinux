@@ -1,3 +1,5 @@
+aegisub
+alass-git
 alsa-firmware
 alsa-tools
 alsa-utils
@@ -37,6 +39,7 @@ docker
 docker-compose
 docker-machine
 dotnet-sdk
+dust
 easyeffects
 efibootmgr
 element-desktop
@@ -107,7 +110,6 @@ gtk-vnc
 gtk4-docs
 gzip
 helvum
-hollywood
 htop-vim
 hunspell-en_us
 hunspell-ko
@@ -145,7 +147,6 @@ mgba-qt
 mold
 mpd
 mpv
-multimc-bin
 native-image-jdk17-bin
 nautilus
 neofetch
@@ -153,6 +154,8 @@ neovim
 nerd-fonts-jetbrains-mono
 network-manager-applet
 networkmanager
+networkmanager-openvpn
+networkmanager-strongswan
 noise-suppression-for-voice-git
 noto-fonts-cjk
 noto-fonts-emoji
@@ -199,6 +202,7 @@ qpwgraph
 qt5-wayland
 qt5ct
 qt6-wayland
+racket
 reflector
 rime-emoji
 ripgrep
@@ -239,6 +243,7 @@ termdown
 tesseract
 tesseract-data-jpn
 texinfo
+texlab
 texlive-bibtexextra
 texlive-fontsextra
 texlive-formatsextra
@@ -284,6 +289,7 @@ wl-clipboard
 wlsunset
 wob
 xdg-desktop-portal-wlr
+xdg-ninja-git
 xdg-user-dirs-gtk
 xdiskusage
 xorg-bdftopcf
