@@ -1,2 +1,6 @@
 [build]
 rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+incremental = true
+
+[doc]
+browser = "librewolf"

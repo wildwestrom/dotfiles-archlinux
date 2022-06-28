@@ -12,6 +12,7 @@ set -gx READER "bat"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_STATE_HOME "$HOME/.local/state"
 
 ### PATH
 # User Path
@@ -21,15 +22,37 @@ fish_add_path -a "$HOME/.local/bin"
 fish_add_path -a "/var/lib/flatpak/exports/bin"
 
 # GPG
+set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
 # Screenshots
 set -gx SCREENSHOT_DIR "$HOME/images/screenshots"
 
-# Java Applications
+# pass
+set -gx PASSWORD_STORE_DIR "XDG_DATA_HOME/pass"
+
+# wget
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
+set -gx WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
+
+# wine
+set -gx WINEPREFIX "$XDG_DATA_HOME/wine"
+
+# zoom
+set -gx SSB_HOME "$XDG_DATA_HOME/zoom"
+
+# LaTeX
+set -gx TEXMFVAR "$XDG_CACHE_HOME/texlive/texmf-var"
+
+# JVM/JAVA/Clojure
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
+set -gx GRADLE_USER_HOME "$XDG_DATA_HOME/gradle"
+set -gx LEIN_HOME "$XDG_DATA_HOME/lein"
+set -gx _JAVA_OPTIONS "-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 
 # Android
+set -gx ANDROID_HOME "$XDG_DATA_HOME/android"
+set -gx ANDROID_SDK_HOME "$XDG_CONFIG_HOME/android"
 fish_add_path -a "/opt/android-sdk/platform-tools"
 
 # Node.js
@@ -38,29 +61,42 @@ set -gx NPM_PACKAGES "$XDG_DATA_HOME/npm-packages"
 set -gx NODE_PATH "$NPM_PACKAGES/lib/node_modules"
 set -gx MANPATH ":$NPM_PACKAGES/share/man"
 set -gx nvm_prefix $NVM_DIR
+set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 fish_add_path -a "$NVM_DIR/versions/node/v17.9.0/bin/"
 
 # Haskell
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; fish_add_path -a $HOME/.cabal/bin $HOME/.ghcup/bin
+set -gx STACK_ROOT "$XDG_DATA_HOME/stack"
+set -gx GHCUP_USE_XDG_DIRS true
 
-# Cleanup
+# Rust
+set -gx CARGO_INCREMENTAL 1
+set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
+set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
+
+# Go
+set -gx GOPATH "$XDG_DATA_HOME/go"
+
+# Python
+set -gx PYTHONSTARTUP "$XDG_CONFIG_HOME/python/pythonrc"
+
+# Docker
+set -gx DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
+set -gx MACHINE_STORAGE_PATH "$XDG_DATA_HOME/docker-machine"
+
+# CLEANUP
 set -gx IPFS_PATH "$XDG_DATA_HOME/ipfs"
 set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
 set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
-set -gx LESSHISTFILE "-"
-set -gx WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
+set -gx KDEHOME "XDG_CONFIG_HOME/kde"
+set -gx LESSHISTFILE "$XDG_CACHE_HOME/less/history"
 set -gx INPUTRC "$XDG_CONFIG_HOME/shell/inputrc"
 set -gx ALSA_CONFIG_PATH "$XDG_CONFIG_HOME/alsa/asoundrc"
-# set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
 set -gx KODI_DATA "$XDG_DATA_HOME/kodi"
 set -gx PASSWORD_STORE_DIR "$XDG_DATA_HOME/password-store"
 set -gx TMUX_TMPDIR "$XDG_RUNTIME_DIR"
-set -gx ANDROID_SDK_HOME "$XDG_CONFIG_HOME/android"
-set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
-set -gx GOPATH "$XDG_DATA_HOME/go"
 set -gx ANSIBLE_CONFIG "$XDG_CONFIG_HOME/ansible/ansible.cfg"
-set -gx HISTFILE "$XDG_DATA_HOME/history"
+set -gx HISTFILE "$XDG_STATE_HOME/sh/history"
 set -gx WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
 set -gx MBSYNCRC "$XDG_CONFIG_HOME/mbsync/config"
 set -gx ELECTRUMDIR "$XDG_DATA_HOME/electrum"

@@ -11,7 +11,7 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /home/main/.gitignore_global
+	excludesfile = /home/main/.config/git/gitignore_global
 [init]
 	defaultBranch = main
 [github]

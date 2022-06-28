@@ -869,6 +869,7 @@ before packages are loaded."
   ;; Get environment variables from shell
   ;; Requires exec-path-from-shell
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+  (exec-path-from-shell-copy-env "GNUPGHOME")
   (exec-path-from-shell-initialize)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -887,8 +888,8 @@ before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Yubikey Setup
-  (require 'epg)
-  (setq epg-pinentry-mode 'loopback)
+  ;; (require 'epg)
+  ;; (setq epg-pinentry-mode 'loopback)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
