@@ -361,7 +361,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(org-roam-ui fcitx)
+   dotspacemacs-additional-packages '(org-roam-ui fcitx exec-path-from-shell)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -866,10 +866,10 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Manually set nodejs path
-  (setenv "PATH"
-          (concat "~/.local/share/nvm/versions/node/v18.2.0/bin:"
-           (getenv "PATH")))
+  ;; Get environment variables from shell
+  ;; Requires exec-path-from-shell
+  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+  (exec-path-from-shell-initialize)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -889,7 +889,6 @@ before packages are loaded."
   ;; Yubikey Setup
   (require 'epg)
   (setq epg-pinentry-mode 'loopback)
-  (setenv "SSH_AUTH_SOCK" "/run/user/1000/gnupg/S.gpg-agent.ssh")
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
