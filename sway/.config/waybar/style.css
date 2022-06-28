@@ -103,13 +103,11 @@ window#waybar.chromium {
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #64727D;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    background-color: #64727D;
 }
 
 @keyframes blink {
@@ -134,12 +132,11 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: #64727D;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: #64727D;
 }
 
 #disk {
@@ -147,7 +144,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: #64727D;
 }
 
 #network {
@@ -160,17 +157,14 @@ label:focus {
 
 #pulseaudio {
     background-color: #f1c40f;
-    color: #000000;
 }
 
 #pulseaudio.muted {
     background-color: #90b1b1;
-    color: #2a5c45;
 }
 
 #custom-media {
     background-color: #66cc99;
-    color: #2a5c45;
     min-width: 100px;
 }
 
@@ -183,7 +177,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: #64727D;
 }
 
 #temperature.critical {
@@ -191,7 +185,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #64727D;
 }
 
 #tray > .passive {
