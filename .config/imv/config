@@ -1,0 +1,10 @@
+[options]
+background = DDDDDD
+scaling_mode = shrink
+overlay_font = Jetbrains Mono:14
+overlay_text = "$(basename $imv_current_file)"
+[binds]
+j = next
+k = prev
+q = exec echo "$imv_current_file"; quit
+<Ctrl+c> = quit

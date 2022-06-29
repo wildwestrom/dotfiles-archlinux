@@ -1,0 +1,7 @@
+exec wlsunset -l -40.6 -L -74.2 -t 4500 -T 6500 -g 1.0
+exec swaync -s /home/main/.config/swaync/preset-0.css
+exec nm-applet --indicator
+exec_always autotiling -w 1 2 3 4 5 6 7 8
+exec_always nwg-panel -c preset-0 -s preset-0.css
+exec_always nwg-shell-check-updates
+exec nwg-shell-config

@@ -1,21 +1,51 @@
 * Dotfiles for my Arch Linux System
-
 ** How to use?
 
 First clone the repo:
-```shell
+#+begin_src shell
 git clone git@github.com:wildwestrom/dotfiles-archlinux.git ~/.dotfiles
-```
+#+end_src
 
-Then run the sync script. Both `fish` and `~/.local/bin` should be on your path.
-```shell
-stowsync.fish
-```
+Have an alias like so.
+#+begin_src shell
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'
+#+end_src
 
-In order to save packages on arch, use the command:
-```shell
-pacman -Qe | awk '{print $1}' > ~/.dotfiles/packages.txt
-```
+Make the output of status more readable.
+#+begin_src shell
+config config --local status.showUntrackedFiles no
+#+end_src
+
+Now run:
+#+begin_src shell
+config checkout
+#+end_src
+
+If it doesn't work:
+#+begin_src shell
+config checkout -f
+#+end_src
+
+Use all your git commands like normal.
+#+begin_src shell
+config commit
+config status
+config add
+#+end_src
+
+Every time you make a change the root configuration, do this:
+#+begin_src shell
+move-root-files.fish
+#+end_src
+
+A [[file:.root-configs/etc/pacman.d/hooks/save-package-list.hook][pacman hook]] will automatically update the [[file:.root-configs/packages.txt][package list]] every time you use ~pacman~ to update, install, or uninstall a package.
+
+** Some Jankiness
+TODO: Figure out why tab completion for the ~config~ alias is buggy under fish.
+
+TODO: Figure out why Magit doesn't work with this setup.
+
+TODO: Automate moving root files every time ~.root-configs~ is updated.
 
 ** License
 My Personal Dotfiles - Feel free to fork!
