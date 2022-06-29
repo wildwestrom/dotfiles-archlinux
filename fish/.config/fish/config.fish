@@ -112,13 +112,13 @@ alias trash="trash -v"
 alias mkdir="mkdir -pv"
 alias stow="stow -v"
 
-alias ls="exa --color=always"
-alias ll="exa -la --color=always"
-alias la="exa -a --color=always"
-alias lt="exa -aT --color=always"
+alias ls="exa --color=automatic"
+alias ll="exa -la --color=automatic"
+alias la="exa -a --color=automatic"
+alias lt="exa -aT --color=automatic"
 alias l.="exa -d .*"
 alias df='df -h'
-#alias du='du -ch'
+alias du='dust'
 alias fd='fd --hidden'
 alias rg='rg -.'
 alias ag='ag -a'
