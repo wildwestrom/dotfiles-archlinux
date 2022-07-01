@@ -151,7 +151,7 @@ This function should only modify configuration layer settings."
 
      (groovy :variables
              groovy-backend 'lsp
-             groovy-lsp-jar-path "/usr/share/java/groovy-language-server/groovy-language-server-all.jar") 
+             groovy-lsp-jar-path "/usr/share/java/groovy-language-server/groovy-language-server-all.jar")
 
      haskell
 
@@ -361,7 +361,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(org-roam-ui fcitx exec-path-from-shell)
+   dotspacemacs-additional-packages '(org-roam-ui fcitx)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -864,14 +864,6 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Get environment variables from shell
-  ;; Requires exec-path-from-shell
-  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
-  (exec-path-from-shell-copy-env "GNUPGHOME")
-  (exec-path-from-shell-initialize)
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Stop prompting me to follow symlinks.
