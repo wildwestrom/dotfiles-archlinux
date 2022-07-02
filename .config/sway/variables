@@ -1,8 +1,0 @@
-set $lang 'us'
-set $term foot
-set $browser librewolf
-set $filemanager nautilus
-set $editor emacs
-set $launcher nwg-drawer -c 6 -is 64 -fscol 2 -s preset-0.css -term foot
-set $exit nwg-bar -p center -a middle -i 48 -s preset-0.css
-set $dock nwg-dock -p bottom -a center -i 48 -s preset-0.css

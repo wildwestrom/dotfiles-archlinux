@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
 
-sudo cp -vr ~/.dotfiles/root/* /
+sudo cp -vr ~/.root-configs/* /

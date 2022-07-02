@@ -63,6 +63,8 @@ set -gx MANPATH ":$NPM_PACKAGES/share/man"
 set -gx nvm_prefix $NVM_DIR
 set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 fish_add_path -a "$NVM_DIR/versions/node/v17.9.0/bin/"
+set -gx PNPM_HOME "/home/main/.local/share/pnpm"
+fish_add_path -a "$PNPM_HOME"
 
 # Haskell
 set -gx STACK_ROOT "$XDG_DATA_HOME/stack"
@@ -156,6 +158,3 @@ function fish_user_key_bindings
         fish_vi_key_bindings
     end
 end
-
-set -gx PNPM_HOME "/home/main/.local/share/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
