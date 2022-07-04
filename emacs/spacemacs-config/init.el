@@ -897,7 +897,12 @@ before packages are loaded."
   ;; Org-roam-ui
   (use-package org-roam-ui
     :after org-roam
-    :defer t)
+    :defer t
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1284,6 +1289,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(js-indent-level 2)
  '(js2-indent-level 2)
+ '(package-selected-packages
+   '(edit-indirect org-roam-ui yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vmd-mode vim-powerline vim-empty-lines-mode vi-tilde-fringe uuidgen use-package unkillable-scratch unicode-fonts unfill undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil treemacs-all-the-icons toml-mode toc-org tide terminal-here tagedit systemd symon symbol-overlay string-inflection string-edit sql-indent spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc smeargle slim-mode shfmt shell-pop scss-mode sass-mode rust-mode ron-mode restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters quickrun pug-mode psci psc-ide prettier-js popwin password-generator paradox ox-twbs ox-gfm ox-asciidoc overseer orgit-forge org-superstar org-roam org-rich-yank org-re-reveal org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file npm-mode nov nodejs-repl nameless mwim mvn multi-term multi-line mmm-mode meson-mode maven-test-mode markdown-toc magit-todos macrostep lsp-ui lsp-origami lsp-latex lsp-java lsp-haskell lorem-ipsum livid-mode link-hint keycast json-reformat json-navigator js2-refactor js-doc journalctl-mode jinja2-mode inspector insert-shebang info+ indent-guide impatient-mode hybrid-mode hungry-delete holy-mode hlint-refactor hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-rtags helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-hoogle helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-cider helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md gendoxy fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rust flycheck-rtags flycheck-pos-tip flycheck-package flycheck-haskell flycheck-elsa flycheck-elm flycheck-clj-kondo flycheck-bashate flx-ido fish-mode fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-tex evil-terminal-cursor-changer evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode doom-themes doom-modeline dockerfile-mode docker disaster dired-quick-sort diminish diff-hl devdocs define-word dante csv-mode cpp-auto-include company-ycmd company-web company-statistics company-shell company-rtags company-reftex company-quickhelp company-math company-lua company-emoji company-cabal company-c-headers company-auctex company-ansible command-log-mode column-enforce-mode color-identifiers-mode cmm-mode cmake-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu centered-cursor-mode ccls cargo browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile attrap ansible-doc ansible aggressive-indent adoc-mode ace-link ace-jump-helm-line ac-ispell))
  '(safe-local-variable-values
    '((default-tab-width . 2)
      (eval quote
