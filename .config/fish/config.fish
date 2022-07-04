@@ -138,9 +138,11 @@ alias su="su -s /bin/fish"
 alias htop="htop -s PERCENT_CPU"
 alias proc="ps aux | grep -v grep | grep "
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0"
-
 alias magit='swayhide emacsclient -c --eval "(magit-status-here)"'
+
 alias mpv="swayhide mpv"
+# use the word `command` to skip previous aliases
+alias mpa="command mpv --force-window=no --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
 
