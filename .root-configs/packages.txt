@@ -147,6 +147,7 @@ mgba-qt
 mold
 mpd
 mpv
+multimc-bin
 native-image-jdk17-bin
 nautilus
 neofetch
@@ -213,6 +214,7 @@ rustup
 sbcl
 sdparm
 sed
+session-desktop-bin
 shntool
 shotcut
 showmethekey
@@ -256,6 +258,7 @@ texlive-publishers
 texlive-science
 the_silver_searcher
 thunderbird
+torbrowser-launcher
 transmission-gtk
 trash-cli
 tree
