@@ -51,12 +51,11 @@ evince
 exa
 fakeroot
 fcitx5
-fcitx5-chinese-addons
 fcitx5-configtool
+fcitx5-gtk
 fcitx5-hangul
 fcitx5-mozc
 fcitx5-qt
-fcitx5-rime
 fd
 fennel
 file
@@ -175,6 +174,7 @@ otf-mathilde
 otf-russkopis
 pacfinder
 pacman
+pacman-contrib
 pandoc
 paru-bin
 patch
