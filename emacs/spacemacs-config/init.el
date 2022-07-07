@@ -157,13 +157,21 @@ This function should only modify configuration layer settings."
 
      java
 
-     lua
+     (lua :variables
+          lua-backend 'lua
+          lua-lsp-server 'lua-language-server
+          lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"
+          lsp-clients-lua-language-server-main-location "/usr/lib/lua-language-server/bin/main.lua"
+          )
 
      ;; python
 
      ;; racket
 
-     rust
+     (rust :variables
+           ;; Relies on a self-made patch to cargo.el due to a bug
+           ;; Pending PR: https://github.com/kwrooijen/cargo.el/pull/138
+           cargo-process--command-clippy--additional-args "-- -A clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo" )
 
      (shell-scripts :variables
                     insert-shebang-track-ignored-filename nil
@@ -912,6 +920,12 @@ before packages are loaded."
    (lambda ()
      (spacemacs/toggle-visual-line-navigation-on)
      (visual-fill-column-mode 1)))
+
+  ;; Make sure compilation buffers don't truncate lines
+  (add-hook
+   'compilation-mode-hook
+   (lambda ()
+     (spacemacs/toggle-visual-line-navigation-on)))
 
   ;; Make sure whitespace doesn't get cleaned up on markdown mode
   (add-hook
