@@ -13,7 +13,7 @@ include $XDG_CONFIG_HOME/sway/modes/*
 # additional config
 include $XDG_CONFIG_HOME/sway/config.d/*.conf
 
-output * bg $bg fit
+output * bg $bg fit #1a1a1a
 
 # Focus on main monitor on startup
 exec focus output $laptop_monitor
@@ -41,11 +41,13 @@ exec {
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
     wlsunset -T 6500 -t 4000 -l 40.6 -L -74.2
     noisetorch -i alsa_input.usb-Focusrite_Scarlett_2i2_USB-00.pro-input-0
+    flameshot
     # Social Media Services
-    signal-deskop
+    signal-desktop
     element-desktop
     /opt/Session/session-desktop
     thunderbird
+    telegram-desktop
 }
 
 exec_always {

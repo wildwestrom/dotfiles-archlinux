@@ -36,7 +36,7 @@
 (set nvim.o.number true)                            ;; set numbered lines
 (set nvim.o.relativenumber true)                    ;; set relative numbered lines
 (set nvim.o.numberwidth 1)                          ;; set number column width to 2 {default 4}
-;; (set nvim.o.signcolumn "no")                     ;; shift the left column by a fixed amount for line numbers
+(set nvim.o.signcolumn "no")                        ;; shift the left column by a fixed amount for line numbers
 (set nvim.o.wrap false)                             ;; display lines as one long line
 (set nvim.o.scrolloff  8)                           ;; is one of my fav
 (set nvim.o.sidescrolloff 8)

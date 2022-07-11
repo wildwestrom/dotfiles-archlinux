@@ -239,7 +239,7 @@ om = ObjectManager {
     Interest {
         type = "node",
         Constraint { "media.class", "equals", "Audio/Source", type = "pw-global" },
-        Constraint { "device.serial", "equals", "Focusrite_Scarlett_2i2_USB", type = "pw" }
+        Constraint { "device.name", "equals", "alsa_card.usb-Focusrite_Scarlett_2i2_USB-00", type = "pw" }
     },
     Interest {
         type = "device",

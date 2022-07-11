@@ -1,3 +1,5 @@
+adwaita-qt5
+adwaita-qt6
 aegisub
 alass-git
 alsa-firmware
@@ -23,7 +25,6 @@ binutils
 bison
 bitwarden
 blender
-brave-bin
 cambalache-git
 cheese
 clj-kondo-bin
@@ -34,8 +35,9 @@ cmatrix
 code
 cool-retro-term
 czkawka-gui-bin
+dconf-editor
 devhelp
-discord
+discord_arch_electron
 docker
 docker-compose
 docker-machine
@@ -63,6 +65,7 @@ findutils
 firefox-developer-edition
 fish
 fisher
+flameshot
 flex
 foot
 frcursive
@@ -99,7 +102,6 @@ greetd
 greetd-gtkgreet
 grep
 grim
-grimshot
 groff
 groovy-language-server-git
 grub
@@ -135,6 +137,7 @@ linux-headers
 lldb
 lolcat
 lua-language-server
+lxappearance
 m4
 make
 mako
@@ -156,11 +159,13 @@ networkmanager
 networkmanager-openvpn
 networkmanager-strongswan
 noise-suppression-for-voice-git
+noisetorch
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 npm
 nushell
+nwg-look-bin
 obs-studio
 obsidian
 opencl-mesa
@@ -184,6 +189,7 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+pipewire-v4l2
 pipewire-x11-bell
 pkgconf
 polkit-gnome
@@ -202,6 +208,7 @@ qpwgraph
 qt5-wayland
 qt5ct
 qt6-wayland
+qt6ct
 racket
 reflector
 rime-emoji
@@ -213,6 +220,7 @@ rustup
 sbcl
 sdparm
 sed
+servo-latest
 session-desktop-bin
 shntool
 shotcut
@@ -256,7 +264,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 the_silver_searcher
-thunderbird
+thunderbird-bin
 torbrowser-launcher
 transmission-gtk
 trash-cli
@@ -270,7 +278,6 @@ ueberzug
 unbound
 ungoogled-chromium
 unrar
-v4l2loopback-dkms
 vinagre
 virtualbox
 virtualbox-host-modules-arch
@@ -287,6 +294,7 @@ wireplumber
 wireplumber-docs
 wkhtmltopdf
 wl-clipboard
+wl-color-picker
 wlsunset
 wob
 xdg-desktop-portal-wlr

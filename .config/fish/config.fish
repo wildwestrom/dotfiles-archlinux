@@ -4,9 +4,13 @@
 set fish_greeting
 
 # Editors/Readers
-set -gx EDITOR "swayhide emacsclient -c"
+set -gx EDITOR "swayhide emacsclient -c -a nvim"
 # set -gx EDITOR "nvim"
+
 set -gx READER "bat"
+
+# Man Page Reader
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # XDG_DIRS
 set -gx XDG_CONFIG_HOME "$HOME/.config"
@@ -86,9 +90,11 @@ set -gx DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
 set -gx MACHINE_STORAGE_PATH "$XDG_DATA_HOME/docker-machine"
 
 # CLEANUP
+set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
+set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+set -gx XCURSOR_PATH "/usr/share/icons:$XDG_DATA_HOME/icons"
 set -gx IPFS_PATH "$XDG_DATA_HOME/ipfs"
 set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
-set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 set -gx KDEHOME "XDG_CONFIG_HOME/kde"
 set -gx LESSHISTFILE "$XDG_CACHE_HOME/less/history"
 set -gx INPUTRC "$XDG_CONFIG_HOME/shell/inputrc"
@@ -98,7 +104,6 @@ set -gx KODI_DATA "$XDG_DATA_HOME/kodi"
 set -gx PASSWORD_STORE_DIR "$XDG_DATA_HOME/password-store"
 set -gx TMUX_TMPDIR "$XDG_RUNTIME_DIR"
 set -gx ANSIBLE_CONFIG "$XDG_CONFIG_HOME/ansible/ansible.cfg"
-set -gx HISTFILE "$XDG_STATE_HOME/sh/history"
 set -gx WEECHAT_HOME "$XDG_CONFIG_HOME/weechat"
 set -gx MBSYNCRC "$XDG_CONFIG_HOME/mbsync/config"
 set -gx ELECTRUMDIR "$XDG_DATA_HOME/electrum"

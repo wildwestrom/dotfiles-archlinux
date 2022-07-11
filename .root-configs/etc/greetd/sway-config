@@ -1,3 +1,4 @@
+exec light -I
 exec "gtkgreet -l; swaymsg exit"
 
 bindsym Mod4+shift+q exec swaynag \

@@ -130,7 +130,7 @@ This function should only modify configuration layer settings."
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      (clojure :variables
-              ;; clojure-backend 'cider               ;; use cider instead of lsp
+              ;; clojure-backend 'cider                  ;; use cider instead of lsp
               clojure-enable-linters 'clj-kondo       ;; clj-kondo included in lsp
               clojure-enable-clj-refactor t
               cider-repl-display-help-banner t        ;; disable help banner
@@ -169,8 +169,6 @@ This function should only modify configuration layer settings."
      ;; racket
 
      (rust :variables
-           ;; Relies on a self-made patch to cargo.el due to a bug
-           ;; Pending PR: https://github.com/kwrooijen/cargo.el/pull/138
            cargo-process--command-clippy--additional-args "-- -A clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo" )
 
      (shell-scripts :variables
@@ -527,8 +525,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-one-light
-                         doom-one)
+   dotspacemacs-themes '(one-dark
+                         one-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
