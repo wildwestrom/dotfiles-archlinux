@@ -31,7 +31,7 @@ set $browser librewolf
 set $file_manager nautilus
 
 # launcher/menu
-set $menu fuzzel -i breeze -T "alacritty -e" -B 0 -r 0 -b 302f2ef8 -t d0d0d0ff -S ffffffff -s 1793d1ff -f Hack:size=14 -w 50
+set $menu fuzzel -i Adwaita -T "foot" -B 0 -r 0 -b 302f2ef8 -t d0d0d0ff -S ffffffff -s 1793d1ff -f 'Noto Sans:size=14' -w 50
 
 # workspace names
 set $ws1  1

@@ -3,21 +3,23 @@ set $mode_resize "<span foreground='$color10'>Resize</span>  \
 <span foreground='$color5'><b>Increase Gaps</b></span> <span foreground='$color10'>(<b>+</b>)</span> \
 <span foreground='$color5'><b>Decrease Gaps</b></span> <span foreground='$color10'>(<b>-</b>)</span>"
 
+set $grow-factor 10px
+
 mode --pango_markup $mode_resize {
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width $grow-factor
+    bindsym $down resize grow height $grow-factor
+    bindsym $up resize shrink height $grow-factor
+    bindsym $right resize grow width $grow-factor
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width $grow-factor
+    bindsym Down resize grow height $grow-factor
+    bindsym Up resize shrink height $grow-factor
+    bindsym Right resize grow width $grow-factor
 
     # Return to default mode
     bindsym Return mode "default"
