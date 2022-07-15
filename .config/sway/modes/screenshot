@@ -9,6 +9,11 @@ mode --pango_markup $mode_screenshot {
      bindsym w exec 'grimshot --notify copy window'; mode "default"
      bindsym o exec 'grimshot --notify copy output'; mode "default"
      bindsym s exec 'grimshot --notify copy screen'; mode "default"
+
+     bindsym $mod+a exec 'grimshot save area   - | swappy -f -'; mode "default"
+     bindsym $mod+w exec 'grimshot save window - | swappy -f -'; mode "default"
+     bindsym $mod+o exec 'grimshot save output - | swappy -f -'; mode "default"
+     bindsym $mod+s exec 'grimshot save screen - | swappy -f -'; mode "default"
 }
 
 bindsym $mod+x mode $mode_screenshot
