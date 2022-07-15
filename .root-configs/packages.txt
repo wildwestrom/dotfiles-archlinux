@@ -25,6 +25,7 @@ binutils
 bison
 bitwarden
 blender
+bottom
 cambalache-git
 cheese
 clj-kondo-bin
@@ -43,7 +44,6 @@ docker-compose
 docker-machine
 dotnet-sdk
 dust
-easyeffects
 efibootmgr
 element-desktop
 emacs-gcc-wayland-devel-bin
@@ -81,7 +81,6 @@ gettext
 gimp
 git
 github-cli
-glade
 glfw-wayland
 gnome-calculator
 gnome-font-viewer
@@ -102,6 +101,7 @@ greetd
 greetd-gtkgreet
 grep
 grim
+grimshot
 groff
 groovy-language-server-git
 grub
@@ -110,7 +110,6 @@ gtk-vnc
 gtk4-docs
 gzip
 helvum
-htop-vim
 hunspell-en_us
 hunspell-ko
 imv
@@ -218,6 +217,7 @@ rsync
 rust-analyzer
 rustup
 sbcl
+sd
 sdparm
 sed
 servo-latest
@@ -239,13 +239,13 @@ strace
 strawberry
 sudo
 supercollider
+swappy
 sway
 swayhide
 swayidle
 swaylock
 syncthing
 system-config-printer
-teamviewer-beta
 telegram-desktop
 termdown
 tesseract
@@ -288,6 +288,7 @@ vscode-json-languageserver
 vulkan-intel
 vulkan-mesa-layers
 waybar
+wev
 wget
 which
 wireplumber
@@ -297,6 +298,7 @@ wl-clipboard
 wl-color-picker
 wlsunset
 wob
+wofi
 xdg-desktop-portal-wlr
 xdg-ninja-git
 xdg-user-dirs-gtk
