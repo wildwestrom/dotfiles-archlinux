@@ -118,10 +118,10 @@ alias rm="rm -riv"
 alias trash="trash -v"
 alias mkdir="mkdir -pv"
 
-alias ls="exa --color=automatic"
-alias ll="exa -la --color=automatic"
-alias la="exa -a --color=automatic"
-alias lt="exa -aT --color=automatic"
+alias ls="exa"
+alias ll="exa -la"
+alias la="exa -a"
+alias lt="exa -aT"
 alias l.="exa -d .*"
 alias df='df -h'
 alias du='dust'
@@ -131,6 +131,9 @@ alias ag='ag -a'
 alias cat="bat"
 alias less="bat"
 alias tree="tree -a"
+alias top="btm"
+alias htop="btm"
+alias grep="rg"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
 alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
@@ -140,10 +143,9 @@ alias barrc="$EDITOR $XDG_CONFIG_HOME/waybar/config"
 alias vimrc="$EDITOR $XDG_CONFIG_HOME/nvim/"
 
 alias su="su -s /bin/fish"
-alias htop="htop -s PERCENT_CPU"
 alias proc="ps aux | grep -v grep | grep "
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0"
-alias magit='swayhide emacsclient -c --eval "(magit-status-here)"'
+alias magit="swayhide emacsclient -c --eval '(magit-status-here)'"
 
 alias mpv="swayhide mpv"
 # use the word `command` to skip previous aliases
