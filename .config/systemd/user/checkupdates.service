@@ -1,0 +1,9 @@
+[Unit]
+Description=Checks for updates and notifies the user
+Wants=checkupdates.timer
+
+[Service]
+ExecStart=/home/main/.local/bin/update-notify.fish
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Run my update notification script every hour.
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1h
+
+[Install]
+WantedBy=timers.target
