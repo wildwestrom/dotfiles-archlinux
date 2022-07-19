@@ -78,6 +78,7 @@ set -gx GHCUP_USE_XDG_DIRS true
 set -gx CARGO_INCREMENTAL 1
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
+fish_add_path -a "$CARGO_HOME/bin"
 
 # Go
 set -gx GOPATH "$XDG_DATA_HOME/go"
@@ -117,6 +118,8 @@ alias ln="ln -iv"
 alias rm="rm -riv"
 alias trash="trash -v"
 alias mkdir="mkdir -pv"
+alias chmod="chmod -Rv"
+alias chown="chown -Rv"
 
 alias ls="exa"
 alias ll="exa -la"
@@ -144,12 +147,12 @@ alias vimrc="$EDITOR $XDG_CONFIG_HOME/nvim/"
 
 alias su="su -s /bin/fish"
 alias proc="ps aux | grep -v grep | grep "
-alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11 DISPLAY=:0"
+alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11"
 alias magit="swayhide emacsclient -c --eval '(magit-status-here)'"
 
 alias mpv="swayhide mpv"
 # use the word `command` to skip previous aliases
-alias mpa="command mpv --force-window=no --no-video"
+alias mpa="command mpv --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
 
@@ -167,3 +170,5 @@ function fish_user_key_bindings
         fish_vi_key_bindings
     end
 end
+
+thefuck --alias | source
