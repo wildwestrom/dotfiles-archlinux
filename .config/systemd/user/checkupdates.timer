@@ -3,7 +3,7 @@ Description=Run my update notification script every hour.
 
 [Timer]
 OnBootSec=5min
-OnUnitActiveSec=1h
+OnUnitActiveSec=4h
 
 [Install]
 WantedBy=timers.target
