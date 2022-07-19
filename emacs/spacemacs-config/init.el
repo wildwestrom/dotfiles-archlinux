@@ -169,7 +169,8 @@ This function should only modify configuration layer settings."
      ;; racket
 
      (rust :variables
-           cargo-process--command-clippy--additional-args "-- -A clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo" )
+           cargo-process--command-clippy--additional-args "-- -A clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo"
+           fill-column 100)
 
      (shell-scripts :variables
                     insert-shebang-track-ignored-filename nil
@@ -307,13 +308,13 @@ This function should only modify configuration layer settings."
           ;; popup documentation boxes
           lsp-ui-doc-enable t               ;; disable all doc popups
           lsp-ui-doc-show-with-cursor t     ;; doc popup for cursor
-          lsp-ui-doc-show-with-mouse nil    ;; doc popup for mouse
+          lsp-ui-doc-show-with-mouse t      ;; doc popup for mouse
           lsp-ui-doc-delay 1                ;; delay in seconds for popup to display
 
           ;; code actions and diagnostics text as right-hand side of buffer
-          lsp-ui-sideline-enable nil
-          lsp-ui-sideline-show-code-actions nil
-          lsp-ui-sideline-show-diagnostics nil
+          lsp-ui-sideline-enable t
+          lsp-ui-sideline-show-code-actions t
+          lsp-ui-sideline-show-diagnostics t
 
           ;; reference count for functions (assume their maybe other lenses in future)
           lsp-lens-enable t
@@ -875,6 +876,13 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Fixes for jumping to files when using the error_stack package
+  (setq cargo-compilation-regexps
+        '("\\(?:at\\|',\\) \\(\\([^:\\[ ]+\\):\\([0-9]+\\)\\)"
+          2 3 nil nil 1))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Thank you Daniel Nicolai! <@dalanicolai-5c40d41ad73408ce4fb51ea9:gitter.im>
   ;; Now I can paste all I want without it copying my selection that I'm replacing!
   (setq evil-kill-on-visual-paste nil)
@@ -888,9 +896,13 @@ before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Get dired to delete buffer upon exiting
+  ;; There was another implementation, but when using it with swayhide,
+  ;; it would spit be back to the terminal I launched emacsclient from.
   (require 'dired)
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
-  (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
+  (define-key dired-mode-map (kbd "^")
+    (lambda () (interactive)
+      (find-alternate-file "..")))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
