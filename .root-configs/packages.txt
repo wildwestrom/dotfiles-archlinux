@@ -27,18 +27,20 @@ bitwarden
 blender
 bottom
 cambalache-git
+cargo-watch
+ccls
 cheese
 clj-kondo-bin
 cljstyle-bin
 clojure
 clojure-lsp-bin
+cmake
 cmatrix
 code
 cool-retro-term
 czkawka-gui-bin
 dconf-editor
 devhelp
-discord_arch_electron
 docker
 docker-compose
 docker-machine
@@ -69,7 +71,6 @@ flameshot
 flex
 foot
 frcursive
-freetube-bin
 fuzzel
 fzf
 gawk
@@ -89,7 +90,6 @@ gnome-logs
 gnome-maps
 gnome-screenshot
 gnome-system-monitor
-gnome-terminal
 gnome-tweaks
 gnu-free-fonts
 gnucash
@@ -120,7 +120,8 @@ jdk17-openjdk
 jdtls
 jq
 kanshi
-kdenlive
+kvantum
+kvantum-theme-libadwaita-git
 lazygit
 leiningen
 libayatana-appindicator
@@ -133,8 +134,9 @@ lingot
 linux
 linux-firmware
 linux-headers
+lld
 lldb
-lolcat
+llvm
 lua-language-server
 lxappearance
 m4
@@ -143,13 +145,14 @@ mako
 man-db
 man-pages
 mediainfo
+meson
 mgba-qt
 mold
-mpd
 mpv
 multimc-bin
 native-image-jdk17-bin
 nautilus
+nemo
 neofetch
 neovim
 nerd-fonts-jetbrains-mono
@@ -227,7 +230,6 @@ shotcut
 showmethekey
 signal-desktop
 signato-font
-slack-desktop
 slurp
 smartmontools
 sqlfmt-bin
@@ -241,6 +243,7 @@ sudo
 supercollider
 swappy
 sway
+swaybg
 swayhide
 swayidle
 swaylock
@@ -264,6 +267,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 the_silver_searcher
+thefuck
 thunderbird-bin
 torbrowser-launcher
 transmission-gtk
@@ -278,6 +282,8 @@ ueberzug
 unbound
 ungoogled-chromium
 unrar
+unzip
+v4l2loopback-dkms
 vinagre
 virtualbox
 virtualbox-host-modules-arch
@@ -288,6 +294,7 @@ vscode-json-languageserver
 vulkan-intel
 vulkan-mesa-layers
 waybar
+wayshot-git
 wev
 wget
 which
