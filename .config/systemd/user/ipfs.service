@@ -1,0 +1,11 @@
+[Unit]
+Description=InterPlanetary File System (IPFS) daemon
+
+[Service]
+Environment=IPFS_PATH=/home/main/.local/share/ipfs
+ExecStart=/usr/bin/ipfs daemon
+Restart=on-failure
+StartLimitBurst=2
+
+[Install]
+WantedBy=default.target
