@@ -6,7 +6,7 @@ Wants=pull-latest-spacemacs.service
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/fish -c '/usr/bin/emacs --daemon --debug-init'
+ExecStart=/usr/bin/fish -c '/usr/bin/emacs --daemon'
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
 Environment="XMODIFIERS=@im=fcitx"
 Restart=on-failure
