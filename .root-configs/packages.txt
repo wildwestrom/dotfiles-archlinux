@@ -48,8 +48,8 @@ dotnet-sdk
 dust
 efibootmgr
 element-desktop
-emacs-gcc-wayland-devel-bin
 emacs-libvterm-git
+emacs-native-comp-git-enhanced
 evcxr_repl
 evince
 exa
@@ -71,6 +71,7 @@ flameshot
 flex
 foot
 frcursive
+freetube-0.17.0-nightly
 fuzzel
 fzf
 gawk
@@ -93,9 +94,9 @@ gnome-system-monitor
 gnome-tweaks
 gnu-free-fonts
 gnucash
-go-ipfs
 gobject-introspection
 gparted
+gperf
 gradle
 greetd
 greetd-gtkgreet
@@ -115,13 +116,15 @@ hunspell-ko
 imv
 inkscape
 intel-ucode
+ipscan
 jami-qt
 jdk17-openjdk
 jdtls
 jq
+jre8-openjdk
 kanshi
-kvantum
-kvantum-theme-libadwaita-git
+kompare
+kubo
 lazygit
 leiningen
 libayatana-appindicator
@@ -150,8 +153,8 @@ mgba-qt
 mold
 mpv
 multimc-bin
+nasm
 native-image-jdk17-bin
-nautilus
 nemo
 neofetch
 neovim
@@ -160,16 +163,15 @@ network-manager-applet
 networkmanager
 networkmanager-openvpn
 networkmanager-strongswan
-noise-suppression-for-voice-git
 noisetorch
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 npm
 nushell
-nwg-look-bin
 obs-studio
 obsidian
+oil
 opencl-mesa
 openjdk-src
 openjdk17-src
@@ -186,6 +188,7 @@ paru-bin
 patch
 pavucontrol
 perl-gd
+perl-html-parser
 picard
 pipewire
 pipewire-alsa
@@ -194,6 +197,8 @@ pipewire-pulse
 pipewire-v4l2
 pipewire-x11-bell
 pkgconf
+pmidi
+po4a
 polkit-gnome
 postgresql
 powershell-bin
@@ -207,6 +212,7 @@ python-pynvim
 qemu-desktop
 qjackctl
 qpwgraph
+qsynth
 qt5-wayland
 qt5ct
 qt6-wayland
@@ -285,9 +291,8 @@ unrar
 unzip
 v4l2loopback-dkms
 vinagre
-virtualbox
+virt-manager
 virtualbox-host-modules-arch
-vmpk
 vscode-css-languageserver
 vscode-html-languageserver
 vscode-json-languageserver
@@ -319,3 +324,4 @@ zip
 zoom
 zram-generator
 zsa-wally-cli
+zulip-desktop-bin
