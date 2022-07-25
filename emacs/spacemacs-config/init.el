@@ -194,7 +194,8 @@ This function should only modify configuration layer settings."
                  javascript-backend 'lsp)
      typescript
 
-     svelte
+     (svelte :variables
+             svelte-backend 'lsp)
 
      elm
      purescript
@@ -250,7 +251,8 @@ This function should only modify configuration layer settings."
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
      ;; Debugging
-     dap
+     (dap :variables
+          dap-lldb-debug-program 'lldb-vscode)
 
      ;; Containers
      docker
@@ -294,24 +296,17 @@ This function should only modify configuration layer settings."
 
      ;; https://practicalli.github.io/spacemacs/install-spacemacs/clojure-lsp/lsp-variables-reference.html
      (lsp :variables
-          ;; Formatting and indentation - use Cider instead
           lsp-enable-on-type-formatting t
-          ;; Set to nil to use CIDER features instead of LSP UI
-          ;; Default t
           lsp-enable-indentation t
-          lsp-enable-snippet t  ;; to test again
-
-          ;; symbol highlighting - `lsp-toggle-symbol-highlight` toggles highlighting
-          ;; subtle highlighting for doom-gruvbox-light theme defined in dotspacemacs/user-config
+          lsp-enable-snippet t
           lsp-enable-symbol-highlighting t
 
           ;; Show lint error indicator in the mode line
-          lsp-modeline-diagnostics-enable nil
-          lsp-modeline-diagnostics-scope :workspace
-          lsp-modeline-code-actions-enable nil
+          lsp-modeline-diagnostics-enable t
+          lsp-modeline-code-actions-enable t
 
           ;; popup documentation boxes
-          lsp-ui-doc-enable t               ;; disable all doc popups
+          lsp-ui-doc-enable t               ;; doc popups
           lsp-ui-doc-show-with-cursor t     ;; doc popup for cursor
           lsp-ui-doc-show-with-mouse t      ;; doc popup for mouse
           lsp-ui-doc-delay 1                ;; delay in seconds for popup to display
@@ -319,12 +314,13 @@ This function should only modify configuration layer settings."
           ;; code actions and diagnostics text as right-hand side of buffer
           lsp-ui-sideline-enable t
           lsp-ui-sideline-show-code-actions t
+          lsp-ui-sideline-show-hover t
           lsp-ui-sideline-show-diagnostics t
 
           ;; reference count for functions (assume their maybe other lenses in future)
-          lsp-lens-enable t
-
           ;; Efficient use of space in treemacs-lsp display
+
+          lsp-lens-enable t
 
           ;; Optimization for large files
           lsp-file-watch-threshold 10000
@@ -335,6 +331,7 @@ This function should only modify configuration layer settings."
 
           ;; Rust
           lsp-rust-server 'rust-analyzer
+          lsp-rust-analyzer-server-display-inlay-hints t
           cargo-process-reload-on-modify t
           )
 
@@ -899,6 +896,17 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Make sure indentation is correct for svelte
+  (add-hook
+   'svelte-mode-hook
+   (setq web-mode-script-padding 2)
+   (setq web-mode-style-padding 2)
+   (setq indent-tabs-mode t)
+   (web-mode-use-tabs)
+   )
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Fixes for jumping to files when using the error_stack package
   (setq cargo-compilation-regexps
         '("\\(?:at\\|',\\) \\(\\([^:\\[ ]+\\):\\([0-9]+\\)\\)"
@@ -926,12 +934,6 @@ before packages are loaded."
   (define-key dired-mode-map (kbd "^")
     (lambda () (interactive)
       (find-alternate-file "..")))
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Yubikey Setup
-  ;; (require 'epg)
-  ;; (setq epg-pinentry-mode 'loopback)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1266,8 +1268,9 @@ before packages are loaded."
   (defun web-mode-indent-2-hook ()
     "Indent settings for languages in Web mode, markup=html, css=css, code=javascript/php/etc."
     (setq web-mode-markup-indent-offset 2)
-    (setq web-mode-css-indent-offset  2)
-    (setq web-mode-code-indent-offset 2))
+    (setq web-mode-css-indent-offset    2)
+    (setq web-mode-code-indent-offset   2)
+    (setq web-mode-attr-indent-offset   2))
   ;;
   (add-hook 'web-mode-hook  'web-mode-indent-2-hook)
   ;;
@@ -1381,6 +1384,7 @@ This function is called at the very end of Spacemacs initialization."
       ("localhost" "8776"))
      (typescript-backend . lsp)
      (javascript-backend . lsp)))
+ '(tab-always-indent 'complete)
  '(warning-suppress-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
