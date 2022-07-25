@@ -134,9 +134,11 @@ alias ag='ag -a'
 alias cat="bat"
 alias less="bat"
 alias tree="tree -a"
-alias top="btm"
-alias htop="btm"
+alias top="btm --color=default-light"
+alias htop="btm --color=default-light"
 alias grep="rg"
+set -gx WATCH_INTERVAL '0.5'
+alias watch="watch -c"
 
 alias fishrc="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
 alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
@@ -155,6 +157,9 @@ alias mpv="swayhide mpv"
 alias mpa="command mpv --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
+
+# Arch Specific
+alias remove-orphans="paru -Rns (paru -Qtdq)"
 
 # Worktree-based-dotfiles storage
 # alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'
