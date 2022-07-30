@@ -1,9 +1,9 @@
-set $gtk-theme Adwaita-dark
+set $gtk-theme Adwaita
 set $icon-theme Adwaita
 set $cursor-theme Adwaita
 set $gui-font Noto Sans 11
 set $term-font JetBrainsMono 14
-set $color-preference prefer-dark
+set $color-preference prefer-light
 
 set $color0  #141a1b
 set $color1  #282a2b
@@ -29,12 +29,12 @@ set $text-color $color6
 #color1
 set $selection-color $color1
 #color12
-set $accent-color $color12
+set $accent-color $color2
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $color5 $color12 $color0 $color12 $color12
-client.focused_inactive $color1 $color1 $color5 $color3 $color1
+client.focused          $color3 $color2 $color6 $color2 $color2
+client.focused_inactive $color1 $color3 $color5 $color3 $color1
 client.unfocused        $color1 $color0 $color5 $color1 $color1
 client.urgent           $color8 $color8 $color0 $color8 $color8
 client.placeholder      $color0 $color0 $color5 $color0 $color0

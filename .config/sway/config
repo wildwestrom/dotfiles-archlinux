@@ -1,7 +1,7 @@
 set $XDG_CONFIG_HOME $HOME/.config
 
 # theme variables
-set $theme $XDG_CONFIG_HOME/sway/themes/my-theme
+include $XDG_CONFIG_HOME/sway/themes/my-theme/definitions
 
 # user variables
 include $XDG_CONFIG_HOME/sway/definitions
@@ -13,7 +13,8 @@ include $XDG_CONFIG_HOME/sway/modes/*
 # additional config
 include $XDG_CONFIG_HOME/sway/config.d/*.conf
 
-output * bg $bg fit #1a1a1a
+# print out the death calendar for the day
+output * bg $bg fit #FFFFFF
 
 # Focus on main monitor on startup
 exec focus output $laptop_monitor

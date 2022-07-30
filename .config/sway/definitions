@@ -19,9 +19,9 @@ set $external_monitor DP-1 DP-2 DP-3 DP-4
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 exec swayidle -w \
-         timeout 300 'swaylock -e -f -c 000000' \
+         timeout 300 'swaylock -e -f -c ffffff' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -e -f -c 000000'
+         before-sleep 'swaylock -e -f -c ffffff'
 
 ### Applications
 #
