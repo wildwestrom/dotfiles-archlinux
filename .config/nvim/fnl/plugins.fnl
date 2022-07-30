@@ -57,7 +57,6 @@
   ;; :maxmellon/vim-jsx-pretty {}
   ;; :mbbill/undotree {:mod :undotree}
   ;; :neovim/nvim-lspconfig {:mod :lspconfig}
-  ;; :norcalli/nvim-colorizer.lua {:mod :colorizer}
   ;; :nvim-lualine/lualine.nvim {:mod :lualine}
   ;; :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-lua/popup.nvim] [:nvim-lua/plenary.nvim]]}
   ;; :nvim-treesitter/nvim-treesitter {:mod :treesitter}

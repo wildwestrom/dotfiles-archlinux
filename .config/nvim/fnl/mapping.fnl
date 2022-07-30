@@ -13,9 +13,9 @@
 (set nvim.g.maplocalleader ",")
 
 ;; jk escape sequences.
-(noremap :i :jk :<esc>)
-(noremap :c :jk :<c-c>)
-(noremap :t :jk :<c-\><c-n>)
+;; (noremap :i :jk :<esc>)
+;; (noremap :c :jk :<c-c>)
+;; (noremap :t :jk :<c-\><c-n>)
 
 ;; Spacemacs style leader mappings.
 (noremap :n :<leader>wm ":tab sp<cr>")
