@@ -162,9 +162,12 @@ alias zathura="swayhide zathura"
 alias remove-orphans="paru -Rns (paru -Qtdq)"
 
 # Worktree-based-dotfiles storage
-# alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'
 function config --wraps='git'
     git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME $argv
+end
+
+function lazyconf --wraps='lazygit'
+    lazygit --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME
 end
 
 # Vi bindings
@@ -175,5 +178,3 @@ function fish_user_key_bindings
         fish_vi_key_bindings
     end
 end
-
-thefuck --alias | source
