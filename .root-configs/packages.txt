@@ -8,7 +8,6 @@ alsa-utils
 android-file-transfer
 android-platform
 anki-bin
-anydesk-bin
 appmenu-gtk-module
 asoundconf
 asp
@@ -24,7 +23,6 @@ bind
 binutils
 bison
 bitwarden
-blender
 bottom
 cambalache-git
 cargo-watch
@@ -47,9 +45,10 @@ docker-machine
 dotnet-sdk
 dust
 efibootmgr
+electron19
 element-desktop
+emacs-gcc-wayland-devel-bin
 emacs-libvterm-git
-emacs-native-comp-git-enhanced
 evcxr_repl
 evince
 exa
@@ -71,7 +70,7 @@ flameshot
 flex
 foot
 frcursive
-freetube-0.17.0-nightly
+freetube
 fuzzel
 fzf
 gawk
@@ -80,6 +79,7 @@ gcc
 gdb
 gedit
 gettext
+ghcup-hs-bin
 gimp
 git
 github-cli
@@ -110,6 +110,7 @@ gst-plugin-pipewire
 gtk-vnc
 gtk4-docs
 gzip
+helix
 helvum
 hunspell-en_us
 hunspell-ko
@@ -132,6 +133,7 @@ libpulse
 libreoffice-fresh
 librewolf-bin
 libtool
+libxcrypt-compat
 light
 lingot
 linux
@@ -139,6 +141,7 @@ linux-firmware
 linux-headers
 lld
 lldb
+lldb-mi-git
 llvm
 lua-language-server
 lxappearance
@@ -150,13 +153,17 @@ man-pages
 mediainfo
 meson
 mgba-qt
+mindustry-bin
 mold
 mpv
 multimc-bin
+musescore
 nasm
 native-image-jdk17-bin
 nemo
+nemo-fileroller
 neofetch
+neovide
 neovim
 nerd-fonts-jetbrains-mono
 network-manager-applet
@@ -168,7 +175,6 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 npm
-nushell
 obs-studio
 obsidian
 oil
@@ -183,7 +189,6 @@ otf-russkopis
 pacfinder
 pacman
 pacman-contrib
-pandoc
 paru-bin
 patch
 pavucontrol
@@ -224,6 +229,7 @@ ripgrep
 rlwrap
 rsync
 rust-analyzer
+rustdesk-bin
 rustup
 sbcl
 sd
@@ -238,6 +244,7 @@ signal-desktop
 signato-font
 slurp
 smartmontools
+sonic-visualiser
 sqlfmt-bin
 sqlite-doc
 sqlitebrowser
@@ -245,6 +252,7 @@ sqls
 steam-native-runtime
 strace
 strawberry
+subversion
 sudo
 supercollider
 swappy
@@ -273,7 +281,6 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 the_silver_searcher
-thefuck
 thunderbird-bin
 torbrowser-launcher
 transmission-gtk
@@ -292,14 +299,13 @@ unzip
 v4l2loopback-dkms
 vinagre
 virt-manager
-virtualbox-host-modules-arch
 vscode-css-languageserver
 vscode-html-languageserver
 vscode-json-languageserver
 vulkan-intel
 vulkan-mesa-layers
 waybar
-wayshot-git
+wayshot-bin
 wev
 wget
 which
@@ -315,6 +321,7 @@ xdg-desktop-portal-wlr
 xdg-ninja-git
 xdg-user-dirs-gtk
 xorg-bdftopcf
+xorg-xeyes
 xorg-xwayland
 xorg-xwininfo
 yt-dlp
