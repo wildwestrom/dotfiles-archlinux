@@ -70,9 +70,11 @@ fish_add_path -a "$NVM_DIR/versions/node/v17.9.0/bin/"
 set -gx PNPM_HOME "/home/main/.local/share/pnpm"
 fish_add_path -a "$PNPM_HOME"
 
-# Haskell
+## Haskell
 set -gx STACK_ROOT "$XDG_DATA_HOME/stack"
 set -gx GHCUP_USE_XDG_DIRS true
+# Carp
+set -gx CARP_DIR "$HOME/code/community/Carp"
 
 # Rust
 set -gx CARGO_INCREMENTAL 1
