@@ -153,7 +153,8 @@ This function should only modify configuration layer settings."
              groovy-backend 'lsp
              groovy-lsp-jar-path "/usr/share/java/groovy-language-server/groovy-language-server-all.jar")
 
-     haskell
+     (haskell :variables
+              haskell-enable-hindent t)
 
      java
 
@@ -224,17 +225,20 @@ This function should only modify configuration layer settings."
 
      ;; Spacemacs Org mode
      (org :variables
-          org-clock-sound "~/emacs/spacemacs-config/bell.mp3"
           org-enable-github-support t
           org-enable-asciidoc-support t
           org-enable-bootstrap-support t
           org-enable-reveal-js-support t
           org-enable-roam-support t
           org-enable-roam-protocol t
-          org-roam-directory "~/org/Notes"
           org-roam-dailies-directory "Journal"
           org-roam-v2-ack t
+          org-roam-directory "~/org/Notes"
+          org-fc-directories '("~/org/Notes")
           org-want-todo-bindings t
+          org-enable-journal-support t
+          org-download-image-dir "~/org/Notes/images"
+          org-journal-enable-agenda-integration t
           org-latex-classes '("letter" "\\documentclass{letter}"
                               ("\\section{%s}" . "\\section*{%s}")
                               ("\\subsection{%s}" . "\\subsection*{%s}")
@@ -256,9 +260,6 @@ This function should only modify configuration layer settings."
 
      ;; Containers
      docker
-
-     ;; Formatting for emacs lisp and possibly others
-     semantic
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;; Version Control
@@ -317,10 +318,8 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-show-hover t
           lsp-ui-sideline-show-diagnostics t
 
-          ;; reference count for functions (assume their maybe other lenses in future)
           ;; Efficient use of space in treemacs-lsp display
-
-          lsp-lens-enable t
+          lsp-lens-enable nil
 
           ;; Optimization for large files
           lsp-file-watch-threshold 10000
@@ -331,7 +330,7 @@ This function should only modify configuration layer settings."
 
           ;; Rust
           lsp-rust-server 'rust-analyzer
-          lsp-rust-analyzer-server-display-inlay-hints t
+          lsp-rust-analyzer-server-display-inlay-hints nil
           cargo-process-reload-on-modify t
           )
 
@@ -899,11 +898,11 @@ before packages are loaded."
   ;; Make sure indentation is correct for svelte
   (add-hook
    'svelte-mode-hook
-   (setq web-mode-script-padding 2)
-   (setq web-mode-style-padding 2)
-   (setq indent-tabs-mode t)
-   (web-mode-use-tabs)
-   )
+   (lambda ()
+     (setq web-mode-script-padding 2)
+     (setq web-mode-style-padding 2)
+     (setq indent-tabs-mode t)
+     (web-mode-use-tabs)))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -969,7 +968,13 @@ before packages are loaded."
   (add-hook
    'compilation-mode-hook
    (lambda ()
-     (spacemacs/toggle-visual-line-navigation-on)))
+     (visual-line-mode)))
+
+  ;; Do the same for cargo-process
+  (add-hook
+   'cargo-process-mode-hook
+   (lambda ()
+     (visual-line-mode)))
 
   ;; Make sure whitespace doesn't get cleaned up on markdown mode
   (add-hook
