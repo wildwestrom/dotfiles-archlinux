@@ -51,9 +51,6 @@ exec_always {
 }
 
 # Gaps
-gaps inner 0
-gaps outer 0
-# smart_gaps on
 default_border normal 2
 focus_follows_mouse yes
 # Protip: Use mod+rightclick to drag resize windows
