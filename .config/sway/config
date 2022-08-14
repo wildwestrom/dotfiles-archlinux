@@ -10,11 +10,14 @@ include $XDG_CONFIG_HOME/sway/definitions.d/*.conf
 # enable modes
 include $XDG_CONFIG_HOME/sway/modes/*
 
+# enable numlock on start
+input * xkb_numlock enable
+
 # additional config
 include $XDG_CONFIG_HOME/sway/config.d/*.conf
 
-# print out the death calendar for the day
-output * bg $bg fit #FFFFFF
+# set the wallpaper # comment this out if you have something else invoking swaybg
+# output * bg $bg fit #FFFFFF
 
 # Focus on main monitor on startup
 exec focus output $laptop_monitor
@@ -46,6 +49,7 @@ exec {
 }
 
 exec_always {
+    ~/.local/bin/update-calendar-bg.sh
     fcitx5 -dr
     'pkill kanshi; kanshi || kanshi'
 }
