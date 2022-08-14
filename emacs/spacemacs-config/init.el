@@ -171,7 +171,7 @@ This function should only modify configuration layer settings."
 
      ;; Note: In order to use dap-mode, you must have unzip installed on your system
      (rust :variables
-           cargo-process--command-clippy--additional-args "-- -A clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo"
+           cargo-process--command-clippy--additional-args "-- -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo"
            fill-column 100
            rust-backend 'lsp)
 
