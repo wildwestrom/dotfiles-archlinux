@@ -34,6 +34,6 @@ current_bg=$XDG_DATA_HOME/current-bg
 dbg "BG File" "$current_bg"
 dbg '$(cat "$birthday_file")' "$(cat "$birthday_file")"
 
-~/.local/bin/death-calendar svg "$(cat "$birthday_file")" --border-unit=shape --shape=circle --lifespan-years=75 --ratios=1,1,6,3 >"$current_bg"
+~/.local/bin/death-calendar svg "$(cat "$birthday_file")" --scale-factor=2 --border-unit=shape --shape=circle --lifespan-years=75 --ratios=1,1,6,2 >"$current_bg"
 killall --signal 15 swaybg
 swaybg -i "$current_bg" -m fit -c '#FFFFFF' &
