@@ -906,13 +906,6 @@ before packages are loaded."
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Fixes for jumping to files when using the error_stack package
-  (setq cargo-compilation-regexps
-        '("\\(?:at\\|',\\) \\(\\([^:\\[ ]+\\):\\([0-9]+\\)\\)"
-          2 3 nil nil 1))
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Thank you Daniel Nicolai! <@dalanicolai-5c40d41ad73408ce4fb51ea9:gitter.im>
   ;; Now I can paste all I want without it copying my selection that I'm replacing!
   (setq evil-kill-on-visual-paste nil)
