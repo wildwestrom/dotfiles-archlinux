@@ -42,9 +42,6 @@ set -gx WGETRC "$XDG_CONFIG_HOME/wget/wgetrc"
 # wine
 set -gx WINEPREFIX "$XDG_DATA_HOME/wine"
 
-# zoom
-set -gx SSB_HOME "$XDG_DATA_HOME/zoom"
-
 # LaTeX
 set -gx TEXMFVAR "$XDG_CACHE_HOME/texlive/texmf-var"
 
@@ -93,6 +90,9 @@ set -gx PYTHONSTARTUP "$XDG_CONFIG_HOME/python/pythonrc"
 set -gx DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
 set -gx MACHINE_STORAGE_PATH "$XDG_DATA_HOME/docker-machine"
 
+# SVN
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+
 # CLEANUP
 set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
 set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
@@ -101,7 +101,6 @@ set -gx IPFS_PATH "$XDG_DATA_HOME/ipfs"
 set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
 set -gx KDEHOME "XDG_CONFIG_HOME/kde"
 set -gx LESSHISTFILE "$XDG_CACHE_HOME/less/history"
-set -gx INPUTRC "$XDG_CONFIG_HOME/shell/inputrc"
 set -gx ALSA_CONFIG_PATH "$XDG_CONFIG_HOME/alsa/asoundrc"
 set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
 set -gx KODI_DATA "$XDG_DATA_HOME/kodi"
