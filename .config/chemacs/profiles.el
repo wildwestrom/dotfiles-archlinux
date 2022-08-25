@@ -1,0 +1,5 @@
+(("default" . ((user-emacs-directory . "~/emacs/default")))
+ ("spacemacs" . ((user-emacs-directory . "~/emacs/spacemacs")
+		 (env . (("SPACEMACSDIR" . "~/emacs/spacemacs-config")))))
+ ("spacemacs-minimal" . ((user-emacs-directory . "~/emacs/spacemacs-minimal")
+		             (env . (("SPACEMACSDIR" . "~/emacs/spacemacs-minimal-config"))))))
