@@ -159,6 +159,7 @@ alias mpv="swayhide mpv"
 alias mpa="command mpv --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
+alias yt-dlp="yt-dlp -P ~/downloads"
 
 # Arch Specific
 alias remove-orphans="paru -Rns (paru -Qtdq)"
