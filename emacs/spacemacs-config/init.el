@@ -1242,22 +1242,6 @@ before packages are loaded."
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	;; Web-mode configuration
-	;;
-	;; Changing auto indent size for languages in html layer (web mode) to 2 (defaults to 4)
-	(defun web-mode-indent-2-hook ()
-		"Indent settings for languages in Web mode, markup=html, css=css, code=javascript/php/etc."
-		(setq web-mode-markup-indent-offset 2)
-		(setq web-mode-css-indent-offset    2)
-		(setq web-mode-code-indent-offset   2)
-		(setq web-mode-attr-indent-offset   2))
-	;;
-	(add-hook 'web-mode-hook  'web-mode-indent-2-hook)
-	;;
-	;; End of Web-mode configuration
-	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	;; Clojure configurations
 	;;
 	;; Do not indent single ; comment characters
