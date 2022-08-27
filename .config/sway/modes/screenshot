@@ -1,9 +1,9 @@
-set $mode_screenshot "<span foreground='$color10'>Screenshot</span>  \
+set $mode_screenshot "<span foreground='$color10'>Screenshot</span> \
 <span foreground='$color5'><b>Area</b></span> <span foreground='$color10'>(<b>a</b>)</span> \
 <span foreground='$color5'><b>Window</b></span> <span foreground='$color10'>(<b>w</b>)</span> \
 <span foreground='$color5'><b>Output</b></span> <span foreground='$color10'>(<b>o</b>)</span> \
 <span foreground='$color5'><b>Screen</b></span> <span foreground='$color10'>(<b>s</b>)</span> \
-<span foreground='$color5'><b>Edit w/ swappy</b> <span foreground='$color10'>(<b>$mod</b>)</span>"
+<span foreground='$color5'><b>Edit w/ swappy</b></span> <span foreground='$color10'>(<b>$mod</b>)</span>"
 
 mode --pango_markup $mode_screenshot {
      bindsym a exec 'grimshot --notify copy area';   mode "default"
@@ -15,7 +15,7 @@ mode --pango_markup $mode_screenshot {
      bindsym $mod+w exec 'grimshot save window - | swappy -f -'; mode "default"
      bindsym $mod+o exec 'grimshot save output - | swappy -f -'; mode "default"
      bindsym $mod+s exec 'grimshot save screen - | swappy -f -'; mode "default"
-     
+
      # Return to default mode
      bindsym Return mode "default"
      bindsym Escape mode "default"
