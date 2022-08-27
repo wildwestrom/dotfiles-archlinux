@@ -37,7 +37,7 @@ workspace $ws9  output $laptop_monitor
 workspace $ws10 output $laptop_monitor
 
 # Gaps
-default_border normal 2
+default_border pixel 2
 focus_follows_mouse yes
 # Protip: Use mod+rightclick to drag resize windows
 
