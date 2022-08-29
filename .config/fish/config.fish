@@ -4,7 +4,7 @@
 set fish_greeting
 
 # Editors/Readers
-set -gx EDITOR "swayhide emacsclient -c -a nvim"
+set -gx EDITOR "swayhide emacsclient -c"
 # set -gx EDITOR "nvim"
 
 set -gx READER "bat"
@@ -70,6 +70,9 @@ fish_add_path -a "$PNPM_HOME"
 ## Haskell
 set -gx STACK_ROOT "$XDG_DATA_HOME/stack"
 set -gx GHCUP_USE_XDG_DIRS true
+# Cabal
+set -gx CABAL_CONFIG "$XDG_CONFIG_HOME/cabal/config"
+set -gx CABAL_DIR "$XDG_DATA_HOME/cabal"
 # Carp
 set -gx CARP_DIR "$HOME/code/community/Carp"
 
@@ -129,7 +132,6 @@ alias la="exa -a"
 alias lt="exa -aT"
 alias l.="exa -d .*"
 alias df='df -h'
-alias du='dust'
 alias fd='fd --hidden'
 alias rg='rg -.'
 alias ag='ag -a'
