@@ -1,5 +1,5 @@
 [Unit]
-Description=Run my update notification script every hour.
+Description=Run my update notification script every week.
 
 [Timer]
 OnCalendar=weekly
