@@ -25,7 +25,7 @@ lon_file=$coordinates_dir/lon
 
 if not [ "$(find "$coordinates_dir" | wc -l)" -eq 3 ]; then
 	zenity --info --text "Looks like you haven't added your coordinates."
-	register_coordinates.sh
+	"$HOME/.local/bin/register_coordinates.sh"
 fi
 
 # shellcheck disable=SC2016
