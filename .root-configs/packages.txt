@@ -5,9 +5,11 @@ alass-git
 alsa-firmware
 alsa-tools
 alsa-utils
+amdvlk
 android-file-transfer
 android-platform
 anki-bin
+anydesk-bin
 appmenu-gtk-module
 asoundconf
 asp
@@ -23,6 +25,8 @@ bind
 binutils
 bison
 bitwarden
+bleachbit
+blender
 bottom
 cambalache-git
 cargo-watch
@@ -30,6 +34,7 @@ ccls
 cheese
 clj-kondo-bin
 cljstyle-bin
+cloc
 clojure
 clojure-lsp-bin
 cmake
@@ -70,6 +75,7 @@ flameshot
 flex
 foot
 frcursive
+freecad
 freetube
 fuzzel
 fzf
@@ -95,6 +101,7 @@ gnome-tweaks
 gnu-free-fonts
 gnucash
 gobject-introspection
+godot
 gparted
 gperf
 gradle
@@ -130,7 +137,9 @@ lazygit
 leiningen
 libayatana-appindicator
 libpulse
+librecad
 libreoffice-fresh
+libressl
 librewolf-bin
 libtool
 libxcrypt-compat
@@ -154,6 +163,7 @@ mediainfo
 meson
 mgba-qt
 mindustry-bin
+mkinitcpio-numlock
 mold
 mpv
 multimc-bin
@@ -176,8 +186,8 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 obs-studio
-obsidian
 oil
+oksh
 opencl-mesa
 openjdk-src
 openjdk17-src
@@ -189,6 +199,7 @@ otf-russkopis
 pacfinder
 pacman
 pacman-contrib
+pandoc
 paru-bin
 patch
 pavucontrol
@@ -212,6 +223,7 @@ protonmail-bridge-bin
 pv
 python-j2cli
 python-lsp-server
+python-pip
 python-pyalsa
 python-pynvim
 qemu-desktop
@@ -237,11 +249,14 @@ sdparm
 sed
 servo-latest
 session-desktop-bin
+shellcheck
+shfmt
 shntool
 shotcut
 showmethekey
 signal-desktop
 signato-font
+signify
 slurp
 smartmontools
 sonic-visualiser
@@ -324,6 +339,7 @@ xorg-bdftopcf
 xorg-xeyes
 xorg-xwayland
 xorg-xwininfo
+xorgproto
 yt-dlp
 zathura
 zathura-pdf-mupdf
