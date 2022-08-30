@@ -14,19 +14,23 @@ dbg "\$HOME" "$HOME"
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 dbg "\$XDG_DATA_HOME" "$XDG_DATA_HOME"
 
-coordinates_file=$XDG_DATA_HOME/coordinates
+coordinates_dir=$XDG_DATA_HOME/coordinates
 
-if not [ -e "$coordinates_file" ]; then
-	zenity --info --text "Looks like you haven't added your coordinates"
-	echo \
-		"-l" \
-		"$(zenity --entry --text "Put in your latitude (a number from -180 to +180).")" \
-		"-L" \
-		"$(zenity --entry --text "Put in your longitude (a number from -180 to +180).")" \
-		>"$coordinates_file"
+if not [ -e "$coordinates_dir" ]; then
+	mkdir "$coordinates_dir"
+fi
+
+lat_file=$coordinates_dir/lat
+lon_file=$coordinates_dir/lon
+
+if not [ "$(find "$coordinates_dir" | wc -l)" -eq 3 ]; then
+	zenity --info --text "Looks like you haven't added your coordinates."
+	register_coordinates.sh
 fi
 
 # shellcheck disable=SC2016
-dbg '$(cat "$coordinates_file")' "$(cat "$coordinates_file")"
+dbg '$(cat "$lat_file")' "$(cat "$lat_file")"
+# shellcheck disable=SC2016
+dbg '$(cat "$lon_file")' "$(cat "$lon_file")"
 
-wlsunset -T 6500 -t 4000 "$(cat "$coordinates_file")"
+wlsunset -T 6500 -t 4000 -l "$(cat "$lat_file")" -L "$(cat "$lon_file")"
