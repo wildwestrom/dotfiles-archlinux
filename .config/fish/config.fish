@@ -98,7 +98,6 @@ alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
 # CLEANUP
 set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
-set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 set -gx XCURSOR_PATH "/usr/share/icons:$XDG_DATA_HOME/icons"
 set -gx IPFS_PATH "$XDG_DATA_HOME/ipfs"
 set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
