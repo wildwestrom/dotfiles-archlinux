@@ -185,6 +185,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 npm
+nwg-look-bin
 obs-studio
 oil
 oksh
@@ -307,6 +308,7 @@ ttf-sarasa-gothic
 ttf-victor-mono
 tzclock
 ueberzug
+ufw
 unbound
 ungoogled-chromium
 unrar
