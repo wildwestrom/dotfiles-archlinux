@@ -17,7 +17,7 @@ input * xkb_numlock enable
 include $XDG_CONFIG_HOME/sway/config.d/*.conf
 
 # set the wallpaper
-output * bg $bg fit #FFFFFF
+output * bg $bg fit #2D3436
 
 # Focus on main monitor on startup
 exec focus output $laptop_monitor

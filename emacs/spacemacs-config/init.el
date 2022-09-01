@@ -174,7 +174,7 @@ This function should only modify configuration layer settings."
 		 ;; Note: In order to use dap-mode, you must have unzip installed on your system
 		 (rust :variables
 					 cargo-process--command-clippy--additional-args "-- -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo"
-					 fill-column 100
+           ;; TODO Figure out per-buffer/per-filetype/per-mode variables
 					 rust-backend 'lsp)
 
 		 (shell-scripts :variables
@@ -548,8 +548,8 @@ It should only modify the values of Spacemacs settings."
 	 ;; List of themes, the first of the list is loaded when spacemacs starts.
 	 ;; Press `SPC T n' to cycle to the next theme in the list (works great
 	 ;; with 2 themes variants, one dark and one light)
-	 dotspacemacs-themes '(doom-one-light
-												 doom-one)
+	 dotspacemacs-themes '(doom-one
+                         doom-one-light)
 
 	 ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
 	 ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -911,7 +911,7 @@ before packages are loaded."
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	;; Get dired to delete buffer upon exiting
 	;; There was another implementation, but when using it with swayhide,
-	;; it would spit me back to the terminal I launched emacsclient from.
+	;; it would spit be back to the terminal I launched emacsclient from.
 	(require 'dired)
 	(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 	(define-key dired-mode-map (kbd "^")
@@ -948,6 +948,11 @@ before packages are loaded."
 		 (spacemacs/toggle-visual-line-navigation-on)
 		 (visual-fill-column-mode 1)))
 
+  (add-hook
+   'markdown-mode-hook
+   (lambda ()
+     (setq-local show-trailing-whitespace nil)))
+
 	;; Make sure compilation buffers don't truncate lines
 	(add-hook
 	 'compilation-mode-hook
@@ -959,6 +964,11 @@ before packages are loaded."
 	 'cargo-process-mode-hook
 	 (lambda ()
 		 (visual-line-mode)))
+
+  (add-hook
+   'rust-mode-hook
+   (lambda ()
+     (set-fill-column 100)))
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1248,7 +1258,8 @@ before packages are loaded."
 	;;
 	;; Do not indent single ; comment characters
 	(add-hook 'clojure-mode-hook
-						(lambda () (setq-local comment-column 0)))
+            (lambda ()
+              (setq-local comment-column 0)))
 
 	;; Auto-indent code automatically
 	;; https://emacsredux.com/blog/2016/02/07/auto-indent-your-code-with-aggressive-indent-mode/

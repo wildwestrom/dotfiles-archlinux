@@ -30,6 +30,7 @@ dbg "BG File" "$current_bg"
 # shellcheck disable=SC2016
 dbg '$(cat "$birthday_file")' "$(cat "$birthday_file")"
 
-~/.local/bin/death-calendar svg "$(cat "$birthday_file")" --scale-factor=2 --shape=circle --lifespan-years=100 --ratios=1,1,6,2,shape >"$current_bg"
+~/.local/bin/death-calendar svg "$(cat "$birthday_file")" --lifespan-years=75 --shape=circle --ratios=1,1,6,2,shape --scale-factor=2 --color-primary=64727D --color-secondary="#2D3436" -o "$current_bg"
+#~/.local/bin/death-calendar svg "$(cat "$birthday_file")" --scale-factor=2 --shape=circle --lifespan-years=100 --ratios=1,1,6,2,shape >"$current_bg"
 killall --signal 15 swaybg
-swaybg -i "$current_bg" -m fit -c '#FFFFFF' &
+swaybg -i "$current_bg" -m fit -c '#2D3436' &

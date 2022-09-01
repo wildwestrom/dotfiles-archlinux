@@ -1,9 +1,4 @@
-set $gtk-theme Adwaita
-set $icon-theme Adwaita
-set $cursor-theme Adwaita
-set $gui-font Noto Sans 11
 set $term-font JetBrainsMono 14
-set $color-preference prefer-light
 
 set $color0  #141a1b
 set $color1  #282a2b

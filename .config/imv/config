@@ -1,5 +1,5 @@
 [options]
-background = DDDDDD
+background = 282C34
 scaling_mode = shrink
 overlay_font = Jetbrains Mono:14
 overlay_text = "$(basename $imv_current_file)"

@@ -1,5 +1,5 @@
-exec /usr/local/bin/light -S 20
-exec gtkgreet -l; swaymsg exit
+exec /usr/local/bin/light -S 50
+exec gtkgreet -l -s /etc/greetd/style.css; swaymsg exit
 
 bindsym Mod4+shift+q exec swaynag \
 	-t warning \
