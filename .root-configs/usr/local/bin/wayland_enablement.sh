@@ -7,3 +7,6 @@ export ELM_ENGINE=wayland_egl
 export SDL_VIDEODRIVER=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export NO_AT_BRIDGE=1
+# I couldn't find any other solution to make GTK apps behave. If you can come up
+# with something better, please let me know.
+export GTK_THEME=Adwaita:dark
