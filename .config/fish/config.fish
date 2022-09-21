@@ -29,6 +29,7 @@ fish_add_path -a "/var/lib/flatpak/exports/bin"
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -gx KEYID "0x212B32E0CA23E526"
+alias switch-yubikey='gpg-connect-agent "scd serialno" "learn --force" /bye'
 
 # Screenshots
 set -gx SCREENSHOT_DIR "$HOME/images/screenshots"
@@ -65,7 +66,7 @@ set -gx NODE_PATH "$NPM_PACKAGES/lib/node_modules"
 set -gx MANPATH ":$NPM_PACKAGES/share/man"
 set -gx nvm_prefix $NVM_DIR
 set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
-fish_add_path -a "$NVM_DIR/versions/node/v17.9.0/bin/"
+fish_add_path -a "$XDG_DATA_HOME/npm/bin"
 set -gx PNPM_HOME "/home/main/.local/share/pnpm"
 fish_add_path -a "$PNPM_HOME"
 
