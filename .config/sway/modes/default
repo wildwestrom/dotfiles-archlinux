@@ -3,6 +3,7 @@
 #
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+Return exec gtk-launch $browser
+    bindsym $mod+Shift+p exec gtk-launch $private-browser
     bindsym $mod+Shift+e exec emacsclient -c
     bindsym $mod+Shift+f exec gtk-launch $file_manager
     bindsym $mod+Shift+y exec gtk-launch freetube

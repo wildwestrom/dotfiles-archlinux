@@ -731,7 +731,8 @@ It should only modify the values of Spacemacs settings."
 	 ;;   :size-limit-kb 1000)
 	 ;; When used in a plist, `visual' takes precedence over `relative'.
 	 ;; (default nil)
-	 dotspacemacs-line-numbers '(:relative nil
+	 dotspacemacs-line-numbers '(:relative t
+                               :visual nil
 															 :disabled-for-modes dired-mode
 																									 org-mode
 																									 markdown-mode

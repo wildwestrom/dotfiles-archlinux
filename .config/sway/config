@@ -19,6 +19,9 @@ include $XDG_CONFIG_HOME/sway/config.d/*.conf
 # set the wallpaper
 output * bg $bg fit #2D3436
 
+# clipboard manager
+exec wl-clip-persist --clipboard both
+
 # Focus on main monitor on startup
 exec focus output $laptop_monitor
 bindswitch --reload --locked lid:on output $laptop disable

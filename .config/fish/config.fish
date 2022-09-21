@@ -28,6 +28,7 @@ fish_add_path -a "/var/lib/flatpak/exports/bin"
 # GPG
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -gx KEYID "0x212B32E0CA23E526"
 
 # Screenshots
 set -gx SCREENSHOT_DIR "$HOME/images/screenshots"
@@ -58,6 +59,7 @@ fish_add_path -a "/opt/android-sdk/platform-tools"
 
 # Node.js
 set -gx NVM_DIR "$XDG_DATA_HOME/nvm"
+set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 set -gx NPM_PACKAGES "$XDG_DATA_HOME/npm-packages"
 set -gx NODE_PATH "$NPM_PACKAGES/lib/node_modules"
 set -gx MANPATH ":$NPM_PACKAGES/share/man"
@@ -91,6 +93,7 @@ set -gx GOPATH "$XDG_DATA_HOME/go"
 set -gx PYTHONSTARTUP "$XDG_CONFIG_HOME/python/pythonrc"
 
 # Docker
+set -gx DOCKER_HOST "unix://$XDG_RUNTIME_DIR/docker.sock"
 set -gx DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
 set -gx MACHINE_STORAGE_PATH "$XDG_DATA_HOME/docker-machine"
 
@@ -152,7 +155,7 @@ alias barrc="$EDITOR $XDG_CONFIG_HOME/waybar/config"
 alias vimrc="$EDITOR $XDG_CONFIG_HOME/nvim/"
 
 alias su="su -s /bin/fish"
-alias proc="ps aux | grep -v grep | grep "
+alias proc="ps aux | rg -v '\srg\s-\.' | rg"
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11"
 alias magit="swayhide emacsclient -c --eval '(magit-status-here)'"
 
@@ -161,7 +164,7 @@ alias mpv="swayhide mpv"
 alias mpa="command mpv --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
-alias yt-dlp="yt-dlp -P ~/downloads"
+alias yt-dlp="yt-dlp -P ~/tmp"
 
 # Arch Specific
 alias remove-orphans="paru -Rns (paru -Qtdq)"

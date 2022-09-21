@@ -2,6 +2,7 @@
 [user]
 	name = Christian Westrom
 	email = c.westrom@westrom.xyz
+	signingkey = 212B32E0CA23E526
 [cola]
 	startupmode = folder
 	spellcheck = false
@@ -21,6 +22,6 @@
 [color]
 	ui = auto
 [commit]
-	gpgsign = true
+	gpgSign = true
 [gpg]
 	program = /usr/bin/gpg
