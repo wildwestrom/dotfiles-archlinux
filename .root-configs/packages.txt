@@ -18,6 +18,7 @@ babashka-bin
 base
 bash-language-server
 bat
+bear
 bind
 binutils
 bison
@@ -44,6 +45,7 @@ docker
 docker-compose
 docker-machine
 docker-rootless-extras
+dos2unix
 dotnet-sdk
 dust
 efibootmgr
@@ -69,7 +71,7 @@ flameshot
 flex
 foot
 freecad
-freetube-bin
+freetube
 fuzzel
 fzf
 gawk
@@ -155,12 +157,14 @@ man-pages
 mediainfo
 meson
 mgba-qt
+micro
 mindustry-bin
 mkinitcpio-numlock
 mold
 mpv
 multimc-bin
 musescore
+nano
 nasm
 native-image-jdk17-bin
 nemo
@@ -233,7 +237,6 @@ rime-emoji
 ripgrep
 rlwrap
 rsync
-rust-analyzer
 rustup
 sd
 sdparm
@@ -291,7 +294,8 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 the_silver_searcher
-thunderbird-bin
+thunderbird
+tofi-git
 tokei
 torbrowser-launcher
 transmission-gtk
