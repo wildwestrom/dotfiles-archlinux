@@ -67,7 +67,7 @@ set -gx MANPATH ":$NPM_PACKAGES/share/man"
 set -gx nvm_prefix $NVM_DIR
 set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 fish_add_path -a "$XDG_DATA_HOME/npm/bin"
-set -gx PNPM_HOME "/home/main/.local/share/pnpm"
+set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 fish_add_path -a "$PNPM_HOME"
 
 ## Haskell
