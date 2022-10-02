@@ -167,6 +167,15 @@ alias imv="swayhide imv"
 alias zathura="swayhide zathura"
 alias yt-dlp="yt-dlp -P ~/tmp"
 
+function mkcd
+    if test (count $argv) -gt 1
+        echo "Only one file path allowed."
+    else
+        mkdir $argv[1] && cd $argv[1]
+        echo "moved into directory '$argv[1]'"
+    end
+end
+
 # Arch Specific
 alias remove-orphans="paru -Rns (paru -Qtdq)"
 
