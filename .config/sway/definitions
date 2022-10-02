@@ -28,7 +28,7 @@ exec swayidle -w \
 #
 set $term foot
 set $browser librewolf
-set $private-browser librewolf-private
+set $private-browser librewolf --private-window
 set $file_manager nemo
 
 # launcher/menu
