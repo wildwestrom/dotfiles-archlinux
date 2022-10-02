@@ -237,6 +237,7 @@ rime-emoji
 ripgrep
 rlwrap
 rsync
+rust-analyzer
 rustup
 sd
 sdparm
