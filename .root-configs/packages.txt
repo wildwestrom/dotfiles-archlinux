@@ -139,7 +139,6 @@ light
 lingot
 linux
 linux-firmware
-linux-hardened
 linux-headers
 lld
 lldb
