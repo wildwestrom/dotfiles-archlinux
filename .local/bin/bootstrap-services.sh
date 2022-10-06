@@ -4,6 +4,8 @@ sudo unbound-control-setup
 sudo resolvconf -u
 sudo systemctl enable NetworkManager greetd unbound roothints.timer
 
+gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
+
 echo "Testing to see if unbound works:"
 echo "  OK case:"
 unbound-host -C /etc/unbound/unbound.conf -v sigok.verteiltesysteme.net
