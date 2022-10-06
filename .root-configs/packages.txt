@@ -50,8 +50,8 @@ dotnet-sdk
 dust
 efibootmgr
 element-desktop
-emacs-gcc-wayland-devel-bin
 emacs-libvterm-git
+emacs-pgtk-native-comp-git
 evince
 exa
 fcitx5
@@ -156,7 +156,6 @@ mediainfo
 meson
 mgba-qt
 micro
-mindustry-bin
 mkinitcpio-numlock
 mold
 mpv
@@ -223,6 +222,7 @@ python-pip
 python-pyalsa
 python-pynvim
 qemu-desktop
+qemu-system-riscv
 qjackctl
 qpwgraph
 qsynth
