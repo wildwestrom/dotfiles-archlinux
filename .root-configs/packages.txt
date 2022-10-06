@@ -38,6 +38,7 @@ clojure-lsp-bin
 cmake
 cmatrix
 code
+cronie
 czkawka-gui-bin
 dconf-editor
 devhelp
