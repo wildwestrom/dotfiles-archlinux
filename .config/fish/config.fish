@@ -51,7 +51,6 @@ set -gx TEXMFVAR "$XDG_CACHE_HOME/texlive/texmf-var"
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
 set -gx GRADLE_USER_HOME "$XDG_DATA_HOME/gradle"
 set -gx LEIN_HOME "$XDG_DATA_HOME/lein"
-set -gx _JAVA_OPTIONS "-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 
 # Android
 set -gx ANDROID_HOME "$XDG_DATA_HOME/android"
