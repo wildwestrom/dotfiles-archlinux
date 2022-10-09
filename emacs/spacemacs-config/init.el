@@ -76,25 +76,15 @@ This function should only modify configuration layer settings."
 		 ;; `g r' menu in Emacs normal state
 		 multiple-cursors
 
+		 ;; Visual file manager - `SPC p t'
+		 neotree
+
 		 ;; (ivy :variables
 		 ;;      ;; removes annoying caret (^) on M-x
 		 ;;      ivy-initial-inputs-alist nil)
 
 		 (helm :variables
 					 helm-follow-mode-persistent t)
-
-		 ;; Visual file manager - `SPC p t'
-		 ;; treemacs-no-png-images t removes file and directory icons
-		 (treemacs :variables
-							 treemacs-lock-width t
-							 treemacs-width 30
-							 treemacs-indentation 1
-							 treemacs-use-all-the-icons-theme t
-							 treemacs-space-between-root-nodes nil
-							 treemacs-use-scope-type 'Perspectives
-							 treemacs-use-filewatch-mode t
-							 treemacs-use-follow-mode t
-							 )
 
 		 ;; spacemacs-layouts layer added to set variables
 		 ;; SPC TAB restricted to current layout buffers
