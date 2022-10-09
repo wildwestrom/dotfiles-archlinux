@@ -39,6 +39,7 @@ cmake
 cmatrix
 code
 cronie
+crow-translate
 czkawka-gui-bin
 dconf-editor
 devhelp
