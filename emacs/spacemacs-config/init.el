@@ -565,7 +565,8 @@ It should only modify the values of Spacemacs settings."
 	 ;; Point size is recommended, because it's device independent. (default 10.0)
 	 ;; Comment for recording mode
 	 dotspacemacs-default-font (let ((fonts '("JetBrains Mono"
-																						"Sarasa Mono J")))
+																						"Sarasa Mono J"
+																						"Sarasa Mono K")))
 															 (mapcar (lambda (font)
 																				 `(,font
 																					 :size 10.0
@@ -939,12 +940,6 @@ before packages are loaded."
 
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	;; Global config for all text buffers.
-	(add-hook
-	 'org-mode-hook
-	 (lambda ()
-		 (spacemacs/toggle-visual-line-navigation-on)
-		 (visual-fill-column-mode 1)))
-
   (add-hook
    'markdown-mode-hook
    (lambda ()
@@ -1217,13 +1212,14 @@ before packages are loaded."
 	;;
 	;; customize org-mode's checkboxes with unicode symbols
 	(add-hook
-	 'org-mode-hook
-	 (lambda ()
-		 "Beautify Org Checkbox Symbol"
-		 (push '("[ ]" . "☐") prettify-symbols-alist)
-		 (push '("[X]" . "☑" ) prettify-symbols-alist)
-		 (push '("[-]" . "❍" ) prettify-symbols-alist)
-		 (prettify-symbols-mode)))
+		'org-mode-hook
+		(lambda ()
+			"Beautify Org Checkbox Symbol"
+			(spacemacs/toggle-visual-line-navigation-on)
+			(push '("[ ]" . "☐") prettify-symbols-alist)
+			(push '("[X]" . "☑" ) prettify-symbols-alist)
+			(push '("[-]" . "❍" ) prettify-symbols-alist)
+			(prettify-symbols-mode)))
 
 	(with-eval-after-load 'ox-latex
 		(add-to-list 'org-latex-classes
