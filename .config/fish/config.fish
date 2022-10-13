@@ -3,39 +3,39 @@
 # Remove default greeing
 set fish_greeting
 
-# Editors/Readers
-set -gx EDITOR "swayhide emacsclient -c"
-# set -gx EDITOR "nvim"
-
-set -gx READER "bat"
-
-# Man Page Reader
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
 # XDG_DIRS
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
+# Editors/Readers
+# set -gx EDITOR "swayhide neovide --nofork"
+set -gx EDITOR "swayhide emacsclient -c"
+
+set -gx READER bat
+
+# Man Page Reader
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 ### PATH
 # User Path
 fish_add_path -a "$HOME/.local/bin"
 
 # Flatpak Path
-fish_add_path -a "/var/lib/flatpak/exports/bin"
+fish_add_path -a /var/lib/flatpak/exports/bin
 
 # GPG
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-set -gx KEYID "0x212B32E0CA23E526"
+set -gx KEYID 0x212B32E0CA23E526
 alias switch-yubikey='gpg-connect-agent "scd serialno" "learn --force" /bye'
 
 # Screenshots
 set -gx SCREENSHOT_DIR "$HOME/images/screenshots"
 
 # pass
-set -gx PASSWORD_STORE_DIR "XDG_DATA_HOME/pass"
+set -gx PASSWORD_STORE_DIR "$XDG_DATA_HOME/pass"
 
 # wget
 alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
@@ -55,7 +55,7 @@ set -gx LEIN_HOME "$XDG_DATA_HOME/lein"
 # Android
 set -gx ANDROID_HOME "$XDG_DATA_HOME/android"
 set -gx ANDROID_SDK_HOME "$XDG_CONFIG_HOME/android"
-fish_add_path -a "/opt/android-sdk/platform-tools"
+fish_add_path -a /opt/android-sdk/platform-tools
 
 # Node.js
 set -gx NVM_DIR "$XDG_DATA_HOME/nvm"
@@ -105,7 +105,7 @@ set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
 set -gx XCURSOR_PATH "/usr/share/icons:$XDG_DATA_HOME/icons"
 set -gx IPFS_PATH "$XDG_DATA_HOME/ipfs"
 set -gx NOTMUCH_CONFIG "$XDG_CONFIG_HOME/notmuch-config"
-set -gx KDEHOME "XDG_CONFIG_HOME/kde"
+set -gx KDEHOME "$XDG_CONFIG_HOME/kde"
 set -gx LESSHISTFILE "$XDG_CACHE_HOME/less/history"
 set -gx ALSA_CONFIG_PATH "$XDG_CONFIG_HOME/alsa/asoundrc"
 set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
@@ -189,7 +189,7 @@ end
 
 # Vi bindings
 function fish_user_key_bindings
-    if test -n "$INSIDE_EMACS"
+    if test -n "$INSIDE_EMACS" || test -n "$NVIM"
         fish_default_key_bindings
     else
         fish_vi_key_bindings
