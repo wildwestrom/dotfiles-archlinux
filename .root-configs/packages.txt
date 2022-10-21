@@ -54,7 +54,6 @@ efibootmgr
 element-desktop
 emacs-libvterm-git
 emacs-pgtk-native-comp-git
-evince
 exa
 fcitx5
 fcitx5-configtool
@@ -80,18 +79,14 @@ gawk
 gazou-git
 gcc
 gdb
-gedit
 gettext
 ghcup-hs-bin
+gimp-devel
 git
 github-cli
 glfw-wayland
 gnome-calculator
-gnome-disk-utility
-gnome-font-viewer
 gnome-keyring
-gnome-logs
-gnome-maps
 gnucash
 gobject-introspection
 godot
@@ -110,7 +105,6 @@ gst-plugin-pipewire
 gtk-vnc
 gtk4-docs
 gzip
-helix
 helvum
 hopenpgp-tools
 hunspell-en_us
@@ -163,12 +157,10 @@ mold
 mpv
 multimc-bin
 musescore
-mypaint
 nano
 nasm
 native-image-jdk17-bin
 nemo
-nemo-fileroller
 neofetch
 neovide
 neovim
@@ -336,7 +328,6 @@ wlsunset
 wofi
 xdg-desktop-portal-wlr
 xdg-ninja-git
-xdg-user-dirs-gtk
 xorg-bdftopcf
 xorg-xeyes
 xorg-xwayland
