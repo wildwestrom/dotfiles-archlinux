@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, JetBrainsMono, JetBrains Mono Nerd Font Mono, monospace;
+    font-family: FontAwesome, Noto Sans CJK JP, JetBrains Mono Nerd Font Mono, monospace;
     font-size: 13px;
 }
 
