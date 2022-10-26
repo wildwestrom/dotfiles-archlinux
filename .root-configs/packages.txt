@@ -70,6 +70,7 @@ fish
 fisher
 flameshot
 flex
+font-manager
 foot
 freecad
 freetube
