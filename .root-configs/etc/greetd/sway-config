@@ -1,4 +1,4 @@
-exec /usr/local/bin/light -S 35
+exec /usr/local/bin/light -S 10
 exec gtkgreet -l; swaymsg exit
 
 bindsym Mod4+shift+q exec swaynag \
