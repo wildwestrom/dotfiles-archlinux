@@ -168,8 +168,8 @@ This function should only modify configuration layer settings."
 					 rust-backend 'lsp)
 
 		 (shell-scripts :variables
-										insert-shebang-track-ignored-filename nil
-										shell-scripts-format-on-save t)
+                    insert-shebang-track-ignored-filename nil
+                    shell-scripts-format-on-save t)
 
 		 (sql :variables
 					sql-backend 'lsp)
