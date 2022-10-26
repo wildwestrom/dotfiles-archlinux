@@ -181,6 +181,7 @@ openjdk-src
 openjdk17-src
 openresolv
 opus-tools
+otf-font-awesome
 otf-frb-american-cursive
 otf-mathilde
 otf-russkopis
