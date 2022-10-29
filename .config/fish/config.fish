@@ -166,6 +166,8 @@ alias imv="swayhide imv"
 alias zathura="swayhide zathura"
 alias yt-dlp="yt-dlp -P ~/tmp"
 
+alias tmsym="wl-copy ™"
+
 function mkcd
     if test (count $argv) -gt 1
         echo "Only one file path allowed."
