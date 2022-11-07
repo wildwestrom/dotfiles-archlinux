@@ -1,4 +1,4 @@
 image=/home/main/.local/share/current-bg
-scaling=fit
+scaling=fill
 color=2D3436
 ignore-empty-password
