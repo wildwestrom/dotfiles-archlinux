@@ -2,7 +2,13 @@
 
 sudo unbound-control-setup
 sudo resolvconf -u
-sudo systemctl enable NetworkManager greetd unbound roothints.timer snap-sync-root.timer snap-sync-home.timer
+sudo systemctl enable \
+	NetworkManager \
+	greetd unbound \
+	roothints.timer \
+	snap-sync-root.timer \
+	snap-sync-home.timer \
+	libvirtd
 
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 
