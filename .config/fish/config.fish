@@ -9,10 +9,11 @@ set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
-# Editors/Readers
+# Editor
 # set -gx EDITOR "swayhide neovide --nofork"
 set -gx EDITOR "swayhide emacsclient -c"
 
+# Reader
 set -gx READER bat
 
 # Man Page Reader
@@ -100,6 +101,9 @@ set -gx MACHINE_STORAGE_PATH "$XDG_DATA_HOME/docker-machine"
 # SVN
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
+# C#/Dotnet
+set -gx NUGET_PACKAGES "$XDG_CACHE_HOME/NuGetPackages"
+
 # CLEANUP
 set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
 set -gx XCURSOR_PATH "/usr/share/icons:$XDG_DATA_HOME/icons"
@@ -165,6 +169,7 @@ alias mpa="command mpv --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
 alias yt-dlp="yt-dlp -P ~/tmp"
+alias gcd1="git clone --depth 1"
 
 alias tmsym="wl-copy ™"
 
