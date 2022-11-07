@@ -18,7 +18,6 @@ babashka-bin
 base
 bash-language-server
 bat
-bcwc-pcie-git
 bind
 binutils
 bison
@@ -42,6 +41,7 @@ crow-translate
 czkawka-gui-bin
 dconf-editor
 devhelp
+dnsmasq
 docker
 docker-compose
 docker-machine
@@ -85,6 +85,7 @@ gimp-devel
 git
 github-cli
 glfw-wayland
+gnome-boxes
 gnome-calculator
 gnome-keyring
 gnucash
@@ -134,6 +135,7 @@ lldb
 lldb-mi-git
 llvm
 lua-language-server
+luarocks
 m4
 make
 mako
@@ -278,6 +280,7 @@ ungoogled-chromium-bin
 unrar
 unzip
 v4l2loopback-dkms
+v4l2loopback-utils
 virt-manager
 vscode-css-languageserver
 vscode-html-languageserver
@@ -292,7 +295,6 @@ wine-mono
 wireless-regdb
 wireplumber
 wireplumber-docs
-wkhtmltopdf
 wl-clip-persist-git
 wl-clipboard
 wl-color-picker
