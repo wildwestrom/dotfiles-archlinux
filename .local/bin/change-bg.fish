@@ -20,7 +20,14 @@ if test -z $IMAGE
     exit 1
 end
 
-/usr/bin/cp "$IMAGE" $XDG_DATA_HOME/current-bg
+argparse --name=change-bg 'm/mode=' -- $argv
+
+if set -q _flag_m
+    set mode $_flag_m
+else
+    set mode 'fit'
+end
+
+command cp "$IMAGE" $XDG_DATA_HOME/current-bg
 pkill --signal 15 swaybg
-swaybg -i ~/.local/share/current-bg -m fill &
-# > /dev/null 2>&1
+swaybg -i ~/.local/share/current-bg -m $mode >/dev/null 2>&1 &
