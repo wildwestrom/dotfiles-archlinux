@@ -25,7 +25,6 @@
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec swaynag -t warning -y overlay -m 'What do you want to do?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'swaymsg exit' -z 'Lock' 'swaylock -e -f'
 
-
 #
 # Layout stuff:
 #
@@ -103,7 +102,6 @@
     bindsym $mod+Shift+0 move container to workspace $ws10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-
 
 # OCR Shortcut
 bindsym Mod1+f exec '~/.local/bin/sg-ocr.fish -s'
