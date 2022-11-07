@@ -117,7 +117,6 @@ This function should only modify configuration layer settings."
 						c-c++-backend 'lsp-clangd
 						c-c++-enable-clang-support t)
 		 cmake
-
 		 meson
 
 		 ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
@@ -136,6 +135,8 @@ This function should only modify configuration layer settings."
 							cider-eldoc-display-for-symbol-at-point nil
 							)
 
+     csharp
+
 		 emacs-lisp
 
 		 ;; (go :variables
@@ -153,8 +154,10 @@ This function should only modify configuration layer settings."
 		 (lua :variables
 					lua-backend 'lua
 					lua-lsp-server 'lua-language-server
+          lsp-clients-lua-language-server-install-dir "/usr/lib/lua-language-server/"
 					lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"
 					lsp-clients-lua-language-server-main-location "/usr/lib/lua-language-server/bin/main.lua"
+          lsp-clients-lua-language-server-args '("--logpath" "/tmp/lua-ls-log/")
 					)
 
 		 ;; python
