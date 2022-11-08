@@ -73,10 +73,10 @@ flex
 font-manager
 foot
 freecad
-freetube-bin
 fuzzel
 fzf
 gawk
+gazou-git
 gcc
 gdb
 gettext
@@ -87,6 +87,7 @@ github-cli
 glfw-wayland
 gnome-boxes
 gnome-calculator
+gnome-disk-utility
 gnome-keyring
 gnucash
 gobject-introspection
