@@ -104,5 +104,5 @@
     # We just use 1-10 as the default.
 
 # OCR Shortcut
-bindsym Mod1+f exec '~/.local/bin/sg-ocr.fish -s'
-bindsym Mod1+b exec '~/.local/bin/sg-ocr.fish'
+bindsym Mod1+f exec '~/.local/bin/jp-ocr.fish -s -v'
+bindsym Mod1+b exec '~/.local/bin/jp-ocr.fish'

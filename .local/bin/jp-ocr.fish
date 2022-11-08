@@ -4,7 +4,7 @@ argparse h/help s/slurp l/loop v/vertical -- $argv
 
 # Display usage/help.
 if set -q _flag_h
-    echo "Usage: sg-ocr [OPTION]"
+    echo "Usage: jp-ocr [OPTION]"
     echo -e "Tool for copying an area of the screen and reading text.\n"
     echo -e "  -h, --help\tDisplay this help menu."
     echo -e "  -s, --slurp\tCapture a specific area."
@@ -16,18 +16,18 @@ end
 # If the flag is set, then you can pick an area.
 if set -q _flag_s
     set sg_capture_area (slurp)
-    echo $sg_capture_area > /tmp/sg_cap_area
+    echo $sg_capture_area > /tmp/ocr_cap_area
 # If the flag is not set...
 else
     # If /tmp/sg_cap_area exists
-    if test -e /tmp/sg_cap_area
+    if test -e /tmp/ocr_cap_area
         # Set the area to the file
-        set sg_capture_area (cat /tmp/sg_cap_area)
+        set sg_capture_area (cat /tmp/ocr_cap_area)
     else
         # set the area to a selection
         set sg_capture_area (slurp)
         # and save the area to that file
-        echo $sg_capture_area > /tmp/sg_cap_area
+        echo $sg_capture_area > /tmp/ocr_cap_area
     end
 end
 
@@ -41,7 +41,7 @@ end
 # The OCR Function.
 function ocr
     # Capture an area of the screen.
-    grim -g $sg_capture_area -t png /tmp/sg-img
+    grim -g $sg_capture_area -t png /tmp/ocr-img
     # grim -g $sg_capture_area -t png /dev/stdout \
     # | magick \
     #     fd:0 \
@@ -49,9 +49,9 @@ function ocr
     #     -level 0%,0%,1.0 \
     #     -colorspace RGB \
     #     -format png \
-    #     /tmp/sg-img
+    #     /tmp/ocr-img
     # Use gazou's amazing OCR and copy to Wayland clipboard.
-    gazou $direction /tmp/sg-img | tr -d "\n" | wl-copy
+    gazou $direction /tmp/ocr-img | tr -d "\n" | wl-copy
 end
 
 ### Main Entry Point ###
