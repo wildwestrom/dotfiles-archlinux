@@ -31,7 +31,7 @@ dbg "BG File" "$current_bg"
 dbg '$(cat "$birthday_file")' "$(cat "$birthday_file")"
 
 # ~/.local/bin/death-calendar img "$(cat "$birthday_file")" --lifespan-years=100 --scale-factor=2 --color-primary=64727D --color-secondary=2D3436 -o "$current_bg" log --width-height-ratio=8
-~/.local/bin/death-calendar img "$(cat "$birthday_file")" --lifespan-years=100 -o "$current_bg" --scale-factor=2 --color-primary=64727D --color-secondary=2D3436 grid --stroke=1 --padding=1 --length=6 --border=2 --border-unit=shape --week-shape=circle
+~/.local/bin/death-calendar img "$(cat "$birthday_file")" --lifespan-years=100 -o "$current_bg" --scale-factor=2 --color-primary=64727D --color-secondary=2D3436 grid --stroke=1 --padding=1 --length=6 --border=3 --border-unit=shape --week-shape=circle
 
 killall --signal 15 swaybg
-swaybg -i "$current_bg" -m fit -c '#2D3436' &
+swaybg -i "$current_bg" -m fill -c '#2D3436' &
