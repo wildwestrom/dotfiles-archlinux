@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sudo cp -vr ~/.root-configs/* /
-sudo chown -R greeter /etc/greetd
+sudo rsync -vr ~/.root-configs/* /
+sudo chown -vR greeter /etc/greetd
