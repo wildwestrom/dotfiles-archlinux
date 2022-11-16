@@ -103,6 +103,7 @@ alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
 # C#/Dotnet
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME/NuGetPackages"
+fish_add_path -a "$HOME/.dotnet/tools"
 
 # CLEANUP
 set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
