@@ -4,11 +4,13 @@ sudo unbound-control-setup
 sudo resolvconf -u
 sudo systemctl enable \
 	NetworkManager \
-	greetd unbound \
+	greetd \
+	unbound \
 	roothints.timer \
 	snap-sync-root.timer \
 	snap-sync-home.timer \
-	libvirtd
+	libvirtd \
+	noisetorch-pipewire
 
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 
