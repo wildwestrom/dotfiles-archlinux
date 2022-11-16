@@ -144,7 +144,6 @@ alias rg='rg -.'
 alias ag='ag -a'
 alias cat="bat"
 alias less="bat"
-alias tree="tree -a"
 alias top="btm --color=default"
 alias htop="btm --color=default"
 alias grep="rg"
