@@ -101,8 +101,9 @@ set -gx MACHINE_STORAGE_PATH "$XDG_DATA_HOME/docker-machine"
 # SVN
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
-# C#/Dotnet
+# C#/Csharp/Dotnet
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME/NuGetPackages"
+set -gx OMNISHARPHOME "$XDG_CONFIG_HOME/omnisharp"
 fish_add_path -a "$HOME/.dotnet/tools"
 
 # CLEANUP
