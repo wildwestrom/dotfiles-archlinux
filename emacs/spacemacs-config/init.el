@@ -135,21 +135,21 @@ This function should only modify configuration layer settings."
               cider-eldoc-display-for-symbol-at-point nil
               )
 
-     csharp
+     ;; csharp
 
      emacs-lisp
 
      ;; (go :variables
      ;;     go-backend 'lsp)
 
-     (groovy :variables
-             groovy-backend 'lsp
-             groovy-lsp-jar-path "/usr/share/java/groovy-language-server/groovy-language-server-all.jar")
+     ;; (groovy :variables
+     ;;         groovy-backend 'lsp
+     ;;         groovy-lsp-jar-path "/usr/share/java/groovy-language-server/groovy-language-server-all.jar")
 
      (haskell :variables
               haskell-enable-hindent t)
 
-     java
+     ;; java
 
      (lua :variables
           lua-backend 'lua
@@ -197,8 +197,8 @@ This function should only modify configuration layer settings."
      (svelte :variables
              svelte-backend 'lsp)
 
-     elm
-     purescript
+     ;; elm
+     ;; purescript
 
      prettier
 
@@ -898,6 +898,13 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Wakatime
+  (use-package wakatime-mode
+    :ensure t
+    :config (global-wakatime-mode))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Thank you Daniel Nicolai! <@dalanicolai-5c40d41ad73408ce4fb51ea9:gitter.im>
   ;; Now I can paste all I want without it copying my selection that I'm replacing!
   (setq evil-kill-on-visual-paste nil)
@@ -1319,23 +1326,103 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(connection-local-criteria-alist
+		'(((:application tramp)
+				tramp-connection-local-default-system-profile tramp-connection-local-default-shell-profile)))
+ '(connection-local-profile-alist
+		'((tramp-connection-local-darwin-ps-profile
+				(tramp-process-attributes-ps-args "-acxww" "-o" "pid,uid,user,gid,comm=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" "-o" "state=abcde" "-o" "ppid,pgid,sess,tty,tpgid,minflt,majflt,time,pri,nice,vsz,rss,etime,pcpu,pmem,args")
+				(tramp-process-attributes-ps-format
+					(pid . number)
+					(euid . number)
+					(user . string)
+					(egid . number)
+					(comm . 52)
+					(state . 5)
+					(ppid . number)
+					(pgrp . number)
+					(sess . number)
+					(ttname . string)
+					(tpgid . number)
+					(minflt . number)
+					(majflt . number)
+					(time . tramp-ps-time)
+					(pri . number)
+					(nice . number)
+					(vsize . number)
+					(rss . number)
+					(etime . tramp-ps-time)
+					(pcpu . number)
+					(pmem . number)
+					(args)))
+			 (tramp-connection-local-busybox-ps-profile
+				 (tramp-process-attributes-ps-args "-o" "pid,user,group,comm=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" "-o" "stat=abcde" "-o" "ppid,pgid,tty,time,nice,etime,args")
+				 (tramp-process-attributes-ps-format
+					 (pid . number)
+					 (user . string)
+					 (group . string)
+					 (comm . 52)
+					 (state . 5)
+					 (ppid . number)
+					 (pgrp . number)
+					 (ttname . string)
+					 (time . tramp-ps-time)
+					 (nice . number)
+					 (etime . tramp-ps-time)
+					 (args)))
+			 (tramp-connection-local-bsd-ps-profile
+				 (tramp-process-attributes-ps-args "-acxww" "-o" "pid,euid,user,egid,egroup,comm=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" "-o" "state,ppid,pgid,sid,tty,tpgid,minflt,majflt,time,pri,nice,vsz,rss,etimes,pcpu,pmem,args")
+				 (tramp-process-attributes-ps-format
+					 (pid . number)
+					 (euid . number)
+					 (user . string)
+					 (egid . number)
+					 (group . string)
+					 (comm . 52)
+					 (state . string)
+					 (ppid . number)
+					 (pgrp . number)
+					 (sess . number)
+					 (ttname . string)
+					 (tpgid . number)
+					 (minflt . number)
+					 (majflt . number)
+					 (time . tramp-ps-time)
+					 (pri . number)
+					 (nice . number)
+					 (vsize . number)
+					 (rss . number)
+					 (etime . number)
+					 (pcpu . number)
+					 (pmem . number)
+					 (args)))
+			 (tramp-connection-local-default-shell-profile
+				 (shell-file-name . "/bin/sh")
+				 (shell-command-switch . "-c"))
+			 (tramp-connection-local-default-system-profile
+				 (path-separator . ":")
+				 (null-device . "/dev/null"))))
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   '(srefactor stickyfunc-enhance edit-indirect org-roam-ui yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vmd-mode vim-powerline vim-empty-lines-mode vi-tilde-fringe uuidgen use-package unkillable-scratch unicode-fonts unfill undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil treemacs-all-the-icons toml-mode toc-org tide terminal-here tagedit systemd symon symbol-overlay string-inflection string-edit sql-indent spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc smeargle slim-mode shfmt shell-pop scss-mode sass-mode rust-mode ron-mode restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters quickrun pug-mode psci psc-ide prettier-js popwin password-generator paradox ox-twbs ox-gfm ox-asciidoc overseer orgit-forge org-superstar org-roam org-rich-yank org-re-reveal org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file npm-mode nov nodejs-repl nameless mwim mvn multi-term multi-line mmm-mode meson-mode maven-test-mode markdown-toc magit-todos macrostep lsp-ui lsp-origami lsp-latex lsp-java lsp-haskell lorem-ipsum livid-mode link-hint keycast json-reformat json-navigator js2-refactor js-doc journalctl-mode jinja2-mode inspector insert-shebang info+ indent-guide impatient-mode hybrid-mode hungry-delete holy-mode hlint-refactor hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-rtags helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-hoogle helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-cider helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md gendoxy fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rust flycheck-rtags flycheck-pos-tip flycheck-package flycheck-haskell flycheck-elsa flycheck-elm flycheck-clj-kondo flycheck-bashate flx-ido fish-mode fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-tex evil-terminal-cursor-changer evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode doom-themes doom-modeline dockerfile-mode docker disaster dired-quick-sort diminish diff-hl devdocs define-word dante csv-mode cpp-auto-include company-ycmd company-web company-statistics company-shell company-rtags company-reftex company-quickhelp company-math company-lua company-emoji company-cabal company-c-headers company-auctex company-ansible command-log-mode column-enforce-mode color-identifiers-mode cmm-mode cmake-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu centered-cursor-mode ccls cargo browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile attrap ansible-doc ansible aggressive-indent adoc-mode ace-link ace-jump-helm-line ac-ispell))
+		'(srefactor stickyfunc-enhance edit-indirect org-roam-ui yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vmd-mode vim-powerline vim-empty-lines-mode vi-tilde-fringe uuidgen use-package unkillable-scratch unicode-fonts unfill undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil treemacs-all-the-icons toml-mode toc-org tide terminal-here tagedit systemd symon symbol-overlay string-inflection string-edit sql-indent spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc smeargle slim-mode shfmt shell-pop scss-mode sass-mode rust-mode ron-mode restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters quickrun pug-mode psci psc-ide prettier-js popwin password-generator paradox ox-twbs ox-gfm ox-asciidoc overseer orgit-forge org-superstar org-roam org-rich-yank org-re-reveal org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file npm-mode nov nodejs-repl nameless mwim mvn multi-term multi-line mmm-mode meson-mode maven-test-mode markdown-toc magit-todos macrostep lsp-ui lsp-origami lsp-latex lsp-java lsp-haskell lorem-ipsum livid-mode link-hint keycast json-reformat json-navigator js2-refactor js-doc journalctl-mode jinja2-mode inspector insert-shebang info+ indent-guide impatient-mode hybrid-mode hungry-delete holy-mode hlint-refactor hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-rtags helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-hoogle helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-cider helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md gendoxy fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rust flycheck-rtags flycheck-pos-tip flycheck-package flycheck-haskell flycheck-elsa flycheck-elm flycheck-clj-kondo flycheck-bashate flx-ido fish-mode fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-tex evil-terminal-cursor-changer evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode doom-themes doom-modeline dockerfile-mode docker disaster dired-quick-sort diminish diff-hl devdocs define-word dante csv-mode cpp-auto-include company-ycmd company-web company-statistics company-shell company-rtags company-reftex company-quickhelp company-math company-lua company-emoji company-cabal company-c-headers company-auctex company-ansible command-log-mode column-enforce-mode color-identifiers-mode cmm-mode cmake-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu centered-cursor-mode ccls cargo browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile attrap ansible-doc ansible aggressive-indent adoc-mode ace-link ace-jump-helm-line ac-ispell))
  '(safe-local-variable-values
-   '((major-mode . jsonc-mode)
-     (major-mode . jsonc)
-     (typescript-backend . tide)
-     (typescript-backend . lsp)
-     (javascript-backend . tide)
-     (javascript-backend . tern)
-     (javascript-backend . lsp)))
+		'((major-mode . jsonc-mode)
+			 (major-mode . jsonc)
+			 (typescript-backend . tide)
+			 (typescript-backend . lsp)
+			 (javascript-backend . tide)
+			 (javascript-backend . tern)
+			 (javascript-backend . lsp)))
  '(tab-always-indent 'complete)
+ '(wakatime-api-key "875efdd9-099d-4f7f-9bfa-ab4839c4717b")
+ '(wakatime-cli-path "/usr/bin/wakatime-cli")
  '(warning-suppress-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "JetBrains Mono" :foundry "JB" :slant normal :weight regular :height 98 :width normal))))
  '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t)
  '(mode-line ((t (:height 0.92))))
  '(mode-line-inactive ((t (:height 0.92)))))
