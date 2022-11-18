@@ -33,4 +33,4 @@ dbg '$(cat "$lat_file")' "$(cat "$lat_file")"
 # shellcheck disable=SC2016
 dbg '$(cat "$lon_file")' "$(cat "$lon_file")"
 
-wlsunset -T 6500 -t 4000 -l "$(cat "$lat_file")" -L "$(cat "$lon_file")"
+wlsunset -T 6500 -t 3000 -l "$(cat "$lat_file")" -L "$(cat "$lon_file")"
