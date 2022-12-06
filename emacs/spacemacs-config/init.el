@@ -373,7 +373,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(org-roam-ui fcitx)
+   dotspacemacs-additional-packages '(org-roam-ui fcitx wakatime-mode)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -898,7 +898,14 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Wakatime
+  ;; I don't know why this wasn't set,
+  ;; but this should solve the annoying problem
+  ;; of not being able to paste into emacs consitently.
+  (setq x-select-enable-primary t)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Wakatime programming language time tracker
   (use-package wakatime-mode
     :ensure t
     :config (global-wakatime-mode))
@@ -907,7 +914,7 @@ before packages are loaded."
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Thank you Daniel Nicolai! <@dalanicolai-5c40d41ad73408ce4fb51ea9:gitter.im>
   ;; Now I can paste all I want without it copying my selection that I'm replacing!
-  (setq evil-kill-on-visual-paste nil)
+  (setq-default evil-kill-on-visual-paste nil)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
