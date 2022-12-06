@@ -81,11 +81,8 @@ set -gx CARP_DIR "$HOME/code/community/Carp"
 
 # Rust
 set -gx CARGO_INCREMENTAL 1
-set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
-set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 fish_add_path -a "$CARGO_HOME/bin"
 alias clipme "cargo clippy -- -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo"
-alias clipme-restricted "cargo clippy -- -W clippy::all -W clippy::restriction -W clippy::pedantic -W clippy::nursery -W clippy::cargo -A clippy::needless-return"
 
 # Go
 set -gx GOPATH "$XDG_DATA_HOME/go"
