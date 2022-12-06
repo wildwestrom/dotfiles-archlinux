@@ -1,6 +1,6 @@
 [Default Applications]
 application/json=emacsclient.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-ZQ72R1.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-X76QW1.desktop
 image/png=imv-folder.desktop
 image/jpeg=imv-folder.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
@@ -18,10 +18,11 @@ application/x-shellscript=emacsclient.desktop
 image/svg+xml=imv-folder.desktop
 application/zip=org.gnome.FileRoller.desktop
 audio/flac=mpv.desktop
+application/xhtml+xml=librewolf.desktop
 
 [Added Associations]
 application/json=emacsclient.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-ZQ72R1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-ZQ72R1.desktop;userapp-Telegram Desktop-X76QW1.desktop;
 image/png=imv-folder.desktop;
 image/jpeg=imv-folder.desktop;imv.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
@@ -30,3 +31,4 @@ image/gif=imv-folder.desktop;
 application/x-shellscript=emacsclient.desktop;
 image/svg+xml=imv-folder.desktop;imv.desktop;
 audio/flac=mpv.desktop;
+application/xhtml+xml=librewolf.desktop;
