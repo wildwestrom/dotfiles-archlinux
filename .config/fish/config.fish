@@ -10,8 +10,8 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
 # Editor
-# set -gx EDITOR "swayhide neovide --nofork"
-set -gx EDITOR "swayhide emacsclient -c"
+set -gx EDITOR "swayhide neovide --nofork"
+# set -gx EDITOR "swayhide emacsclient -c"
 
 # Reader
 set -gx READER bat
