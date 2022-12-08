@@ -108,8 +108,7 @@ lvim.plugins = {
     end,
   },
   {
-    -- "n-shift/scratch.nvim",
-    "wildwestrom/scratch.nvim",
+    "n-shift/scratch.nvim",
     config = function()
       require("telescope").load_extension("scratch")
     end,
@@ -129,9 +128,11 @@ lvim.plugins = {
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
---
+
 -- Create a scratch buffer
-lvim.keys.normal_mode["<Leader>bs"] = ":Telescope scratch md<CR>"
+lvim.keys.normal_mode["<Leader>bs"] = ":ScratchNew md<CR>"
+-- Delete current buffer
+lvim.keys.normal_mode["<Leader>bd"] = ":BufferKill<CR>"
 
 -- TODO
 -- Figure out why highlighted text says highlighted even after I've completed the search
