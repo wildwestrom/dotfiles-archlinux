@@ -36,7 +36,16 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
+
+-- Terminal Stuff
+-- I possibly only want it like this when I'm in a Rust project.
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.direction = "vertical"
+-- I wish I open the terminal to a percentage of the buffer
+lvim.builtin.terminal.size = 60
+lvim.builtin.terminal.open_mapping = "<Leader>\'"
+
+-- Tree stuff
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
@@ -58,27 +67,15 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
 -- generic LSP settings
 
 -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-    "sumneko_lua",
-    "jsonls",
+  "sumneko_lua",
+  "jsonls",
 }
--- -- change UI setting of `LspInstallInfo`
--- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
--- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
--- lvim.lsp.installer.setup.ui.border = "rounded"
--- lvim.lsp.installer.setup.ui.keymaps = {
---     uninstall_server = "d",
---     toggle_server_expand = "o",
--- }
-
--- ---@usage disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = false
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
@@ -104,10 +101,19 @@ lvim.lsp.installer.setup.ensure_installed = {
 
 -- Additional Plugins
 lvim.plugins = {
-    {
-      "folke/trouble.nvim",
-      cmd = "TroubleToggle",
-    },
+  {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup()
+    end,
+  },
+  {
+    -- "n-shift/scratch.nvim",
+    "wildwestrom/scratch.nvim",
+    config = function()
+      require("telescope").load_extension("scratch")
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -123,3 +129,13 @@ lvim.plugins = {
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+--
+-- Create a scratch buffer
+lvim.keys.normal_mode["<Leader>bs"] = ":Telescope scratch md<CR>"
+
+-- TODO
+-- Figure out why highlighted text says highlighted even after I've completed the search
+
+
+-- TODO
+-- Get nvim to respect editorconfig settings

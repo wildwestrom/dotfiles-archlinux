@@ -156,7 +156,7 @@ alias termrc="$EDITOR $XDG_CONFIG_HOME/foot/foot.ini"
 alias swayrc="$EDITOR $XDG_CONFIG_HOME/sway/"
 alias kanshirc="$EDITOR $XDG_CONFIG_HOME/kanshi/config"
 alias barrc="$EDITOR $XDG_CONFIG_HOME/waybar/config"
-alias vimrc="$EDITOR $XDG_CONFIG_HOME/nvim/"
+alias vimrc="$EDITOR $XDG_CONFIG_HOME/lvim/config.lua"
 
 alias su="su -s /bin/fish"
 alias proc="ps u | head -n1 && ps aux | rg -v '\srg\s-\.' | rg"
@@ -196,7 +196,7 @@ end
 
 # Vi bindings
 function fish_user_key_bindings
-    if test -n "$INSIDE_EMACS" || test -n "$NVIM"
+    if test -n "$INSIDE_EMACS"
         fish_default_key_bindings
     else
         fish_vi_key_bindings
