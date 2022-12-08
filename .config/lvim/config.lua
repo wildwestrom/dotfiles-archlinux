@@ -7,19 +7,24 @@ a global executable or a path to
 an executable
 ]]
 
+-- REFERENCE
+--
+-- Show type information in Rust with `<S-k>`.
+--
+-- Delete/kill a buffer with `<Leader>c`.
+--
+-- END REFERENCE
+
 vim.opt.hlsearch = false
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save.enabled = false
 lvim.colorscheme = "zellner"
--- to disable icons and use a minimalist setup, uncomment the following
 lvim.use_icons = true
+lvim.builtin.cmp.experimental.ghost_text = true
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -133,5 +138,22 @@ lvim.plugins = {
 -- Create a scratch buffer
 lvim.keys.normal_mode["<Leader>bs"] = ":ScratchNew md<CR>"
 
+-- Format on save
+lvim.format_on_save.enabled = true
+
 -- TODO
 -- Get nvim to respect editorconfig settings
+
+-- Neovide
+vim.o.guifont = "JetBrains_Mono,Noto_Color_Emoji:h12"
+if (vim.g.neovide == true) then
+  vim.g.neovide_refresh_rate = 60
+  vim.g.neovide_refresh_rate_idle = 1
+  vim.g.neovide_transparency = 0.80
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+  vim.g.neovide_scroll_animation_length = 0.3
+  vim.g.neovide_cursor_animation_length = 0.05
+  vim.g.neovide_cursor_trail_length = 0.5
+  vim.g.neovide_hide_mouse_when_typing = true
+end
