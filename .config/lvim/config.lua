@@ -6,7 +6,8 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+
+vim.opt.hlsearch = false
 
 -- general
 lvim.log.level = "warn"
@@ -131,12 +132,6 @@ lvim.plugins = {
 
 -- Create a scratch buffer
 lvim.keys.normal_mode["<Leader>bs"] = ":ScratchNew md<CR>"
--- Delete current buffer
-lvim.keys.normal_mode["<Leader>bd"] = ":BufferKill<CR>"
-
--- TODO
--- Figure out why highlighted text says highlighted even after I've completed the search
-
 
 -- TODO
 -- Get nvim to respect editorconfig settings
