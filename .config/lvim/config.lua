@@ -16,10 +16,11 @@ an executable
 -- END REFERENCE
 
 vim.opt.hlsearch = false
+vim.opt.rnu = true
 
 -- general
 lvim.log.level = "warn"
-lvim.colorscheme = "zellner"
+lvim.colorscheme = "delek"
 lvim.use_icons = true
 lvim.builtin.cmp.experimental.ghost_text = true
 
@@ -59,17 +60,18 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
+  "css",
   "fish",
   "haskell",
+  "java",
   "javascript",
   "json",
   "lua",
   "python",
+  "rust",
+  "svelte",
   "typescript",
   "tsx",
-  "css",
-  "rust",
-  "java",
   "yaml",
 }
 
@@ -110,7 +112,24 @@ lvim.plugins = {
   {
     "Pocco81/auto-save.nvim",
     config = function()
-      require("auto-save").setup()
+      require("auto-save").setup {
+        condition = function(buf)
+          local fn = vim.fn
+          local utils = require("auto-save.utils.data")
+
+          if fn.getbufvar(buf, "&modifiable") == 1 
+            and utils.not_in(fn.getbufvar(buf, "&filetype"), {
+              -- Nothing here yet
+            }) 
+            and utils.not_in(fn.expand("%:t"), {
+              "config.lua"
+            })
+            then
+            return true
+          end
+          return false
+        end
+      }
     end,
   },
   {
@@ -139,17 +158,18 @@ lvim.plugins = {
 lvim.keys.normal_mode["<Leader>bs"] = ":ScratchNew md<CR>"
 
 -- Format on save
-lvim.format_on_save.enabled = true
+-- TODO: Figure out the timeout for auto-save so that auto-format doesn't happen too much.
+lvim.format_on_save.enabled = false
 
 -- TODO
 -- Get nvim to respect editorconfig settings
 
 -- Neovide
-vim.o.guifont = "JetBrains_Mono,Noto_Color_Emoji:h12"
+vim.o.guifont = "JetBrains_Mono,Noto_Color_Emoji:h10"
 if (vim.g.neovide == true) then
   vim.g.neovide_refresh_rate = 60
   vim.g.neovide_refresh_rate_idle = 1
-  vim.g.neovide_transparency = 0.80
+  vim.g.neovide_transparency = 0.90
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
   vim.g.neovide_scroll_animation_length = 0.3
