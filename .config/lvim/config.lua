@@ -49,7 +49,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.terminal.direction = "vertical"
 -- I wish I open the terminal to a percentage of the buffer
-lvim.builtin.terminal.size = 60
+lvim.builtin.terminal.size = 80
 lvim.builtin.terminal.open_mapping = "<Leader>\'"
 
 -- Tree stuff
@@ -117,14 +117,14 @@ lvim.plugins = {
           local fn = vim.fn
           local utils = require("auto-save.utils.data")
 
-          if fn.getbufvar(buf, "&modifiable") == 1 
-            and utils.not_in(fn.getbufvar(buf, "&filetype"), {
-              -- Nothing here yet
-            }) 
-            and utils.not_in(fn.expand("%:t"), {
-              "config.lua"
-            })
-            then
+          if fn.getbufvar(buf, "&modifiable") == 1
+              and utils.not_in(fn.getbufvar(buf, "&filetype"), {
+                -- Nothing here yet
+              })
+              and utils.not_in(fn.expand("%:t"), {
+                "config.lua"
+              })
+          then
             return true
           end
           return false
@@ -138,6 +138,11 @@ lvim.plugins = {
       require("telescope").load_extension("scratch")
     end,
   },
+  { "editorconfig/editorconfig-vim" },
+  { "black-desk/fcitx5-ui.nvim",
+		rocks = {'lgi', 'dbus_proxy'}
+		-- You MUST config fcitx to `ShareInputState=No`
+	}
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
