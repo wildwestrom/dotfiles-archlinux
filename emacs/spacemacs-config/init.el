@@ -109,31 +109,31 @@ This function should only modify configuration layer settings."
 
      ;; agda
 
-     ansible
+     ;; ansible
 
      ;; apl+variants
 
-     (c-c++ :variables
-            c-c++-backend 'lsp-clangd
-            c-c++-enable-clang-support t)
-     cmake
-     meson
+     ;; (c-c++ :variables
+     ;;        c-c++-backend 'lsp-clangd
+     ;;        c-c++-enable-clang-support t)
+     ;; cmake
+     ;; meson
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
-     (clojure :variables
-              ;; clojure-backend 'cider                  ;; use cider instead of lsp
-              clojure-enable-linters 'clj-kondo       ;; clj-kondo included in lsp
-              clojure-enable-clj-refactor t
-              cider-repl-display-help-banner t        ;; disable help banner
-              cider-pprint-fn 'fipp                   ;; fast pretty printing
-              clojure-indent-style 'align-arguments
-              clojure-align-forms-automatically t
-              clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
-              cider-result-overlay-position 'at-point ;; results shown right after expression
-              cider-overlays-use-font-lock t
-              cider-repl-buffer-size-limit 100        ;; limit lines shown in REPL buffer
-              cider-eldoc-display-for-symbol-at-point nil
-              )
+     ;; (clojure :variables
+     ;;          ;; clojure-backend 'cider                  ;; use cider instead of lsp
+     ;;          clojure-enable-linters 'clj-kondo       ;; clj-kondo included in lsp
+     ;;          clojure-enable-clj-refactor t
+     ;;          cider-repl-display-help-banner t        ;; disable help banner
+     ;;          cider-pprint-fn 'fipp                   ;; fast pretty printing
+     ;;          clojure-indent-style 'align-arguments
+     ;;          clojure-align-forms-automatically t
+     ;;          clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
+     ;;          cider-result-overlay-position 'at-point ;; results shown right after expression
+     ;;          cider-overlays-use-font-lock t
+     ;;          cider-repl-buffer-size-limit 100        ;; limit lines shown in REPL buffer
+     ;;          cider-eldoc-display-for-symbol-at-point nil
+     ;;          )
 
      ;; csharp
 
@@ -146,63 +146,63 @@ This function should only modify configuration layer settings."
      ;;         groovy-backend 'lsp
      ;;         groovy-lsp-jar-path "/usr/share/java/groovy-language-server/groovy-language-server-all.jar")
 
-     (haskell :variables
-              haskell-enable-hindent t)
+     ;; (haskell :variables
+     ;;          haskell-enable-hindent t)
 
      ;; java
 
-     (lua :variables
-          lua-backend 'lua
-          lua-lsp-server 'lua-language-server
-          lsp-clients-lua-language-server-install-dir "/usr/lib/lua-language-server/"
-          lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"
-          lsp-clients-lua-language-server-main-location "/usr/lib/lua-language-server/bin/main.lua"
-          lsp-clients-lua-language-server-args '("--logpath" "/tmp/lua-ls-log/")
-          )
+     ;; (lua :variables
+     ;;      lua-backend 'lua
+     ;;      lua-lsp-server 'lua-language-server
+     ;;      lsp-clients-lua-language-server-install-dir "/usr/lib/lua-language-server/"
+     ;;      lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"
+     ;;      lsp-clients-lua-language-server-main-location "/usr/lib/lua-language-server/bin/main.lua"
+     ;;      lsp-clients-lua-language-server-args '("--logpath" "/tmp/lua-ls-log/")
+     ;;      )
 
      ;; python
 
      ;; racket
 
      ;; Note: In order to use dap-mode, you must have unzip installed on your system
-     (rust :variables
-           cargo-process--command-clippy--additional-args "-- -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo"
-           ;; TODO Figure out per-buffer/per-filetype/per-mode variables
-           rust-backend 'lsp)
+     ;; (rust :variables
+     ;;       cargo-process--command-clippy--additional-args "-- -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo"
+     ;;       ;; TODO Figure out per-buffer/per-filetype/per-mode variables
+     ;;       rust-backend 'lsp)
 
-     (shell-scripts :variables
-                    insert-shebang-track-ignored-filename nil
-                    shell-scripts-format-on-save t)
+     ;; (shell-scripts :variables
+     ;;                insert-shebang-track-ignored-filename nil
+     ;;                shell-scripts-format-on-save t)
 
-     (sql :variables
-          sql-backend 'lsp)
+     ;; (sql :variables
+     ;;      sql-backend 'lsp)
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;; Web Programming
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-     html
+     ;; html
      ;; (php :variables php-backend 'lsp)
      ;; gtags ;; seems to fix the problem of not detecting closing tags
 
-     (javascript :variables
-                 javascript-fmt-tool 'prettier
-                 javascript-fmt-on-save t
-                 javascript-backend 'lsp
-                 js2-basic-offset 2
-                 js-indent-level 2
-                 )
-     typescript
+     ;; (javascript :variables
+     ;;            javascript-fmt-tool 'prettier
+     ;;            javascript-fmt-on-save t
+     ;;            javascript-backend 'lsp
+     ;;            js2-basic-offset 2
+     ;;            js-indent-level 2
+     ;;            )
+     ;; typescript
 
-     (svelte :variables
-             svelte-backend 'lsp)
+     ;; (svelte :variables
+     ;;        svelte-backend 'lsp)
 
      ;; elm
      ;; purescript
 
-     prettier
+     ;; prettier
 
-     web-beautify
+     ;; web-beautify
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;; Document/Data Formats
@@ -216,10 +216,10 @@ This function should only modify configuration layer settings."
 
      json
 
-     (latex :variables
-            latex-build-command "LaTeX"
-            latex-backend 'lsp
-            latex-refresh-preview t)
+     ;; (latex :variables
+     ;;        latex-build-command "LaTeX"
+     ;;        latex-backend 'lsp
+     ;;        latex-refresh-preview t)
 
      (markdown :variables
                markdown-live-preview-engine 'vmd)
@@ -232,6 +232,7 @@ This function should only modify configuration layer settings."
           org-enable-reveal-js-support t
           org-enable-roam-support t
           org-enable-roam-protocol t
+          org-enable-roam-ui t
           org-roam-dailies-directory "Journal"
           org-roam-v2-ack t
           org-roam-directory "~/org/Notes"
@@ -245,7 +246,7 @@ This function should only modify configuration layer settings."
                               ("\\subsection{%s}" . "\\subsection*{%s}")
                               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 
-     systemd
+     ;; systemd
 
      yaml
 
@@ -256,11 +257,11 @@ This function should only modify configuration layer settings."
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
      ;; Debugging
-     (dap :variables
-          dap-lldb-debug-program 'lldb-vscode)
+     ;; (dap :variables
+     ;;      dap-lldb-debug-program 'lldb-vscode)
 
      ;; Containers
-     docker
+     ;; docker
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;; Version Control
@@ -373,7 +374,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(org-roam-ui fcitx wakatime-mode)
+   dotspacemacs-additional-packages '(fcitx)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -898,23 +899,18 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (use-package md-roam
+    :quelpa (md-roam :fetcher github :repo "nobiot/md-roam")
+    :config
+    (setq org-roam-file-extensions '("org" "md"))
+    (md-roam-mode 1))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; I don't know why this wasn't set,
   ;; but this should solve the annoying problem
   ;; of not being able to paste into emacs consitently.
   (setq x-select-enable-primary t)
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Wakatime programming language time tracker
-  (use-package wakatime-mode
-    :ensure t
-    :config (global-wakatime-mode))
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Thank you Daniel Nicolai! <@dalanicolai-5c40d41ad73408ce4fb51ea9:gitter.im>
-  ;; Now I can paste all I want without it copying my selection that I'm replacing!
-  (setq-default evil-kill-on-visual-paste nil)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -941,18 +937,6 @@ before packages are loaded."
         ;; the command name changed, but the switches and arguments haven't
         fcitx-remote-command "fcitx5-remote")
   (fcitx-aggressive-setup)
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Org-roam-ui
-  (use-package org-roam-ui
-    :after org-roam
-    :defer t
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1411,7 +1395,7 @@ This function is called at the very end of Spacemacs initialization."
 				 (null-device . "/dev/null"))))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-		'(srefactor stickyfunc-enhance edit-indirect org-roam-ui yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vmd-mode vim-powerline vim-empty-lines-mode vi-tilde-fringe uuidgen use-package unkillable-scratch unicode-fonts unfill undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil treemacs-all-the-icons toml-mode toc-org tide terminal-here tagedit systemd symon symbol-overlay string-inflection string-edit sql-indent spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc smeargle slim-mode shfmt shell-pop scss-mode sass-mode rust-mode ron-mode restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters quickrun pug-mode psci psc-ide prettier-js popwin password-generator paradox ox-twbs ox-gfm ox-asciidoc overseer orgit-forge org-superstar org-roam org-rich-yank org-re-reveal org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file npm-mode nov nodejs-repl nameless mwim mvn multi-term multi-line mmm-mode meson-mode maven-test-mode markdown-toc magit-todos macrostep lsp-ui lsp-origami lsp-latex lsp-java lsp-haskell lorem-ipsum livid-mode link-hint keycast json-reformat json-navigator js2-refactor js-doc journalctl-mode jinja2-mode inspector insert-shebang info+ indent-guide impatient-mode hybrid-mode hungry-delete holy-mode hlint-refactor hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-rtags helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-hoogle helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-cider helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md gendoxy fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rust flycheck-rtags flycheck-pos-tip flycheck-package flycheck-haskell flycheck-elsa flycheck-elm flycheck-clj-kondo flycheck-bashate flx-ido fish-mode fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-tex evil-terminal-cursor-changer evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode doom-themes doom-modeline dockerfile-mode docker disaster dired-quick-sort diminish diff-hl devdocs define-word dante csv-mode cpp-auto-include company-ycmd company-web company-statistics company-shell company-rtags company-reftex company-quickhelp company-math company-lua company-emoji company-cabal company-c-headers company-auctex company-ansible command-log-mode column-enforce-mode color-identifiers-mode cmm-mode cmake-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu centered-cursor-mode ccls cargo browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile attrap ansible-doc ansible aggressive-indent adoc-mode ace-link ace-jump-helm-line ac-ispell))
+		'(srefactor stickyfunc-enhance edit-indirect org-roam-ui yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vmd-mode vim-powerline vim-empty-lines-mode vi-tilde-fringe uuidgen use-package unkillable-scratch unicode-fonts unfill undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil treemacs-all-the-icons toml-mode toc-org tide terminal-here tagedit systemd symon symbol-overlay string-inflection string-edit sql-indent spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc smeargle slim-mode shfmt shell-pop scss-mode sass-mode rust-mode ron-mode restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters quickrun pug-mode psci psc-ide prettier-js popwin password-generator paradox ox-twbs ox-gfm ox-asciidoc overseer orgit-forge org-superstar org-roam org-rich-yank org-re-reveal org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file npm-mode nov nodejs-repl nameless mwim mvn multi-term multi-line mmm-mode meson-mode maven-test-mode markdown-toc magit-todos macrostep lsp-ui lsp-origami lsp-latex lsp-java lsp-haskell lorem-ipsum livid-mode link-hint keycast json-reformat json-navigator js2-refactor js-doc journalctl-mode jinja2-mode inspector insert-shebang info+ indent-guide impatient-mode hybrid-mode hungry-delete holy-mode hlint-refactor hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-rtags helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-hoogle helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-cider helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md gendoxy fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rust flycheck-rtags flycheck-pos-tip flycheck-package flycheck-haskell flycheck-elsa flycheck-elm flycheck-clj-kondo flycheck-bashate flx-ido fish-mode fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-tex evil-terminal-cursor-changer evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode doom-themes doom-modeline dockerfile-mode docker disaster dired-quick-sort diminish diff-hl devdocs define-word dante csv-mode cpp-auto-include company-ycmd company-web company-statistics company-shell company-rtags company-reftex company-quickhelp company-math company-lua company-emoji company-cabal company-c-headers company-auctex company-ansible command-log-mode column-enforce-mode color-identifiers-mode cmm-mode cmake-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu centered-cursor-mode ccls cargo browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile attrap ansible-doc ansible aggressive-indent adoc-mode ace-link ace-jump-helm-line ac-ispell))
  '(safe-local-variable-values
 		'((major-mode . jsonc-mode)
 			 (major-mode . jsonc)
@@ -1421,8 +1405,6 @@ This function is called at the very end of Spacemacs initialization."
 			 (javascript-backend . tern)
 			 (javascript-backend . lsp)))
  '(tab-always-indent 'complete)
- '(wakatime-api-key "875efdd9-099d-4f7f-9bfa-ab4839c4717b")
- '(wakatime-cli-path "/usr/bin/wakatime-cli")
  '(warning-suppress-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
