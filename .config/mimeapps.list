@@ -1,10 +1,10 @@
 [Default Applications]
-application/json=emacsclient.desktop
+application/json=lvim.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-X76QW1.desktop
 image/png=imv-folder.desktop
 image/jpeg=imv-folder.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
-text/plain=emacsclient.desktop
+text/plain=lvim.desktop
 text/html=librewolf.desktop
 x-scheme-handler/http=librewolf.desktop
 x-scheme-handler/https=librewolf.desktop
@@ -14,21 +14,23 @@ x-scheme-handler/mailto=thunderbird.desktop
 image/gif=imv-folder.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 x-scheme-handler/fleet=jetbrains-fleet.desktop
-application/x-shellscript=emacsclient.desktop
+application/x-shellscript=lvim.desktop
 image/svg+xml=imv-folder.desktop
 application/zip=org.gnome.FileRoller.desktop
 audio/flac=mpv.desktop
 application/xhtml+xml=librewolf.desktop
+image/bmp=imv-folder.desktop
 
 [Added Associations]
-application/json=emacsclient.desktop;
+application/json=lvim.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-ZQ72R1.desktop;userapp-Telegram Desktop-X76QW1.desktop;
 image/png=imv-folder.desktop;
 image/jpeg=imv-folder.desktop;imv.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
-text/plain=emacsclient.desktop;
+text/plain=lvim.desktop;
 image/gif=imv-folder.desktop;
-application/x-shellscript=emacsclient.desktop;
+application/x-shellscript=lvim.desktop;
 image/svg+xml=imv-folder.desktop;imv.desktop;
 audio/flac=mpv.desktop;
 application/xhtml+xml=librewolf.desktop;
+image/bmp=imv-folder.desktop;
