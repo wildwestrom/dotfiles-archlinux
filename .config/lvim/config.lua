@@ -28,16 +28,10 @@ lvim.builtin.cmp.experimental.ghost_text = true
 lvim.leader = "space"
 
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
+lvim.builtin.which_key.mappings["t"] = {
+	name = "+Toggle",
+	a = { ":ASToggle<CR>", "Auto Save" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -58,21 +52,21 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "css",
-  "fish",
-  "haskell",
-  "java",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "rust",
-  "svelte",
-  "typescript",
-  "tsx",
-  "yaml",
+	"bash",
+	"c",
+	"css",
+	"fish",
+	"haskell",
+	"java",
+	"javascript",
+	"json",
+	"lua",
+	"python",
+	"rust",
+	"svelte",
+	"typescript",
+	"tsx",
+	"yaml",
 }
 
 lvim.builtin.treesitter.highlight.enable = true
@@ -81,8 +75,8 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-  "sumneko_lua",
-  "jsonls",
+	"sumneko_lua",
+	"jsonls",
 }
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
@@ -109,76 +103,62 @@ lvim.lsp.installer.setup.ensure_installed = {
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup {
-        condition = function(buf)
-          local fn = vim.fn
-          local utils = require("auto-save.utils.data")
+	{
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup {
+				condition = function(buf)
+					local fn = vim.fn
+					local utils = require("auto-save.utils.data")
 
-          if fn.getbufvar(buf, "&modifiable") == 1
-              and utils.not_in(fn.getbufvar(buf, "&filetype"), {
-                -- Nothing here yet
-              })
-              and utils.not_in(fn.expand("%:t"), {
-                "config.lua"
-              })
-          then
-            return true
-          end
-          return false
-        end
-      }
-    end,
-  },
-  {
-    "n-shift/scratch.nvim",
-    config = function()
-      require("telescope").load_extension("scratch")
-    end,
-  },
-  { "editorconfig/editorconfig-vim" },
-  { "black-desk/fcitx5-ui.nvim",
-		rocks = {'lgi', 'dbus_proxy'}
+					if fn.getbufvar(buf, "&modifiable") == 1
+							and utils.not_in(fn.getbufvar(buf, "&filetype"), {
+								-- Nothing here yet
+							})
+							and utils.not_in(fn.expand("%:t"), {
+								"config.lua"
+							})
+					then
+						return true
+					end
+					return false
+				end
+			}
+		end,
+	},
+	{
+		"n-shift/scratch.nvim",
+		config = function()
+			require("telescope").load_extension("scratch")
+		end,
+	},
+	{ "editorconfig/editorconfig-vim" },
+	{ "black-desk/fcitx5-ui.nvim",
+		rocks = { 'lgi', 'dbus_proxy' }
 		-- You MUST config fcitx to `ShareInputState=No`
 	}
 }
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
-
 -- Create a scratch buffer
 lvim.keys.normal_mode["<Leader>bs"] = ":ScratchNew md<CR>"
+
+-- Open an external terminal (because the built-in terminal doesn't seem to clear properly)
+-- lvim.keys.normal_mode["<Leader>\""] = ":!foot &<CR>"
 
 -- Format on save
 -- TODO: Figure out the timeout for auto-save so that auto-format doesn't happen too much.
 lvim.format_on_save.enabled = false
 
--- TODO
--- Get nvim to respect editorconfig settings
-
 -- Neovide
 vim.o.guifont = "JetBrains_Mono,Noto_Color_Emoji:h10"
 if (vim.g.neovide == true) then
-  vim.g.neovide_refresh_rate = 60
-  vim.g.neovide_refresh_rate_idle = 1
-  vim.g.neovide_transparency = 0.90
-  vim.g.neovide_floating_blur_amount_x = 2.0
-  vim.g.neovide_floating_blur_amount_y = 2.0
-  vim.g.neovide_scroll_animation_length = 0.3
-  vim.g.neovide_cursor_animation_length = 0.05
-  vim.g.neovide_cursor_trail_length = 0.5
-  vim.g.neovide_hide_mouse_when_typing = true
+	vim.g.neovide_refresh_rate = 60
+	vim.g.neovide_refresh_rate_idle = 1
+	vim.g.neovide_transparency = 0.90
+	vim.g.neovide_floating_blur_amount_x = 2.0
+	vim.g.neovide_floating_blur_amount_y = 2.0
+	vim.g.neovide_scroll_animation_length = 0.3
+	vim.g.neovide_cursor_animation_length = 0.05
+	vim.g.neovide_cursor_trail_length = 0.5
+	vim.g.neovide_hide_mouse_when_typing = true
 end
