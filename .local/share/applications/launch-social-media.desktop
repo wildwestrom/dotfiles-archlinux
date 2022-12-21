@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Launch Social Media
 Comment=A convenience script to launch all social media and communication related programs I use
-Exec=/bin/sh -c 'gtk-launch signal-desktop; gtk-launch io.element.Element.desktop; gtk-launch zulip-desktop; gtk-launch telegramdesktop; gtk-launch thunderbird; gtk-launch librewolf https://discord.com/app'
+Exec=/bin/sh -c 'gtk-launch signal-desktop; gtk-launch io.element.Element.desktop; gtk-launch zulip-desktop; gtk-launch org.telegram.desktop.desktop; gtk-launch thunderbird; gtk-launch librewolf https://discord.com/app'
 Terminal=false
 Type=Application
 #Icon=TBD
