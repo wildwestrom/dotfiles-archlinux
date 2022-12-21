@@ -144,7 +144,7 @@ alias fd='fd --hidden'
 alias rg='rg -.'
 alias ag='ag -a'
 alias cat="bat"
-alias less="bat"
+alias less="bat --style=plain"
 alias top="btm --color=default"
 alias htop="btm --color=default"
 alias grep="rg"
@@ -184,6 +184,7 @@ end
 
 # Arch Specific
 alias remove-orphans="paru -Rns (paru -Qtdq)"
+alias paru="paru --color=always"
 
 # Worktree-based-dotfiles storage
 function config --wraps='git'
