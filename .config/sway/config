@@ -28,16 +28,16 @@ bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 # Bind workspaces to monitors
-workspace $ws1  output $external_monitor
-workspace $ws2  output $external_monitor
-workspace $ws3  output $external_monitor
-workspace $ws4  output $external_monitor
-workspace $ws5  output $external_monitor
-workspace $ws6  output $laptop_monitor
-workspace $ws7  output $laptop_monitor
-workspace $ws8  output $laptop_monitor
-workspace $ws9  output $laptop_monitor
-workspace $ws10 output $laptop_monitor
+workspace $ws1  output $laptop_monitor
+workspace $ws2  output $laptop_monitor
+workspace $ws3  output $laptop_monitor
+workspace $ws4  output $laptop_monitor
+workspace $ws5  output $laptop_monitor
+workspace $ws6  output $external_monitor
+workspace $ws7  output $external_monitor
+workspace $ws8  output $external_monitor
+workspace $ws9  output $external_monitor
+workspace $ws10 output $external_monitor
 
 # Gaps
 default_border pixel 2
