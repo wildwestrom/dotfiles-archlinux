@@ -135,10 +135,10 @@ alias chmod="chmod -v"
 alias chown="chown -v"
 
 alias ls="exa -G"
-alias ll="exa -la"
-alias la="exa -a"
-alias lt="exa -aT"
-alias l.="exa -d .*"
+alias ll="ls -la"
+alias la="ls -a"
+alias lt="ls -aT"
+alias l.="ls -d .*"
 alias df='df -h'
 alias fd='fd --hidden'
 alias rg='rg -.'
@@ -184,7 +184,6 @@ end
 
 # Arch Specific
 alias remove-orphans="paru -Rns (paru -Qtdq)"
-alias paru="paru --color=always"
 
 # Worktree-based-dotfiles storage
 function config --wraps='git'
