@@ -20,6 +20,8 @@ application/zip=org.gnome.FileRoller.desktop
 audio/flac=mpv.desktop
 application/xhtml+xml=librewolf.desktop
 image/bmp=imv-folder.desktop
+text/javascript=lvim.desktop
+text/markdown=lvim.desktop
 
 [Added Associations]
 application/json=lvim.desktop;
@@ -34,3 +36,5 @@ image/svg+xml=imv-folder.desktop;imv.desktop;
 audio/flac=mpv.desktop;
 application/xhtml+xml=librewolf.desktop;
 image/bmp=imv-folder.desktop;
+text/javascript=lvim.desktop;
+text/markdown=lvim.desktop;
