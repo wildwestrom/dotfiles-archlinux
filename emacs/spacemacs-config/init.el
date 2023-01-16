@@ -208,13 +208,13 @@ This function should only modify configuration layer settings."
      ;; Document/Data Formats
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-     asciidoc
+     ;; asciidoc
 
-     csv
+     ;; csv
 
      epub
 
-     json
+     ;; json
 
      ;; (latex :variables
      ;;        latex-build-command "LaTeX"
@@ -248,7 +248,7 @@ This function should only modify configuration layer settings."
 
      ;; systemd
 
-     yaml
+     ;; yaml
 
      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
      ;;
@@ -1216,7 +1216,7 @@ before packages are loaded."
     'org-mode-hook
     (lambda ()
       "Beautify Org Checkbox Symbol"
-      (spacemacs/toggle-visual-line-navigation-on)
+      (spacemacs/toggle-visual-line-navigation-on) ;; TODO Figure out why this doesn't work
       (push '("[ ]" . "☐") prettify-symbols-alist)
       (push '("[X]" . "☑" ) prettify-symbols-alist)
       (push '("[-]" . "❍" ) prettify-symbols-alist)
