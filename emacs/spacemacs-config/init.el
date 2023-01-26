@@ -120,20 +120,20 @@ This function should only modify configuration layer settings."
      ;; meson
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
-     ;; (clojure :variables
-     ;;          ;; clojure-backend 'cider                  ;; use cider instead of lsp
-     ;;          clojure-enable-linters 'clj-kondo       ;; clj-kondo included in lsp
-     ;;          clojure-enable-clj-refactor t
-     ;;          cider-repl-display-help-banner t        ;; disable help banner
-     ;;          cider-pprint-fn 'fipp                   ;; fast pretty printing
-     ;;          clojure-indent-style 'align-arguments
-     ;;          clojure-align-forms-automatically t
-     ;;          clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
-     ;;          cider-result-overlay-position 'at-point ;; results shown right after expression
-     ;;          cider-overlays-use-font-lock t
-     ;;          cider-repl-buffer-size-limit 100        ;; limit lines shown in REPL buffer
-     ;;          cider-eldoc-display-for-symbol-at-point nil
-     ;;          )
+     (clojure :variables
+              ;; clojure-backend 'cider                  ;; use cider instead of lsp
+              clojure-enable-linters 'clj-kondo       ;; clj-kondo included in lsp
+              clojure-enable-clj-refactor t
+              cider-repl-display-help-banner t        ;; disable help banner
+              cider-pprint-fn 'fipp                   ;; fast pretty printing
+              clojure-indent-style 'align-arguments
+              clojure-align-forms-automatically t
+              clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
+              cider-result-overlay-position 'at-point ;; results shown right after expression
+              cider-overlays-use-font-lock t
+              cider-repl-buffer-size-limit 100        ;; limit lines shown in REPL buffer
+              cider-eldoc-display-for-symbol-at-point nil
+              )
 
      ;; csharp
 
