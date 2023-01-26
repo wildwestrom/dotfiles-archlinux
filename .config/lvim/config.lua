@@ -136,6 +136,12 @@ lvim.plugins = {
 	{ "black-desk/fcitx5-ui.nvim",
 		rocks = { 'lgi', 'dbus_proxy' }
 		-- You MUST config fcitx to `ShareInputState=No`
+	},
+	{ "olical/conjure" },
+	{ "luochen1990/rainbow",
+		config = function()
+			vim.g.rainbow_active = 1
+		end
 	}
 }
 
@@ -150,7 +156,7 @@ lvim.keys.normal_mode["<Leader>bs"] = ":ScratchNew md<CR>"
 lvim.format_on_save.enabled = false
 
 -- Neovide
-vim.o.guifont = "JetBrains_Mono,Noto_Color_Emoji:h10"
+vim.o.guifont = "JetBrainsMono,Noto_Color_Emoji:h10"
 if (vim.g.neovide == true) then
 	vim.g.neovide_refresh_rate = 60
 	vim.g.neovide_refresh_rate_idle = 1
