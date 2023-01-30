@@ -17,6 +17,7 @@ an executable
 
 vim.opt.hlsearch = false
 vim.opt.rnu = true
+vim.opt.colorcolumn = "100"
 
 -- general
 lvim.log.level = "warn"
