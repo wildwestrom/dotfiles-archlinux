@@ -2,7 +2,8 @@
 Name=LunarVim
 GenericName=Text Editor
 Comment=An IDE layer for Neovim with sane defaults. Completely free and community driven.
-Exec=neovide --neovim-bin /home/main/.local/bin/lvim %F
+# Exec=neovide --neovim-bin /home/main/.local/bin/lvim %F #Until they fix neovide on wlroots, this will be commented out
+Exec=foot /home/main/.local/bin/lvim %F
 Type=Application
 Keywords=Text;editor;
 Icon=lvim
