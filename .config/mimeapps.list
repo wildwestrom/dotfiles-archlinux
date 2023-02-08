@@ -22,6 +22,7 @@ application/xhtml+xml=librewolf.desktop
 image/bmp=imv-folder.desktop
 text/javascript=lvim.desktop
 text/markdown=lvim.desktop
+image/webp=imv.desktop
 
 [Added Associations]
 application/json=lvim.desktop;
@@ -39,3 +40,4 @@ image/bmp=imv-folder.desktop;
 text/javascript=lvim.desktop;
 text/markdown=lvim.desktop;
 text/css=lvim.desktop;
+image/webp=imv.desktop;
