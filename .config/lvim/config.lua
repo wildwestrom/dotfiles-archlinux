@@ -60,6 +60,7 @@ lvim.builtin.treesitter.ensure_installed = {
 	"java",
 	"javascript",
 	"json",
+	"latex",
 	"lua",
 	"python",
 	"rust",
@@ -132,7 +133,6 @@ lvim.plugins = {
 			require("telescope").load_extension("scratch")
 		end,
 	},
-	{ "editorconfig/editorconfig-vim" },
 	{ "black-desk/fcitx5-ui.nvim",
 		rocks = { 'lgi', 'dbus_proxy' }
 		-- You MUST config fcitx to `ShareInputState=No`
@@ -142,7 +142,17 @@ lvim.plugins = {
 		config = function()
 			vim.g.rainbow_active = 1
 		end
-	}
+	},
+	{ "lervag/vimtex",
+		config = function()
+			vim.g.vimtex_view_method = 'zathura'
+			vim.g.vimtex_quickfix_enabled = 0
+		end,
+	},
+  "lervag/vimtex",
+  "kdheepak/cmp-latex-symbols",
+  "KeitaNakamura/tex-conceal.vim",
+  "SirVer/ultisnips",
 }
 
 -- Create a scratch buffer
