@@ -36,6 +36,7 @@ x-scheme-handler/webcal=userapp-Thunderbird-JV7L01.desktop
 text/calendar=userapp-Thunderbird-JV7L01.desktop
 application/x-extension-ics=userapp-Thunderbird-JV7L01.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-JV7L01.desktop
+x-scheme-handler/signalcaptcha=signal-desktop.desktop
 
 [Added Associations]
 application/json=lvim.desktop;
