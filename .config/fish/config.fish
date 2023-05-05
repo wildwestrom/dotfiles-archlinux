@@ -146,10 +146,11 @@ alias fd='fd --hidden'
 alias rg='rg -.'
 alias ag='ag -a'
 alias cat="bat"
-alias less="bat --style=plain"
+alias less="bat --style=plain --paging=always"
 alias top="btm --color=default"
 alias htop="btm --color=default"
 alias grep="rg"
+alias cloc="tokei"
 set -gx WATCH_INTERVAL '0.5'
 alias watch="watch -c"
 
@@ -171,6 +172,7 @@ alias mpa="command mpv --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
 alias ytdl="yt-dlp -P ~/tmp"
+
 alias gcd1="git clone --depth 1"
 
 alias tmsym="wl-copy ™"
