@@ -164,7 +164,6 @@ alias vimrc="$EDITOR $XDG_CONFIG_HOME/lvim/config.lua"
 alias su="su -s /bin/fish"
 alias proc="ps u | head -n1 && ps aux | rg -v '\srg\s-\.' | rg"
 alias inx="MOZ_ENABLE_WAYLAND=0 GDK_BACKEND=X11 QT_QPA_PLATFORM=xcb WINIT_UNIX_BACKEND=x11"
-alias magit="swayhide emacsclient -c --eval '(magit-status-here)'"
 
 alias mpv="swayhide mpv"
 # use the word `command` to skip previous aliases
