@@ -1,6 +1,6 @@
 [Default Applications]
 application/json=lvim.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-X76QW1.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 image/png=imv.desktop
 image/jpeg=imv-folder.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
@@ -40,7 +40,7 @@ x-scheme-handler/signalcaptcha=signal-desktop.desktop
 
 [Added Associations]
 application/json=lvim.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-ZQ72R1.desktop;userapp-Telegram Desktop-X76QW1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-ZQ72R1.desktop;userapp-Telegram Desktop-X76QW1.desktop;org.telegram.desktop.desktop;
 image/png=imv-folder.desktop;imv.desktop;
 image/jpeg=imv-folder.desktop;imv.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
