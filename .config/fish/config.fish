@@ -171,6 +171,7 @@ alias mpa="command mpv --no-video"
 alias imv="swayhide imv"
 alias zathura="swayhide zathura"
 alias ytdl="yt-dlp -P ~/tmp"
+alias hx="helix"
 
 alias gcd1="git clone --depth 1"
 
