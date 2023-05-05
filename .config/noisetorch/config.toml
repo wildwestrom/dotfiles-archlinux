@@ -1,4 +1,4 @@
-Threshold = 5
+Threshold = 1
 DisplayMonitorSources = false
 EnableUpdates = true
 FilterInput = true
