@@ -6,7 +6,6 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
-
 -- REFERENCE
 --
 -- Show type information in Rust with `<S-k>`.
@@ -20,7 +19,8 @@ vim.opt.rnu = true
 
 -- general
 lvim.log.level = "warn"
-lvim.colorscheme = "delek"
+lvim.colorscheme = "delek" -- light
+-- lvim.colorscheme = "onedarker" -- dark
 lvim.use_icons = true
 lvim.builtin.cmp.experimental.ghost_text = true
 
@@ -31,7 +31,10 @@ lvim.leader = "space"
 lvim.builtin.which_key.mappings["t"] = {
 	name = "+Toggle",
 	a = { ":ASToggle<CR>", "Auto Save" },
+	w = { ":set wrap!<CR>", "Line Wrapping" },
 }
+
+lvim.builtin.which_key.mappings["l"]["R"] = { ":LspRestart<CR>", "Restart" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -133,26 +136,44 @@ lvim.plugins = {
 			require("telescope").load_extension("scratch")
 		end,
 	},
-	{ "black-desk/fcitx5-ui.nvim",
+	{
+		"black-desk/fcitx5-ui.nvim",
 		rocks = { 'lgi', 'dbus_proxy' }
 		-- You MUST config fcitx to `ShareInputState=No`
 	},
 	{ "olical/conjure" },
-	{ "luochen1990/rainbow",
+	{
+		"luochen1990/rainbow",
 		config = function()
 			vim.g.rainbow_active = 1
 		end
 	},
-	{ "lervag/vimtex",
+	{
+		"lervag/vimtex",
 		config = function()
 			vim.g.vimtex_view_method = 'zathura'
 			vim.g.vimtex_quickfix_enabled = 0
 		end,
 	},
-  "lervag/vimtex",
-  "kdheepak/cmp-latex-symbols",
-  "KeitaNakamura/tex-conceal.vim",
-  "SirVer/ultisnips",
+	"kdheepak/cmp-latex-symbols",
+	"KeitaNakamura/tex-conceal.vim",
+	"SirVer/ultisnips",
+	"SeniorMars/typst.nvim",
+	{
+		"aca/emmet-ls",
+		config = function()
+			local lspconfig = require('lspconfig')
+			local configs = require('lspconfig/configs')
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			lspconfig.emmet_ls.setup({
+				capabilities = capabilities,
+				filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug",
+					"typescriptreact", "vue" },
+			})
+		end,
+	},
 }
 
 -- Create a scratch buffer
