@@ -86,6 +86,16 @@ lvim.lsp.installer.setup.ensure_installed = {
 	"jsonls",
 }
 
+require("lvim.lsp.manager").setup("cssls", {
+	settings = {
+		css = {
+			lint = {
+				unknownAtRules = "ignore",
+			}
+		}
+	}
+})
+
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
