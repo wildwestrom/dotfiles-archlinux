@@ -34,7 +34,10 @@ lvim.builtin.which_key.mappings["t"] = {
 	w = { ":set wrap!<CR>", "Line Wrapping" },
 }
 
-lvim.builtin.which_key.mappings["l"]["R"] = { ":LspRestart<CR>", "Restart" }
+table.insert(
+	lvim.builtin.which_key.mappings["l"],
+	{ R = { ":LspRestart<CR>", "Restart" } }
+)
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -141,7 +144,6 @@ lvim.plugins = {
 		rocks = { 'lgi', 'dbus_proxy' }
 		-- You MUST config fcitx to `ShareInputState=No`
 	},
-	{ "olical/conjure" },
 	{
 		"luochen1990/rainbow",
 		config = function()
@@ -173,7 +175,7 @@ lvim.plugins = {
 					"typescriptreact", "vue" },
 			})
 		end,
-	},
+	}
 }
 
 -- Create a scratch buffer
